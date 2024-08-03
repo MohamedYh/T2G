@@ -1,0 +1,18 @@
+// schema.prisma
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/clientPg"
+}
+
+datasource db {
+    provider = "mysql"
+    url      = "mysql://root:Yahyaad2019542008@localhost:3306/graph_maker"
+}
+
+model User {
+    id    Int    @id @default(autoincrement())
+    name  String
+    email String @unique
+    age   Int?
+}
+

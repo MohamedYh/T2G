@@ -1,0 +1,30 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon db.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "prisma": {
+    "schema": "prisma/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.17.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0",
+    "nodemon": "^3.1.4",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "prisma": "^5.17.0"
+  }
+}
