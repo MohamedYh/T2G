@@ -1,0 +1,158 @@
+.containerlg {
+  background-color: #ffffff;
+  height: 100svh;
+  background-image: url("/background.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-size: cover;
+  align-items: center;
+  width: 100svw;
+}
+
+.cntr {
+  width: 30vw;
+  background-color: rgba(255, 255, 255, 0.188);
+  border: 1px solid rgba(255, 255, 255, 0.567);
+  border-radius: 8px;
+  padding: 2vw;
+  color: white;
+  padding-top: 1vw;
+  backdrop-filter: blur(10px);
+}
+
+form {
+  width: 100%;
+}
+
+form div {
+  width: 100%;
+}
+
+.cntr h1 {
+  color: rgb(23, 22, 22);
+  font-family: "Fira Sans Condensed";
+  margin: 0;
+  font-size: 3vw;
+  letter-spacing: 1.25px;
+  font-weight: 550;
+  margin-top: 1.6vh;
+  color: white;
+}
+
+h4 {
+    font-family: 'Fira Sans Condensed';
+    margin: 0;
+    color: rgba(255, 255, 255, 0.84);
+    word-spacing: 3px;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    margin-bottom: 4vh;
+}
+
+label {
+  display: block;
+  font-family: "Lexend";
+  margin-bottom: 0.6vw;
+  font-size: 1.2vw;
+  color: hsla(0, 0%, 100%, 0.8);
+}
+
+input {
+  width: 28.5vw;
+  font-family: 'Lexend';
+  background-color: rgba(255, 255, 255, 0.17);
+  border: 0.75px rgba(255, 255, 255, 0.315) solid;
+  border-radius: 80px;
+  height: 4vh;
+  border-radius: 5px;
+  color: rgb(231, 231, 231);
+  outline: none;
+  margin-bottom: 2vh;
+  font-size: 1.2vw;
+  padding: 1.65%;
+  padding-left: 3%;
+}
+
+#password {
+    -webkit-text-security: disc;
+    -moz-text-security: disc;
+    text-security: disc;
+}
+
+input::placeholder {
+    color: rgb(218, 218, 218);
+}
+
+.sbmt {
+  width: 29.9vw;
+  border-radius: 8px;
+  outline: none;
+  padding: 0.7vw;
+  border: none;
+  font-family: 'Lexend';
+  margin-top: 5vh;
+  font-size: 1.7vw;
+  color: white;
+  background-color: #042c6c;
+}
+
+.sbmt:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.171);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+input::-webkit-input-placeholder {
+    color: inherit;
+}
+
+input::-moz-placeholder {
+    color: inherit;
+}
+
+input::-ms-input-placeholder {
+    color: inherit;
+}
+
+input::placeholder {
+    color: inherit; 
+}
+
+input{
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+.fmp {
+    margin: 0;
+    font-family: 'Roboto';
+    font-size: 0.9vw;
+    color: rgb(0, 0, 122);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ydh {
+    font-size: 1vw;
+    margin: 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.61);
+}
+
+.ydh p {
+    margin: 0;
+    display: inline-block;
+    margin-left: 4px;
+    cursor: pointer;
+    margin-top: 1.5vw;
+}
+
+.ydh p a {
+    color: rgba(255, 255, 255, 0.61);;
+
+}

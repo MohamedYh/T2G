@@ -3,6 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import React from "react";
 import "./globals.css";
 
+export const server_url = 'http://localhost:3001'
+
+
 export default function Home() {
   return (
     <main>
