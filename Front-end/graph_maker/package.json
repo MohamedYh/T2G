@@ -15,7 +15,8 @@
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "react18-input-otp": "^1.1.4"
   },
   "devDependencies": {
     "@types/node": "^20",
