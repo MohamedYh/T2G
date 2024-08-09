@@ -15,4 +15,5 @@ model User {
   password    String
   isConfirmed Boolean?
   v_code      String
+  token       String
 }

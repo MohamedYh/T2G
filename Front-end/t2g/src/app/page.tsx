@@ -1,12 +1,15 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import React from "react";
+import { useRouter } from "next/navigation";
 import "./globals.css";
 
 export const server_url = 'http://localhost:3001'
 
 
 export default function Home() {
+  const router = useRouter()
+
   return (
     <main>
       <div className="scn">
@@ -14,8 +17,12 @@ export default function Home() {
         <div className="navbar">
           <h1 className={"title"}>GraphMaker</h1>
           <div className="btns">
-            <button className="bt1">Login</button>
-            <button className="bt2">Sign Up</button>
+            <button onClick={() => {
+              router.push('/login')
+            }} className="bt1">Login</button>
+            <button onClick={() => {
+              router.push('/signup')
+            }} className="bt2">Sign Up</button>
           </div>
         </div>
         <h1 className="hdr">

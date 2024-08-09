@@ -1,5 +1,5 @@
 {
-  "name": "graph_maker",
+  "name": "t2g",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "react18-input-otp": "^1.1.4"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

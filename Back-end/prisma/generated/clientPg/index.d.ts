@@ -900,6 +900,7 @@ export namespace Prisma {
     password: string | null
     isConfirmed: boolean | null
     v_code: string | null
+    token: string | null
   }
 
   export type UserMaxAggregateOutputType = {
@@ -908,6 +909,7 @@ export namespace Prisma {
     password: string | null
     isConfirmed: boolean | null
     v_code: string | null
+    token: string | null
   }
 
   export type UserCountAggregateOutputType = {
@@ -916,6 +918,7 @@ export namespace Prisma {
     password: number
     isConfirmed: number
     v_code: number
+    token: number
     _all: number
   }
 
@@ -934,6 +937,7 @@ export namespace Prisma {
     password?: true
     isConfirmed?: true
     v_code?: true
+    token?: true
   }
 
   export type UserMaxAggregateInputType = {
@@ -942,6 +946,7 @@ export namespace Prisma {
     password?: true
     isConfirmed?: true
     v_code?: true
+    token?: true
   }
 
   export type UserCountAggregateInputType = {
@@ -950,6 +955,7 @@ export namespace Prisma {
     password?: true
     isConfirmed?: true
     v_code?: true
+    token?: true
     _all?: true
   }
 
@@ -1045,6 +1051,7 @@ export namespace Prisma {
     password: string
     isConfirmed: boolean | null
     v_code: string
+    token: string
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
@@ -1072,6 +1079,7 @@ export namespace Prisma {
     password?: boolean
     isConfirmed?: boolean
     v_code?: boolean
+    token?: boolean
   }, ExtArgs["result"]["user"]>
 
 
@@ -1081,6 +1089,7 @@ export namespace Prisma {
     password?: boolean
     isConfirmed?: boolean
     v_code?: boolean
+    token?: boolean
   }
 
 
@@ -1093,6 +1102,7 @@ export namespace Prisma {
       password: string
       isConfirmed: boolean | null
       v_code: string
+      token: string
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1467,6 +1477,7 @@ export namespace Prisma {
     readonly password: FieldRef<"User", 'String'>
     readonly isConfirmed: FieldRef<"User", 'Boolean'>
     readonly v_code: FieldRef<"User", 'String'>
+    readonly token: FieldRef<"User", 'String'>
   }
     
 
@@ -1759,7 +1770,8 @@ export namespace Prisma {
     email: 'email',
     password: 'password',
     isConfirmed: 'isConfirmed',
-    v_code: 'v_code'
+    v_code: 'v_code',
+    token: 'token'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -1826,6 +1838,7 @@ export namespace Prisma {
     password?: StringFilter<"User"> | string
     isConfirmed?: BoolNullableFilter<"User"> | boolean | null
     v_code?: StringFilter<"User"> | string
+    token?: StringFilter<"User"> | string
   }
 
   export type UserOrderByWithRelationInput = {
@@ -1834,6 +1847,7 @@ export namespace Prisma {
     password?: SortOrder
     isConfirmed?: SortOrderInput | SortOrder
     v_code?: SortOrder
+    token?: SortOrder
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -1845,6 +1859,7 @@ export namespace Prisma {
     password?: StringFilter<"User"> | string
     isConfirmed?: BoolNullableFilter<"User"> | boolean | null
     v_code?: StringFilter<"User"> | string
+    token?: StringFilter<"User"> | string
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -1853,6 +1868,7 @@ export namespace Prisma {
     password?: SortOrder
     isConfirmed?: SortOrderInput | SortOrder
     v_code?: SortOrder
+    token?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
@@ -1869,6 +1885,7 @@ export namespace Prisma {
     password?: StringWithAggregatesFilter<"User"> | string
     isConfirmed?: BoolNullableWithAggregatesFilter<"User"> | boolean | null
     v_code?: StringWithAggregatesFilter<"User"> | string
+    token?: StringWithAggregatesFilter<"User"> | string
   }
 
   export type UserCreateInput = {
@@ -1876,6 +1893,7 @@ export namespace Prisma {
     password: string
     isConfirmed?: boolean | null
     v_code: string
+    token: string
   }
 
   export type UserUncheckedCreateInput = {
@@ -1884,6 +1902,7 @@ export namespace Prisma {
     password: string
     isConfirmed?: boolean | null
     v_code: string
+    token: string
   }
 
   export type UserUpdateInput = {
@@ -1891,6 +1910,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     isConfirmed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     v_code?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateInput = {
@@ -1899,6 +1919,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     isConfirmed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     v_code?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserCreateManyInput = {
@@ -1907,6 +1928,7 @@ export namespace Prisma {
     password: string
     isConfirmed?: boolean | null
     v_code: string
+    token: string
   }
 
   export type UserUpdateManyMutationInput = {
@@ -1914,6 +1936,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     isConfirmed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     v_code?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -1922,6 +1945,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     isConfirmed?: NullableBoolFieldUpdateOperationsInput | boolean | null
     v_code?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -1965,6 +1989,7 @@ export namespace Prisma {
     password?: SortOrder
     isConfirmed?: SortOrder
     v_code?: SortOrder
+    token?: SortOrder
   }
 
   export type UserAvgOrderByAggregateInput = {
@@ -1977,6 +2002,7 @@ export namespace Prisma {
     password?: SortOrder
     isConfirmed?: SortOrder
     v_code?: SortOrder
+    token?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
@@ -1985,6 +2011,7 @@ export namespace Prisma {
     password?: SortOrder
     isConfirmed?: SortOrder
     v_code?: SortOrder
+    token?: SortOrder
   }
 
   export type UserSumOrderByAggregateInput = {

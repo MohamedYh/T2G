@@ -1,0 +1,16 @@
+body {
+    margin-left: 5vw;
+    background-color: white;
+}
+
+div {
+    width: 500px;
+    height: 500px;
+    resize: both;
+    overflow: auto;
+}
+
+svg {
+    width: inherit;
+    height:inherit;
+}
