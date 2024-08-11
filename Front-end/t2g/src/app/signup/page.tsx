@@ -63,7 +63,7 @@ const SignUp: React.FC = () => {
     <div className="containerlg">
       <div className="cntr">
         <h1>Sign Up</h1>
-        <h4>Welcome To Graph Maker!</h4>
+        <h4>Welcome To T2G!</h4>
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="email">Email</label>

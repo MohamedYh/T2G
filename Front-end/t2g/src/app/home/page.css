@@ -1,16 +1,288 @@
 body {
-    margin-left: 5vw;
+    background-color: rgb(253, 253, 253);
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+}
+.cntrv {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: max-content;
+    max-width: 2200px;
+    min-height: 100svh;
+    display: flex;
+    box-shadow: 0 0 8px 12px rgb(240, 240, 240);
+    border-top: none;
+    border-bottom: none;
     background-color: white;
 }
 
-div {
-    width: 500px;
-    height: 500px;
-    resize: both;
-    overflow: auto;
+div:first {
+    width: 100%;
+    height: 100vh;
 }
 
-svg {
-    width: inherit;
-    height:inherit;
+/* --------Navbar---------- */
+
+nav {
+    width: auto;
+    height: 80px;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    /* padding-top: 1vw;
+    padding-bottom: 1vw; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6991d1;
+}
+
+.acnt {
+    display: flex;
+    align-items: center;
+}
+
+.acnt p:first-child {
+    width: 48px;
+    height: 48px;
+    background-color: #8b9ab3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+    margin-right: 14px;
+    border: 1px solid rgba(61, 61, 61, 0.338);
+    /* text style */
+    font-family: "Inter";
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.751);
+    font-size: 24px;
+}
+
+.acnt p:nth-child(2) {
+    margin: 0;
+    font-family: "Inter";
+    font-size: 32px;
+    color: white;
+    font-weight: 550;
+}
+
+.srchcntr {
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.219);
+    height: 48px;
+    border-radius: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.srchcntr p {
+    position: relative;
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.605);
+    font-family: "Inter";
+    font-size: 26px;
+}
+
+.srchcntr svg {
+    color: rgba(255, 255, 255, 0.605);
+    font-size: 24px;
+    z-index: 2;
+    margin-right: 0.9vw;
+    cursor: text;
+}
+
+.srchcntr input {
+    position: absolute;
+    z-index: 1;
+    width: 27vw;
+    height: 7svh;
+    outline: none;
+    color: white;
+    font-size: 1.2vw;
+    padding: 1vw;
+    background: transparent;
+    border: none;
+}
+
+.lgot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lgot p {
+    margin: 0;
+    font-size: 24px;
+    font-family: "Lexend";
+    color: white;
+}
+
+.lgot svg {
+    margin: 0;
+    color: white;
+    font-size: 32px;
+    margin-right: 10px;
+}
+
+/* --------Functions Menus---------- */
+
+.functionsmenu {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 65px;
+    padding-left: 18px;
+    padding-right: 2vw;
+    background-color: #3e6096;
+}
+
+.fnct1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    margin-right: 16px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffe481;
+}
+
+.fnct1 svg {
+    font-size: 24px;
+    color: #494949;
+}
+
+.fnct1:hover {
+    box-shadow: 1px 3px 1px 1px rgb(0, 0, 0, 0.25);
+}
+
+.fnct2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    margin-right: 16px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #b8d3ff;
+}
+
+.fnct2 svg {
+    font-size: 24px;
+    color: #525252;
+}
+
+.fnct2:hover {
+    box-shadow: 1px 3px 1px 1px rgb(0, 0, 0, 0.25);
+}
+
+.fnct1 p,
+.fnct2 p {
+    color: #434343;
+}
+
+.fnct3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    margin-right: 16px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #3e506c;
+}
+
+.fnct3 svg {
+    font-size: 20px;
+    color: #c4a439;
+}
+
+.fnct3:hover {
+    box-shadow: 1px 3px 1px 1px rgb(0, 0, 0, 0.25);
+}
+
+.fnct4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    margin-right: 16px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #b24949;
+}
+
+.fnct4 svg {
+    font-size: 24px;
+    color: #e1e1e1;
+}
+
+.fnct4:hover {
+    box-shadow: 1px 3px 1px 1px rgb(0, 0, 0, 0.25);
+}
+
+.fnct3 p,
+.fnct4 p {
+    color: #e4e4e4f2;
+}
+
+.functionsmenu div {
+    cursor: pointer;
+}
+
+.functionsmenu div p {
+    margin: 0;
+    font-family: "Lexend";
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 4px;
+    margin-left: 9px;
+}
+
+/* ------------------------- */
+
+h1 {
+    font-size: 38px;
+    font-family: "Inter";
+    font-weight: 700;
+    color: #333;
+    margin-left: 19px;
+    margin-top: 12px;
+}
+
+.projects {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.projects > div {
+    width: 345px;
+    height: 290px;
+    background: white;
+    border: 1.25px solid #0000002f;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.projects > div > div {
+    height: 194px;
+    width: 100%;
+    background: #bababa;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+
+.prjtitle {
+    margin: 13px 10px 10px 15px;
+    font-family: "Lexend";
+    font-size: 26px;
 }

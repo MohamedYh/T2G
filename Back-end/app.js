@@ -88,11 +88,11 @@ app.post("/check_token", async (req, res) => {
             if (r.token == req.body.token) {
                 res.sendStatus(200);
             } else {
-                res.sendStatus(201);
+                res.sendStatus(401);
             }
         });
     } else {
-        res.sendStatus(201);
+        res.sendStatus(401);
     }
 });
 
