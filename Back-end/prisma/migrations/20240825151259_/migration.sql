@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Data` MODIFY `data` LONGTEXT NOT NULL;

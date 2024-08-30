@@ -98,12 +98,12 @@ nav {
 .srchcntr input {
     position: absolute;
     z-index: 1;
-    width: 27vw;
-    height: 7svh;
+    width: 375px;
+    height: 48px;
     outline: none;
     color: white;
-    font-size: 1.2vw;
-    padding: 1vw;
+    font-size: 23px;
+    padding: 16px;
     background: transparent;
     border: none;
 }
@@ -183,6 +183,16 @@ nav {
     box-shadow: 1px 3px 1px 1px rgb(0, 0, 0, 0.25);
 }
 
+.fnct2 > input {
+    display: none;
+}
+
+.fnct2 > label {
+    height: 40px;
+    position: absolute;
+    background-color: transparent;
+}
+
 .fnct1 p,
 .fnct2 p {
     color: #434343;
@@ -255,25 +265,34 @@ h1 {
     font-family: "Inter";
     font-weight: 700;
     color: #333;
-    margin-left: 19px;
+    margin-left: 1vw;
     margin-top: 12px;
+}
+
+.cntrer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 0 7.5px;
 }
 
 .projects {
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
 }
-.projects > div {
+.projects > .bxprj {
+    cursor: pointer;
     width: 345px;
     height: 290px;
     background: white;
     border: 1.25px solid #0000002f;
     border-radius: 10px;
-    margin: 10px;
+    margin: 15px;
+    transition: 0.5s;
 }
 
-.projects > div > div {
+.projects > .bxprj > .shw {
     height: 194px;
     width: 100%;
     background: #bababa;
@@ -281,8 +300,164 @@ h1 {
     border-top-right-radius: 9px;
 }
 
+.sdx:hover {
+    transform: scale(0.97);
+}
+
 .prjtitle {
     margin: 13px 10px 10px 15px;
     font-family: "Lexend";
     font-size: 26px;
+}
+
+.selecting_delete {
+    animation-name: scaling;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+}
+
+.delete_btn {
+    width: 240px;
+    height: 64px;
+    background: #eb4848;
+    border-radius: 9px;
+    display: flex;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 28px 0 20px;
+    cursor: pointer;
+    box-shadow: 0 0 8px 1px #0000006b;
+}
+
+.delete_btn:hover {
+    background-color: #c04141;
+}
+
+.delete_btn p {
+    font-size: 25px;
+    font-family: "Lexend";
+    color: white;
+    margin: 0;
+}
+
+.delete_btn svg {
+    font-size: 30px;
+    color: white;
+    margin-right: 10px;
+}
+
+@keyframes scaling {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.select_to_delete {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 15px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.select_to_delete svg {
+    color: rgba(255, 255, 255, 0.502);
+    font-size: 18px;
+}
+
+/* create New Project Pop Up window */
+
+.cnp {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    width: 550px;
+    height: auto;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.297);
+    border-radius: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 4px 16px gray;
+    animation-name: floating;
+    animation-iteration-count: infinite;
+    animation-duration: 9s;
+    animation-timing-function: linear;
+}
+
+.cnp h1 {
+    font-family: "Lexend";
+}
+
+.cnp > input {
+    font-family: "Lexend";
+    width: 320px;
+    height: 50px;
+    outline: none;
+    border-radius: 5.5px;
+    padding: 0 10px;
+    border: 1px solid gray;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.751);
+    margin-bottom: 25px;
+}
+
+.cnp > div > button {
+    width: 110px;
+    height: 42px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    color: white;
+    margin: 0 10px;
+}
+
+.cnp > div > button:first-child {
+    background-color: #fe5b5b;
+    cursor: pointer;
+}
+.cnp > div > button:first-child:hover {
+    background-color: #c92e2e;
+}
+
+.cnp > div > button:last-child {
+    background-color: #18c60e;
+    cursor: pointer;
+}
+.cnp > div > button:last-child:hover {
+    background-color: #1ca514;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-50%, -45%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
 }

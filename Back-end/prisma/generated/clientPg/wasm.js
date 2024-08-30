@@ -16,12 +16,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 5.17.0
- * Query Engine version: 393aa359c9ad4a4bb28630fb5613f9c281cde053
+ * Prisma Client JS version: 5.18.0
+ * Query Engine version: 4c784e32044a8a016d99474bd02a3b6123742169
  */
 Prisma.prismaVersion = {
-  client: "5.17.0",
-  engine: "393aa359c9ad4a4bb28630fb5613f9c281cde053"
+  client: "5.18.0",
+  engine: "4c784e32044a8a016d99474bd02a3b6123742169"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -128,6 +128,210 @@ exports.Prisma.UserScalarFieldEnum = {
   token: 'token'
 };
 
+exports.Prisma.ProjectsScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  createdDate: 'createdDate',
+  name: 'name',
+  title: 'title',
+  background_color: 'background_color',
+  data_selected: 'data_selected',
+  graph_selected: 'graph_selected'
+};
+
+exports.Prisma.DataScalarFieldEnum = {
+  id: 'id',
+  data: 'data',
+  headers: 'headers',
+  name: 'name',
+  projectId: 'projectId'
+};
+
+exports.Prisma.Background_ImageScalarFieldEnum = {
+  id: 'id',
+  image_name: 'image_name',
+  Date: 'Date',
+  is_set: 'is_set',
+  projectId: 'projectId'
+};
+
+exports.Prisma.ColumnScalarFieldEnum = {
+  id: 'id',
+  bar_spacing: 'bar_spacing',
+  border_radius: 'border_radius',
+  border_bld: 'border_bld',
+  border_color: 'border_color',
+  isLegend: 'isLegend',
+  legend_size: 'legend_size',
+  is_legend_italic: 'is_legend_italic',
+  is_legend_bold: 'is_legend_bold',
+  legend_color: 'legend_color',
+  isAxis: 'isAxis',
+  axis_txt_size: 'axis_txt_size',
+  is_axis_txt_italic: 'is_axis_txt_italic',
+  is_axis_txt_bold: 'is_axis_txt_bold',
+  axis_txt_color: 'axis_txt_color',
+  axisX: 'axisX',
+  axisY: 'axisY',
+  projectId: 'projectId'
+};
+
+exports.Prisma.BarsScalarFieldEnum = {
+  id: 'id',
+  bar_spacing: 'bar_spacing',
+  border_radius: 'border_radius',
+  border_bld: 'border_bld',
+  border_color: 'border_color',
+  isLegend: 'isLegend',
+  legend_size: 'legend_size',
+  is_legend_italic: 'is_legend_italic',
+  is_legend_bold: 'is_legend_bold',
+  legend_color: 'legend_color',
+  isAxis: 'isAxis',
+  axis_txt_size: 'axis_txt_size',
+  is_axis_txt_italic: 'is_axis_txt_italic',
+  is_axis_txt_bold: 'is_axis_txt_bold',
+  axis_txt_color: 'axis_txt_color',
+  axisX: 'axisX',
+  axisY: 'axisY',
+  projectId: 'projectId'
+};
+
+exports.Prisma.PieScalarFieldEnum = {
+  id: 'id',
+  start_angle: 'start_angle',
+  isLegend: 'isLegend',
+  legend_size: 'legend_size',
+  is_legend_italic: 'is_legend_italic',
+  is_legend_bold: 'is_legend_bold',
+  legend_color: 'legend_color',
+  projectId: 'projectId'
+};
+
+exports.Prisma.DonutScalarFieldEnum = {
+  id: 'id',
+  start_angle: 'start_angle',
+  inner_radius: 'inner_radius',
+  isLegend: 'isLegend',
+  legend_size: 'legend_size',
+  is_legend_italic: 'is_legend_italic',
+  is_legend_bold: 'is_legend_bold',
+  legend_color: 'legend_color',
+  projectId: 'projectId'
+};
+
+exports.Prisma.AreaScalarFieldEnum = {
+  id: 'id',
+  show_pointer_mark: 'show_pointer_mark',
+  isAxis: 'isAxis',
+  axis_txt_size: 'axis_txt_size',
+  is_axis_txt_italic: 'is_axis_txt_italic',
+  is_axis_txt_bold: 'is_axis_txt_bold',
+  axis_txt_color: 'axis_txt_color',
+  axisX: 'axisX',
+  axisY: 'axisY',
+  isLegend: 'isLegend',
+  legend_size: 'legend_size',
+  is_legend_italic: 'is_legend_italic',
+  is_legend_bold: 'is_legend_bold',
+  legend_color: 'legend_color',
+  thickness: 'thickness',
+  is_line_smoth: 'is_line_smoth',
+  projectId: 'projectId'
+};
+
+exports.Prisma.LineScalarFieldEnum = {
+  id: 'id',
+  show_pointer_mark: 'show_pointer_mark',
+  isAxis: 'isAxis',
+  axis_txt_size: 'axis_txt_size',
+  is_axis_txt_italic: 'is_axis_txt_italic',
+  is_axis_txt_bold: 'is_axis_txt_bold',
+  axis_txt_color: 'axis_txt_color',
+  axisX: 'axisX',
+  axisY: 'axisY',
+  isLegend: 'isLegend',
+  legend_size: 'legend_size',
+  is_legend_italic: 'is_legend_italic',
+  is_legend_bold: 'is_legend_bold',
+  legend_color: 'legend_color',
+  thickness: 'thickness',
+  is_line_smoth: 'is_line_smoth',
+  projectId: 'projectId'
+};
+
+exports.Prisma.Column_LineScalarFieldEnum = {
+  id: 'id',
+  b_bar_spacing: 'b_bar_spacing',
+  b_border_radius: 'b_border_radius',
+  b_border_bld: 'b_border_bld',
+  b_border_color: 'b_border_color',
+  b_isLegend: 'b_isLegend',
+  b_legend_size: 'b_legend_size',
+  b_is_legend_italic: 'b_is_legend_italic',
+  b_is_legend_bold: 'b_is_legend_bold',
+  b_legend_color: 'b_legend_color',
+  b_isAxis: 'b_isAxis',
+  b_axis_txt_size: 'b_axis_txt_size',
+  b_is_axis_txt_italic: 'b_is_axis_txt_italic',
+  b_is_axis_txt_bold: 'b_is_axis_txt_bold',
+  b_axis_txt_color: 'b_axis_txt_color',
+  b_axisX: 'b_axisX',
+  b_axisY: 'b_axisY',
+  l_show_pointer_mark: 'l_show_pointer_mark',
+  l_isAxis: 'l_isAxis',
+  l_axis_txt_size: 'l_axis_txt_size',
+  l_is_axis_txt_italic: 'l_is_axis_txt_italic',
+  l_is_axis_txt_bold: 'l_is_axis_txt_bold',
+  l_axis_txt_color: 'l_axis_txt_color',
+  l_axisX: 'l_axisX',
+  l_axisY: 'l_axisY',
+  l_isLegend: 'l_isLegend',
+  l_legend_size: 'l_legend_size',
+  l_is_legend_italic: 'l_is_legend_italic',
+  l_is_legend_bold: 'l_is_legend_bold',
+  l_legend_color: 'l_legend_color',
+  l_thickness: 'l_thickness',
+  l_is_line_smoth: 'l_is_line_smoth',
+  projectId: 'projectId'
+};
+
+exports.Prisma.Column_AreaScalarFieldEnum = {
+  id: 'id',
+  b_bar_spacing: 'b_bar_spacing',
+  b_border_radius: 'b_border_radius',
+  b_border_bld: 'b_border_bld',
+  b_border_color: 'b_border_color',
+  b_isLegend: 'b_isLegend',
+  b_legend_size: 'b_legend_size',
+  b_is_legend_italic: 'b_is_legend_italic',
+  b_is_legend_bold: 'b_is_legend_bold',
+  b_legend_color: 'b_legend_color',
+  b_isAxis: 'b_isAxis',
+  b_axis_txt_size: 'b_axis_txt_size',
+  b_is_axis_txt_italic: 'b_is_axis_txt_italic',
+  b_is_axis_txt_bold: 'b_is_axis_txt_bold',
+  b_axis_txt_color: 'b_axis_txt_color',
+  b_axisX: 'b_axisX',
+  b_axisY: 'b_axisY',
+  a_show_pointer_mark: 'a_show_pointer_mark',
+  a_isAxis: 'a_isAxis',
+  a_axis_txt_size: 'a_axis_txt_size',
+  a_is_axis_txt_italic: 'a_is_axis_txt_italic',
+  a_is_axis_txt_bold: 'a_is_axis_txt_bold',
+  a_axis_txt_color: 'a_axis_txt_color',
+  a_axisX: 'a_axisX',
+  a_axisY: 'a_axisY',
+  a_isLegend: 'a_isLegend',
+  a_legend_size: 'a_legend_size',
+  a_is_legend_italic: 'a_is_legend_italic',
+  a_is_legend_bold: 'a_is_legend_bold',
+  a_legend_color: 'a_legend_color',
+  a_thickness: 'a_thickness',
+  a_is_line_smoth: 'a_is_line_smoth',
+  projectId: 'projectId'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -140,7 +344,18 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  Projects: 'Projects',
+  Data: 'Data',
+  Background_Image: 'Background_Image',
+  Column: 'Column',
+  Bars: 'Bars',
+  Pie: 'Pie',
+  Donut: 'Donut',
+  Area: 'Area',
+  Line: 'Line',
+  Column_Line: 'Column_Line',
+  Column_Area: 'Column_Area'
 };
 
 /**
