@@ -1,0 +1,33 @@
+-- AlterTable
+ALTER TABLE `Area` MODIFY `axis_txt_color` VARCHAR(191) NOT NULL DEFAULT '#000000',
+    MODIFY `legend_color` VARCHAR(191) NOT NULL DEFAULT '#000000';
+
+-- AlterTable
+ALTER TABLE `Bars` MODIFY `legend_color` VARCHAR(191) NOT NULL DEFAULT '#000000',
+    MODIFY `axis_txt_color` VARCHAR(191) NOT NULL DEFAULT '#000000';
+
+-- AlterTable
+ALTER TABLE `Column` MODIFY `legend_color` VARCHAR(191) NOT NULL DEFAULT '#000000',
+    MODIFY `axis_txt_color` VARCHAR(191) NOT NULL DEFAULT '#000000';
+
+-- AlterTable
+ALTER TABLE `Column_Area` MODIFY `b_legend_color` VARCHAR(191) NOT NULL DEFAULT '#000000',
+    MODIFY `b_axis_txt_color` VARCHAR(191) NOT NULL DEFAULT '#000000',
+    MODIFY `a_axis_txt_color` VARCHAR(191) NOT NULL DEFAULT '#000000',
+    MODIFY `a_legend_color` VARCHAR(191) NOT NULL DEFAULT '#000000';
+
+-- AlterTable
+ALTER TABLE `Column_Line` MODIFY `b_legend_color` VARCHAR(191) NOT NULL DEFAULT '#000000',
+    MODIFY `b_axis_txt_color` VARCHAR(191) NOT NULL DEFAULT '#000000',
+    MODIFY `l_axis_txt_color` VARCHAR(191) NOT NULL DEFAULT '#000000',
+    MODIFY `l_legend_color` VARCHAR(191) NOT NULL DEFAULT '#000000';
+
+-- AlterTable
+ALTER TABLE `Donut` MODIFY `legend_color` VARCHAR(191) NOT NULL DEFAULT '#000000';
+
+-- AlterTable
+ALTER TABLE `Line` MODIFY `axis_txt_color` VARCHAR(191) NOT NULL DEFAULT '#000000',
+    MODIFY `legend_color` VARCHAR(191) NOT NULL DEFAULT '#000000';
+
+-- AlterTable
+ALTER TABLE `Pie` MODIFY `legend_color` VARCHAR(191) NOT NULL DEFAULT '#000000';

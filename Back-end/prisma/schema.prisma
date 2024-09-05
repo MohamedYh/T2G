@@ -65,19 +65,19 @@ model Column {
   // Border
   border_radius Int @default(0)
   border_bld Int @default(0)
-  border_color String @default("transparent")
+  border_color String @default("#000000")
   // Legend
   isLegend Boolean @default(true)
   legend_size Int @default(16)
   is_legend_italic Boolean @default(false)
   is_legend_bold Boolean @default(false)
-  legend_color String @default("black")
+  legend_color String @default("rgba(0,0,0,.75)")
   // Axis 
   isAxis Boolean @default(true)
   axis_txt_size Int @default(10)
   is_axis_txt_italic Boolean @default(false)
   is_axis_txt_bold Boolean @default(false)
-  axis_txt_color String @default("black")
+  axis_txt_color String @default("#000000")
   axisX String @default("")
   axisY String @default("")
   // ---------------//
@@ -91,19 +91,19 @@ model Bars {
   // Border
   border_radius Int @default(0)
   border_bld Int @default(0)
-  border_color String @default("transparent")
+  border_color String @default("#000000")
   // Legend
   isLegend Boolean @default(true)
   legend_size Int @default(16)
   is_legend_italic Boolean @default(false)
   is_legend_bold Boolean @default(false)
-  legend_color String @default("black")
+  legend_color String @default("rgba(0,0,0,.75)")
   // Axis 
   isAxis Boolean @default(true)
   axis_txt_size Int @default(10)
   is_axis_txt_italic Boolean @default(false)
   is_axis_txt_bold Boolean @default(false)
-  axis_txt_color String @default("black")
+  axis_txt_color String @default("#000000")
   axisX String @default("")
   axisY String @default("")
   // ---------------//
@@ -115,12 +115,14 @@ model Pie {
   id    Int    @id @default(autoincrement())
   // Start Angle
   start_angle Int @default(0)
+  // ------------Show Percentage-----------
+  show_percentage Boolean @default(true)
   // Legend
   isLegend Boolean @default(true)
   legend_size Int @default(16)
   is_legend_italic Boolean @default(false)
   is_legend_bold Boolean @default(false)
-  legend_color String @default("black")
+  legend_color String @default("rgba(0,0,0,.75)")
   // ---------------//
   project Projects @relation("Pie",fields: [projectId],references: [id])
   projectId Int @unique
@@ -130,6 +132,8 @@ model Donut {
   id    Int    @id @default(autoincrement())
   // Start Angle
   start_angle Int @default(0)
+  // ------------Show Percentage-----------
+  show_percentage Boolean @default(true)
   // Inner radius
   inner_radius Int @default(60)
   // Legend
@@ -137,7 +141,7 @@ model Donut {
   legend_size Int @default(16)
   is_legend_italic Boolean @default(false)
   is_legend_bold Boolean @default(false)
-  legend_color String @default("black")
+  legend_color String @default("rgba(0,0,0,.75)")
   // ---------------//
   project Projects @relation("Donut",fields: [projectId],references: [id])
   projectId Int @unique
@@ -152,7 +156,7 @@ model Area {
   axis_txt_size Int @default(10)
   is_axis_txt_italic Boolean @default(false)
   is_axis_txt_bold Boolean @default(false)
-  axis_txt_color String @default("black")
+  axis_txt_color String @default("#000000")
   axisX String @default("")
   axisY String @default("")
   // Legend
@@ -160,7 +164,7 @@ model Area {
   legend_size Int @default(16)
   is_legend_italic Boolean @default(false)
   is_legend_bold Boolean @default(false)
-  legend_color String @default("black")
+  legend_color String @default("rgba(0,0,0,.75)")
   // Line
   thickness Int @default(1)
   is_line_smoth Boolean @default(false)
@@ -178,7 +182,7 @@ model Line {
   axis_txt_size Int @default(10)
   is_axis_txt_italic Boolean @default(false)
   is_axis_txt_bold Boolean @default(false)
-  axis_txt_color String @default("black")
+  axis_txt_color String @default("#000000")
   axisX String @default("")
   axisY String @default("")
   // Legend
@@ -186,7 +190,7 @@ model Line {
   legend_size Int @default(16)
   is_legend_italic Boolean @default(false)
   is_legend_bold Boolean @default(false)
-  legend_color String @default("black")
+  legend_color String @default("rgba(0,0,0,.75)")
   // Line
   thickness Int @default(1)
   is_line_smoth Boolean @default(false)
@@ -202,38 +206,23 @@ model Column_Line {
   // Border
   b_border_radius Int @default(0)
   b_border_bld Int @default(0)
-  b_border_color String @default("transparent")
-  // Legend
-  b_isLegend Boolean @default(true)
-  b_legend_size Int @default(16)
-  b_is_legend_italic Boolean @default(false)
-  b_is_legend_bold Boolean @default(false)
-  b_legend_color String @default("black")
-  // Axis 
-  b_isAxis Boolean @default(true)
-  b_axis_txt_size Int @default(10)
-  b_is_axis_txt_italic Boolean @default(false)
-  b_is_axis_txt_bold Boolean @default(false)
-  b_axis_txt_color String @default("black")
-  b_axisX String @default("")
-  b_axisY String @default("")
-  // ---------------Lines---------------//
+  b_border_color String @default("#000000")
   // Pointer
   l_show_pointer_mark Boolean @default(true)
   // Axis 
-  l_isAxis Boolean @default(true)
-  l_axis_txt_size Int @default(10)
-  l_is_axis_txt_italic Boolean @default(false)
-  l_is_axis_txt_bold Boolean @default(false)
-  l_axis_txt_color String @default("black")
-  l_axisX String @default("")
-  l_axisY String @default("")
+  isAxis Boolean @default(true)
+  axis_txt_size Int @default(10)
+  is_axis_txt_italic Boolean @default(false)
+  is_axis_txt_bold Boolean @default(false)
+  axis_txt_color String @default("#000000")
+  axisX String @default("")
+  axisY String @default("")
   // Legend
-  l_isLegend Boolean @default(true)
-  l_legend_size Int @default(16)
-  l_is_legend_italic Boolean @default(false)
-  l_is_legend_bold Boolean @default(false)
-  l_legend_color String @default("black")
+  isLegend Boolean @default(true)
+  legend_size Int @default(16)
+  is_legend_italic Boolean @default(false)
+  is_legend_bold Boolean @default(false)
+  legend_color String @default("rgba(0,0,0,.75)")
   // Line
   l_thickness Int @default(1)
   l_is_line_smoth Boolean @default(false)
@@ -249,38 +238,23 @@ model Column_Area {
   // Border
   b_border_radius Int @default(0)
   b_border_bld Int @default(0)
-  b_border_color String @default("transparent")
-  // Legend
-  b_isLegend Boolean @default(true)
-  b_legend_size Int @default(16)
-  b_is_legend_italic Boolean @default(false)
-  b_is_legend_bold Boolean @default(false)
-  b_legend_color String @default("black")
-  // Axis 
-  b_isAxis Boolean @default(true)
-  b_axis_txt_size Int @default(10)
-  b_is_axis_txt_italic Boolean @default(false)
-  b_is_axis_txt_bold Boolean @default(false)
-  b_axis_txt_color String @default("black")
-  b_axisX String @default("")
-  b_axisY String @default("")
-  // ---------------Area---------------//
+  b_border_color String @default("#000000")
   // Pointer
   a_show_pointer_mark Boolean @default(true)
   // Axis 
-  a_isAxis Boolean @default(true)
-  a_axis_txt_size Int @default(10)
-  a_is_axis_txt_italic Boolean @default(false)
-  a_is_axis_txt_bold Boolean @default(false)
-  a_axis_txt_color String @default("black")
-  a_axisX String @default("")
-  a_axisY String @default("")
+  isAxis Boolean @default(true)
+  axis_txt_size Int @default(10)
+  is_axis_txt_italic Boolean @default(false)
+  is_axis_txt_bold Boolean @default(false)
+  axis_txt_color String @default("#000000")
+  axisX String @default("")
+  axisY String @default("")
   // Legend
-  a_isLegend Boolean @default(true)
-  a_legend_size Int @default(16)
-  a_is_legend_italic Boolean @default(false)
-  a_is_legend_bold Boolean @default(false)
-  a_legend_color String @default("black")
+  isLegend Boolean @default(true)
+  legend_size Int @default(16)
+  is_legend_italic Boolean @default(false)
+  is_legend_bold Boolean @default(false)
+  legend_color String @default("rgba(0,0,0,.75)")
   // Line
   a_thickness Int @default(1)
   a_is_line_smoth Boolean @default(false)

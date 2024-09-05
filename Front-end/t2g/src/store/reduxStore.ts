@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import updateProject from "./slices/projectManger";
-import graphUpdater from "./slices/graphUpdater";
+import updateAction from "./slices/actionUpdater";
 import { ProjectData } from "@/interfaces/project";
 
 export const store = configureStore({
     reducer: {
         updater: updateProject,
+        updateAction: updateAction,
     },
 });
 

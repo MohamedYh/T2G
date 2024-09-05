@@ -57,80 +57,75 @@ function EditGraphsSection(params: { show: boolean }) {
                     <input
                         title="border radius"
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 24 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column,
-                                                border_radius: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column,
-                                                border_radius: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Column: {
+                                            ...project.Column,
+                                            border_radius: parseInt(
+                                                e.target.value
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Column: {
+                                            ...project.Column,
+                                            border_radius: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
-                        max={10}
+                        type="number"
+                        min={0}
+                        max={100}
                         value={project?.Column.border_radius}
                     />
                     <p id="icon_thickness">T</p>
                     <input
                         title="border thickness"
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 24 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column,
-                                                border_bld: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column,
-                                                border_bld: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Column: {
+                                            ...project.Column,
+                                            border_bld: parseInt(
+                                                e.target.value
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Column: {
+                                            ...project.Column,
+                                            border_bld: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
+                        type="number"
+                        min={0}
+                        max={6}
                         value={project?.Column.border_bld}
                     />
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph1">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph1"
                             value={project?.Column.border_color}
                             type="color"
                             onChange={(e) => {
@@ -156,35 +151,35 @@ function EditGraphsSection(params: { show: boolean }) {
                     <input
                         title="legend size"
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 24 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column,
-                                                legend_size: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column,
-                                                legend_size: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Column: {
+                                            ...project.Column,
+                                            legend_size: Math.min(
+                                                parseInt(e.target.value),
+                                                100
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Column: {
+                                            ...project.Column,
+                                            legend_size: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
+                        type="number"
+                        maxLength={2}
+                        min={0}
+                        max={20}
                         value={project?.Column.legend_size}
                     />
                     <div
@@ -251,11 +246,11 @@ function EditGraphsSection(params: { show: boolean }) {
                     </div>
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph2">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph2"
                             value={project?.Column.legend_color}
                             type="color"
                             onChange={(e) => {
@@ -280,34 +275,32 @@ function EditGraphsSection(params: { show: boolean }) {
                     <RiFontSize2 />
                     <input
                         title="axis text size"
+                        type="number"
+                        min={0}
+                        max={22}
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 32 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column,
-                                                axis_txt_size: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column,
-                                                axis_txt_size: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Column: {
+                                            ...project.Column,
+                                            axis_txt_size: parseInt(
+                                                e.target.value
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Column: {
+                                            ...project.Column,
+                                            axis_txt_size: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
                         value={project?.Column.axis_txt_size}
@@ -378,11 +371,11 @@ function EditGraphsSection(params: { show: boolean }) {
                     </div>
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph3">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph3"
                             value={project?.Column.axis_txt_color}
                             type="color"
                             onChange={(e) => {
@@ -467,63 +460,28 @@ function EditGraphsSection(params: { show: boolean }) {
                     Bars
                 </h1>
                 <label>Bar Spacing</label>
-                <div className="cntredtprt">
-                    <RxColumnSpacing />
+                <div className="inpt_rng_cntr">
+                    <p>1</p>
                     <input
-                        max={10}
+                        type="range"
+                        min={1}
+                        max={5}
+                        step={0.1}
+                        title={project.Bars.bar_spacing.toString()}
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 24 ||
-                                e.target.value == ""
-                            ) {
-                                if (
-                                    e.target.value.at(
-                                        e.target.value.length - 1
-                                    ) == "." &&
-                                    !`${project?.Bars.bar_spacing}`.includes(
-                                        "."
-                                    )
-                                ) {
-                                    console.log("ha");
-                                    setisPoint(true);
-                                } else if (project && e.target.value != "") {
-                                    const inputValue = isPoint
-                                        ? e.target.value.slice(
-                                              0,
-                                              e.target.value.length - 1
-                                          ) +
-                                          "." +
-                                          e.target.value.charAt(
-                                              e.target.value.length - 1
-                                          )
-                                        : e.target.value;
-                                    console.log(isPoint, inputValue);
-                                    setisPoint(false);
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Bars: {
-                                                ...project.Bars,
-                                                bar_spacing:
-                                                    parseFloat(inputValue),
-                                            },
-                                        })
-                                    );
-                                } else if (e.target.value == "" && project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Bars: {
-                                                ...project.Bars,
-                                                bar_spacing: 0,
-                                            },
-                                        })
-                                    );
-                                }
-                            }
+                            dispatch(
+                                update({
+                                    ...project,
+                                    Bars: {
+                                        ...project.Bars,
+                                        bar_spacing: parseFloat(e.target.value),
+                                    },
+                                })
+                            );
                         }}
                         value={project?.Bars.bar_spacing}
                     />
+                    <p>5</p>
                 </div>
                 <label>Border</label>
                 <div className="cntredtprt">
@@ -531,80 +489,75 @@ function EditGraphsSection(params: { show: boolean }) {
                     <input
                         title="border radius"
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 24 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Bars: {
-                                                ...project.Bars,
-                                                border_radius: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Bars: {
-                                                ...project.Bars,
-                                                border_radius: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Bars: {
+                                            ...project.Bars,
+                                            border_radius: parseInt(
+                                                e.target.value
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Bars: {
+                                            ...project.Bars,
+                                            border_radius: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
-                        max={10}
+                        type="number"
+                        min={0}
+                        max={100}
                         value={project?.Bars.border_radius}
                     />
                     <p id="icon_thickness">T</p>
                     <input
                         title="border thickness"
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 24 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Bars: {
-                                                ...project.Bars,
-                                                border_bld: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Bars: {
-                                                ...project.Bars,
-                                                border_bld: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Bars: {
+                                            ...project.Bars,
+                                            border_bld: parseInt(
+                                                e.target.value
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Bars: {
+                                            ...project.Bars,
+                                            border_bld: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
+                        type="number"
+                        min={0}
+                        max={6}
                         value={project?.Bars.border_bld}
                     />
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph1">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph1"
                             value={project?.Bars.border_color}
                             type="color"
                             onChange={(e) => {
@@ -630,35 +583,34 @@ function EditGraphsSection(params: { show: boolean }) {
                     <input
                         title="legend size"
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 24 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Bars: {
-                                                ...project.Bars,
-                                                legend_size: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Bars: {
-                                                ...project.Bars,
-                                                legend_size: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Bars: {
+                                            ...project.Bars,
+                                            legend_size: Math.min(
+                                                parseInt(e.target.value),
+                                                20
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Bars: {
+                                            ...project.Bars,
+                                            legend_size: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
+                        type="number"
+                        min={0}
+                        max={20}
                         value={project?.Bars.legend_size}
                     />
                     <div
@@ -724,11 +676,11 @@ function EditGraphsSection(params: { show: boolean }) {
                     </div>
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph2">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph2"
                             value={project?.Bars.legend_color}
                             type="color"
                             onChange={(e) => {
@@ -753,34 +705,32 @@ function EditGraphsSection(params: { show: boolean }) {
                     <RiFontSize2 />
                     <input
                         title="axis text size"
+                        type="number"
+                        min={0}
+                        max={22}
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 32 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Bars: {
-                                                ...project.Bars,
-                                                axis_txt_size: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Bars: {
-                                                ...project.Bars,
-                                                axis_txt_size: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Bars: {
+                                            ...project.Bars,
+                                            axis_txt_size: parseInt(
+                                                e.target.value
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Bars: {
+                                            ...project.Bars,
+                                            axis_txt_size: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
                         value={project?.Bars.axis_txt_size}
@@ -850,11 +800,11 @@ function EditGraphsSection(params: { show: boolean }) {
                     </div>
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph3">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph3"
                             value={project?.Bars.axis_txt_color}
                             type="color"
                             onChange={(e) => {
@@ -885,15 +835,15 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Column: {
-                                                ...project.Column,
+                                            Bars: {
+                                                ...project.Bars,
                                                 axisX: e.target.value,
                                             },
                                         })
                                     );
                                 }
                             }}
-                            value={project?.Column.axisX}
+                            value={project?.Bars.axisX}
                             type="text"
                             placeholder="Default"
                         />
@@ -907,15 +857,15 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Column: {
-                                                ...project.Column,
+                                            Bars: {
+                                                ...project.Bars,
                                                 axisY: e.target.value,
                                             },
                                         })
                                     );
                                 }
                             }}
-                            value={project?.Column.axisY}
+                            value={project?.Bars.axisY}
                             type="text"
                             placeholder="Default"
                         />
@@ -945,35 +895,34 @@ function EditGraphsSection(params: { show: boolean }) {
                     <input
                         title="legend size"
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 24 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Pie: {
-                                                ...project.Pie,
-                                                legend_size: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Pie: {
-                                                ...project.Pie,
-                                                legend_size: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Pie: {
+                                            ...project.Pie,
+                                            legend_size: Math.min(
+                                                parseInt(e.target.value),
+                                                100
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Pie: {
+                                            ...project.Pie,
+                                            legend_size: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
+                        type="number"
+                        min={0}
+                        max={20}
                         value={project?.Pie.legend_size}
                     />
                     <div
@@ -1039,11 +988,11 @@ function EditGraphsSection(params: { show: boolean }) {
                     </div>
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph1">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph1"
                             value={project?.Pie.legend_color}
                             type="color"
                             onChange={(e) => {
@@ -1086,9 +1035,43 @@ function EditGraphsSection(params: { show: boolean }) {
                         }}
                         type="range"
                         min={0}
-                        max={360}
+                        max={359}
                     />
-                    <p>360°</p>
+                    <p>359°</p>
+                </div>
+                <div className="shw_pntrmrk">
+                    <label>Show Percentage</label>
+                    <div
+                        style={{
+                            backgroundColor: project?.Pie.show_percentage
+                                ? "#3D75CD"
+                                : "",
+                        }}
+                        onClick={() => {
+                            if (project) {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Pie: {
+                                            ...project.Pie,
+                                            show_percentage:
+                                                !project.Pie.show_percentage,
+                                        },
+                                    })
+                                );
+                            }
+                        }}
+                        className="toggle"
+                    >
+                        <div
+                            style={{
+                                transform: project?.Pie.show_percentage
+                                    ? "translateX(25px)"
+                                    : "",
+                            }}
+                            className="tgl_crcl"
+                        ></div>
+                    </div>
                 </div>
             </div>
         );
@@ -1114,35 +1097,34 @@ function EditGraphsSection(params: { show: boolean }) {
                     <input
                         title="legend size"
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 24 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Donut: {
-                                                ...project.Donut,
-                                                legend_size: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Donut: {
-                                                ...project.Donut,
-                                                legend_size: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Donut: {
+                                            ...project.Donut,
+                                            legend_size: Math.min(
+                                                parseInt(e.target.value),
+                                                100
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Donut: {
+                                            ...project.Donut,
+                                            legend_size: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
+                        type="number"
+                        min={0}
+                        max={20}
                         value={project?.Donut.legend_size}
                     />
                     <div
@@ -1208,11 +1190,11 @@ function EditGraphsSection(params: { show: boolean }) {
                     </div>
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph1">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph1"
                             value={project?.Donut.legend_color}
                             type="color"
                             onChange={(e) => {
@@ -1255,9 +1237,9 @@ function EditGraphsSection(params: { show: boolean }) {
                         }}
                         type="range"
                         min={0}
-                        max={360}
+                        max={359}
                     />
-                    <p>360°</p>
+                    <p>359°</p>
                 </div>
                 <label>Inner Radius</label>
                 <div className="inpt_rng_cntr">
@@ -1286,6 +1268,40 @@ function EditGraphsSection(params: { show: boolean }) {
                     />
                     <p>100%</p>
                 </div>
+                <div className="shw_pntrmrk">
+                    <label>Show Percentage</label>
+                    <div
+                        style={{
+                            backgroundColor: project?.Donut.show_percentage
+                                ? "#3D75CD"
+                                : "",
+                        }}
+                        onClick={() => {
+                            if (project) {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Donut: {
+                                            ...project.Donut,
+                                            show_percentage:
+                                                !project.Donut.show_percentage,
+                                        },
+                                    })
+                                );
+                            }
+                        }}
+                        className="toggle"
+                    >
+                        <div
+                            style={{
+                                transform: project?.Donut.show_percentage
+                                    ? "translateX(25px)"
+                                    : "",
+                            }}
+                            className="tgl_crcl"
+                        ></div>
+                    </div>
+                </div>
             </div>
         );
     };
@@ -1307,9 +1323,6 @@ function EditGraphsSection(params: { show: boolean }) {
                     <label>Show Pointer Marks</label>
                     <div
                         style={{
-                            justifyContent: project?.Line.show_pointer_mark
-                                ? "end"
-                                : "start",
                             backgroundColor: project?.Line.show_pointer_mark
                                 ? "#3D75CD"
                                 : "",
@@ -1328,9 +1341,16 @@ function EditGraphsSection(params: { show: boolean }) {
                                 );
                             }
                         }}
-                        className="toogle"
+                        className="toggle"
                     >
-                        <div className="tgl_crcl"></div>
+                        <div
+                            style={{
+                                transform: project?.Line.show_pointer_mark
+                                    ? "translateX(25px)"
+                                    : "",
+                            }}
+                            className="tgl_crcl"
+                        ></div>
                     </div>
                 </div>
                 <label>Line Thickness</label>
@@ -1357,41 +1377,93 @@ function EditGraphsSection(params: { show: boolean }) {
                     />
                     <p>5px</p>
                 </div>
+                <label>Line&apos;s Line Type</label>
+                <div className="smt_cntr">
+                    <div
+                        style={{
+                            backgroundColor: project?.Line.is_line_smoth
+                                ? "#6991D1"
+                                : "rgba(216, 216, 216, 0.16)",
+                            color: project?.Line.is_line_smoth ? "" : "#717171",
+                        }}
+                        onClick={() => {
+                            if (project) {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Line: {
+                                            ...project.Line,
+                                            is_line_smoth: true,
+                                        },
+                                    })
+                                );
+                            }
+                        }}
+                        className="smtorstrt"
+                    >
+                        Smoth
+                    </div>
+                    <div
+                        style={{
+                            backgroundColor: !project?.Line.is_line_smoth
+                                ? "#6991D1"
+                                : "rgba(216, 216, 216, 0.16)",
+                            color: !project?.Line.is_line_smoth
+                                ? ""
+                                : "#717171",
+                        }}
+                        onClick={() => {
+                            if (project) {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Line: {
+                                            ...project.Line,
+                                            is_line_smoth: false,
+                                        },
+                                    })
+                                );
+                            }
+                        }}
+                        className="smtorstrt"
+                    >
+                        Straight
+                    </div>
+                </div>
                 <label>Legend</label>
                 <div className="cntredtprt">
                     <RiFontSize2 />
                     <input
                         title="legend size"
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 24 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Line: {
-                                                ...project.Line,
-                                                legend_size: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Line: {
-                                                ...project.Line,
-                                                legend_size: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Line: {
+                                            ...project.Line,
+                                            legend_size: Math.min(
+                                                parseInt(e.target.value),
+                                                100
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Line: {
+                                            ...project.Line,
+                                            legend_size: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
+                        type="number"
+                        min={0}
+                        max={20}
                         value={project?.Line.legend_size}
                     />
                     <div
@@ -1457,11 +1529,11 @@ function EditGraphsSection(params: { show: boolean }) {
                     </div>
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph1">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph1"
                             value={project?.Line.legend_color}
                             type="color"
                             onChange={(e) => {
@@ -1486,34 +1558,32 @@ function EditGraphsSection(params: { show: boolean }) {
                     <RiFontSize2 />
                     <input
                         title="axis text size"
+                        type="number"
+                        min={0}
+                        max={22}
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 32 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Line: {
-                                                ...project.Line,
-                                                axis_txt_size: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Line: {
-                                                ...project.Line,
-                                                axis_txt_size: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Line: {
+                                            ...project.Line,
+                                            axis_txt_size: parseInt(
+                                                e.target.value
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Line: {
+                                            ...project.Line,
+                                            axis_txt_size: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
                         value={project?.Line.axis_txt_size}
@@ -1583,11 +1653,11 @@ function EditGraphsSection(params: { show: boolean }) {
                     </div>
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph2">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph2"
                             value={project?.Line.axis_txt_color}
                             type="color"
                             onChange={(e) => {
@@ -1607,57 +1677,51 @@ function EditGraphsSection(params: { show: boolean }) {
                         />
                     </div>
                 </div>
-                <label>Line</label>
-                <div className="smt_cntr">
-                    <div
-                        style={{
-                            backgroundColor: project?.Line.is_line_smoth
-                                ? "#6991D1"
-                                : "rgba(216, 216, 216, 0.16)",
-                            color: project?.Line.is_line_smoth ? "" : "#717171",
-                        }}
-                        onClick={() => {
-                            if (project) {
-                                dispatch(
-                                    update({
-                                        ...project,
-                                        Line: {
-                                            ...project.Line,
-                                            is_line_smoth: true,
-                                        },
-                                    })
-                                );
-                            }
-                        }}
-                        className="smtorstrt"
-                    >
-                        Smoth
+                <div className="aixs_text">
+                    <div>
+                        <label>Axis X</label>
+                        <input
+                            title="axis X text"
+                            onChange={(e) => {
+                                if (project) {
+                                    console.log(e.target.value);
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Line: {
+                                                ...project.Line,
+                                                axisX: e.target.value,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            value={project?.Line.axisX}
+                            type="text"
+                            placeholder="Default"
+                        />
                     </div>
-                    <div
-                        style={{
-                            backgroundColor: !project?.Line.is_line_smoth
-                                ? "#6991D1"
-                                : "rgba(216, 216, 216, 0.16)",
-                            color: !project?.Line.is_line_smoth
-                                ? ""
-                                : "#717171",
-                        }}
-                        onClick={() => {
-                            if (project) {
-                                dispatch(
-                                    update({
-                                        ...project,
-                                        Line: {
-                                            ...project.Line,
-                                            is_line_smoth: false,
-                                        },
-                                    })
-                                );
-                            }
-                        }}
-                        className="smtorstrt"
-                    >
-                        Straight
+                    <div>
+                        <label>Axis Y</label>
+                        <input
+                            title="axis Y text"
+                            onChange={(e) => {
+                                if (project) {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Line: {
+                                                ...project.Line,
+                                                axisY: e.target.value,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            value={project?.Line.axisY}
+                            type="text"
+                            placeholder="Default"
+                        />
                     </div>
                 </div>
             </div>
@@ -1681,9 +1745,6 @@ function EditGraphsSection(params: { show: boolean }) {
                     <label>Show Pointer Marks</label>
                     <div
                         style={{
-                            justifyContent: project?.Area.show_pointer_mark
-                                ? "end"
-                                : "start",
                             backgroundColor: project?.Area.show_pointer_mark
                                 ? "#3D75CD"
                                 : "",
@@ -1702,12 +1763,19 @@ function EditGraphsSection(params: { show: boolean }) {
                                 );
                             }
                         }}
-                        className="toogle"
+                        className="toggle"
                     >
-                        <div className="tgl_crcl"></div>
+                        <div
+                            style={{
+                                transform: project?.Area.show_pointer_mark
+                                    ? "translateX(25px)"
+                                    : "",
+                            }}
+                            className="tgl_crcl"
+                        ></div>
                     </div>
                 </div>
-                <label>Area Thickness</label>
+                <label>Area&apos;s External Line Thickness</label>
                 <div className="inpt_rng_cntr">
                     <p>0</p>
                     <input
@@ -1731,41 +1799,93 @@ function EditGraphsSection(params: { show: boolean }) {
                     />
                     <p>5px</p>
                 </div>
+                <label>Area&apos;s Line Type</label>
+                <div className="smt_cntr">
+                    <div
+                        style={{
+                            backgroundColor: project?.Area.is_line_smoth
+                                ? "#6991D1"
+                                : "rgba(216, 216, 216, 0.16)",
+                            color: project?.Area.is_line_smoth ? "" : "#717171",
+                        }}
+                        onClick={() => {
+                            if (project) {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Area: {
+                                            ...project.Area,
+                                            is_line_smoth: true,
+                                        },
+                                    })
+                                );
+                            }
+                        }}
+                        className="smtorstrt"
+                    >
+                        Smoth
+                    </div>
+                    <div
+                        style={{
+                            backgroundColor: !project?.Area.is_line_smoth
+                                ? "#6991D1"
+                                : "rgba(216, 216, 216, 0.16)",
+                            color: !project?.Area.is_line_smoth
+                                ? ""
+                                : "#717171",
+                        }}
+                        onClick={() => {
+                            if (project) {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Area: {
+                                            ...project.Area,
+                                            is_line_smoth: false,
+                                        },
+                                    })
+                                );
+                            }
+                        }}
+                        className="smtorstrt"
+                    >
+                        Straight
+                    </div>
+                </div>
                 <label>Legend</label>
                 <div className="cntredtprt">
                     <RiFontSize2 />
                     <input
                         title="legend size"
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 24 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Area: {
-                                                ...project.Area,
-                                                legend_size: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Area: {
-                                                ...project.Area,
-                                                legend_size: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Area: {
+                                            ...project.Area,
+                                            legend_size: Math.min(
+                                                parseInt(e.target.value),
+                                                100
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Area: {
+                                            ...project.Area,
+                                            legend_size: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
+                        type="number"
+                        min={0}
+                        max={20}
                         value={project?.Area.legend_size}
                     />
                     <div
@@ -1831,11 +1951,11 @@ function EditGraphsSection(params: { show: boolean }) {
                     </div>
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph1">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph1"
                             value={project?.Area.legend_color}
                             type="color"
                             onChange={(e) => {
@@ -1860,34 +1980,32 @@ function EditGraphsSection(params: { show: boolean }) {
                     <RiFontSize2 />
                     <input
                         title="axis text size"
+                        type="number"
+                        min={0}
+                        max={22}
                         onChange={(e) => {
-                            if (
-                                parseInt(e.target.value) <= 32 ||
-                                e.target.value == ""
-                            ) {
-                                if (project && e.target.value != "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Area: {
-                                                ...project.Area,
-                                                axis_txt_size: parseInt(
-                                                    e.target.value
-                                                ),
-                                            },
-                                        })
-                                    );
-                                } else if (project && e.target.value == "") {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Area: {
-                                                ...project.Area,
-                                                axis_txt_size: 0,
-                                            },
-                                        })
-                                    );
-                                }
+                            if (project && e.target.value != "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Area: {
+                                            ...project.Area,
+                                            axis_txt_size: parseInt(
+                                                e.target.value
+                                            ),
+                                        },
+                                    })
+                                );
+                            } else if (project && e.target.value == "") {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Area: {
+                                            ...project.Area,
+                                            axis_txt_size: 0,
+                                        },
+                                    })
+                                );
                             }
                         }}
                         value={project?.Area.axis_txt_size}
@@ -1957,11 +2075,11 @@ function EditGraphsSection(params: { show: boolean }) {
                     </div>
 
                     <div className="clr_cntr">
-                        <label htmlFor="inptclrgrph">
+                        <label htmlFor="inptclrgrph2">
                             <IoMdColorFill />
                         </label>
                         <input
-                            id="inptclrgrph"
+                            id="inptclrgrph2"
                             value={project?.Area.axis_txt_color}
                             type="color"
                             onChange={(e) => {
@@ -1981,57 +2099,51 @@ function EditGraphsSection(params: { show: boolean }) {
                         />
                     </div>
                 </div>
-                <label>Area</label>
-                <div className="smt_cntr">
-                    <div
-                        style={{
-                            backgroundColor: project?.Area.is_line_smoth
-                                ? "#6991D1"
-                                : "rgba(216, 216, 216, 0.16)",
-                            color: project?.Area.is_line_smoth ? "" : "#717171",
-                        }}
-                        onClick={() => {
-                            if (project) {
-                                dispatch(
-                                    update({
-                                        ...project,
-                                        Area: {
-                                            ...project.Area,
-                                            is_line_smoth: true,
-                                        },
-                                    })
-                                );
-                            }
-                        }}
-                        className="smtorstrt"
-                    >
-                        Smoth
+                <div className="aixs_text">
+                    <div>
+                        <label>Axis X</label>
+                        <input
+                            title="axis X text"
+                            onChange={(e) => {
+                                if (project) {
+                                    console.log(e.target.value);
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Area: {
+                                                ...project.Area,
+                                                axisX: e.target.value,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            value={project?.Area.axisX}
+                            type="text"
+                            placeholder="Default"
+                        />
                     </div>
-                    <div
-                        style={{
-                            backgroundColor: !project?.Area.is_line_smoth
-                                ? "#6991D1"
-                                : "rgba(216, 216, 216, 0.16)",
-                            color: !project?.Area.is_line_smoth
-                                ? ""
-                                : "#717171",
-                        }}
-                        onClick={() => {
-                            if (project) {
-                                dispatch(
-                                    update({
-                                        ...project,
-                                        Area: {
-                                            ...project.Area,
-                                            is_line_smoth: false,
-                                        },
-                                    })
-                                );
-                            }
-                        }}
-                        className="smtorstrt"
-                    >
-                        Straight
+                    <div>
+                        <label>Axis Y</label>
+                        <input
+                            title="axis Y text"
+                            onChange={(e) => {
+                                if (project) {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Area: {
+                                                ...project.Area,
+                                                axisY: e.target.value,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            value={project?.Area.axisY}
+                            type="text"
+                            placeholder="Default"
+                        />
                     </div>
                 </div>
             </div>
@@ -2050,159 +2162,109 @@ function EditGraphsSection(params: { show: boolean }) {
                             marginTop: "10px",
                         }}
                     >
-                        Column
+                        Column Line
                     </h1>
                     <label>Bar Spacing</label>
-                    <div className="cntredtprt">
-                        <RxColumnSpacing />
+                    <div className="inpt_rng_cntr">
+                        <p>1</p>
                         <input
-                            max={10}
+                            type="range"
+                            min={1}
+                            max={5}
+                            step={0.1}
+                            title={project.Column_Line.b_bar_spacing.toString()}
                             onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 24 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (
-                                        e.target.value.at(
-                                            e.target.value.length - 1
-                                        ) == "." &&
-                                        !`${project?.Column_Line.b_bar_spacing}`.includes(
-                                            "."
-                                        )
-                                    ) {
-                                        console.log("ha");
-                                        setisPoint(true);
-                                    } else if (
-                                        project &&
-                                        e.target.value != ""
-                                    ) {
-                                        const inputValue = isPoint
-                                            ? e.target.value.slice(
-                                                  0,
-                                                  e.target.value.length - 1
-                                              ) +
-                                              "." +
-                                              e.target.value.charAt(
-                                                  e.target.value.length - 1
-                                              )
-                                            : e.target.value;
-                                        console.log(isPoint, inputValue);
-                                        setisPoint(false);
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    bar_spacing:
-                                                        parseFloat(inputValue),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        e.target.value == "" &&
-                                        project
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    bar_spacing: 0,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Column_Line: {
+                                            ...project.Column_Line,
+                                            b_bar_spacing: parseFloat(
+                                                e.target.value
+                                            ),
+                                        },
+                                    })
+                                );
                             }}
                             value={project?.Column_Line.b_bar_spacing}
                         />
+                        <p>5</p>
                     </div>
                     <label>Border</label>
                     <div className="cntredtprt">
                         <FaBorderTopLeft />
                         <input
                             title="border radius"
+                            type="number"
+                            min={0}
                             onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 24 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    border_radius: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    border_radius: 0,
-                                                },
-                                            })
-                                        );
-                                    }
+                                if (project && e.target.value != "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Line: {
+                                                ...project.Column_Line,
+                                                b_border_radius: parseInt(
+                                                    e.target.value
+                                                ),
+                                            },
+                                        })
+                                    );
+                                } else if (project && e.target.value == "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Line: {
+                                                ...project.Column_Line,
+                                                b_border_radius: 0,
+                                            },
+                                        })
+                                    );
                                 }
                             }}
-                            max={10}
+                            max={100}
                             value={project?.Column_Line.b_border_radius}
                         />
                         <p id="icon_thickness">T</p>
                         <input
                             title="border thickness"
+                            type="number"
+                            min={0}
+                            max={6}
                             onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 24 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    border_bld: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    border_bld: 0,
-                                                },
-                                            })
-                                        );
-                                    }
+                                if (project && e.target.value != "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Line: {
+                                                ...project.Column_Line,
+                                                b_border_bld: parseInt(
+                                                    e.target.value
+                                                ),
+                                            },
+                                        })
+                                    );
+                                } else if (project && e.target.value == "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Line: {
+                                                ...project.Column_Line,
+                                                b_border_bld: 0,
+                                            },
+                                        })
+                                    );
                                 }
                             }}
                             value={project?.Column_Line.b_border_bld}
                         />
 
                         <div className="clr_cntr">
-                            <label htmlFor="inptclrgrph">
+                            <label htmlFor="inptclrgrph1">
                                 <IoMdColorFill />
                             </label>
                             <input
-                                id="inptclrgrph"
+                                id="inptclrgrph1"
                                 value={project?.Column_Line.b_border_color}
                                 type="color"
                                 onChange={(e) => {
@@ -2211,9 +2273,9 @@ function EditGraphsSection(params: { show: boolean }) {
                                         dispatch(
                                             update({
                                                 ...project,
-                                                Column: {
+                                                Column_Line: {
                                                     ...project.Column_Line,
-                                                    border_color: color,
+                                                    b_border_color: color,
                                                 },
                                             })
                                         );
@@ -2222,341 +2284,10 @@ function EditGraphsSection(params: { show: boolean }) {
                             />
                         </div>
                     </div>
-                    <label>Legend</label>
-                    <div className="cntredtprt">
-                        <RiFontSize2 />
-                        <input
-                            title="legend size"
-                            onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 24 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    legend_size: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    legend_size: 0,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }
-                            }}
-                            value={project?.Column_Line.b_legend_size}
-                        />
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column_Line,
-                                                is_legend_italic:
-                                                    !project.Column_Line
-                                                        .b_is_legend_italic,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Line.b_is_legend_italic
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-                                fontStyle: project?.Column_Line
-                                    .b_is_legend_italic
-                                    ? "italic"
-                                    : "italic",
-                                backgroundColor: project?.Column_Line
-                                    .b_is_legend_italic
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isItalic"
-                        >
-                            I
-                        </div>
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column_Line,
-                                                is_legend_bold:
-                                                    !project.Column_Line
-                                                        .b_is_legend_bold,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Line.b_is_legend_bold
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-
-                                fontWeight: project?.Column_Line
-                                    .b_is_legend_bold
-                                    ? "bold"
-                                    : "bold",
-                                backgroundColor: project?.Column_Line
-                                    .b_is_legend_bold
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isBold"
-                        >
-                            B
-                        </div>
-
-                        <div className="clr_cntr">
-                            <label htmlFor="inptclrgrph">
-                                <IoMdColorFill />
-                            </label>
-                            <input
-                                id="inptclrgrph"
-                                value={project?.Column_Line.b_legend_color}
-                                type="color"
-                                onChange={(e) => {
-                                    const color = e.target.value;
-                                    if (project) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    legend_color: color,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }}
-                            />
-                        </div>
-                    </div>
-                    <label>Axis</label>
-                    <div className="cntredtprt">
-                        <RiFontSize2 />
-                        <input
-                            title="axis text size"
-                            onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 32 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    axis_txt_size: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    axis_txt_size: 0,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }
-                            }}
-                            value={project?.Column_Line.b_axis_txt_size}
-                        />
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column_Line,
-                                                is_axis_txt_italic:
-                                                    !project.Column_Line
-                                                        .b_is_axis_txt_italic,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Line.b_is_axis_txt_italic
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-
-                                fontStyle: project?.Column_Line
-                                    .b_is_axis_txt_italic
-                                    ? "italic"
-                                    : "italic",
-                                backgroundColor: project?.Column_Line
-                                    .b_is_axis_txt_italic
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isItalic"
-                        >
-                            I
-                        </div>
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Column: {
-                                                ...project.Column_Line,
-                                                is_axis_txt_bold:
-                                                    !project.Column_Line
-                                                        .b_is_axis_txt_bold,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Line.b_is_axis_txt_bold
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-
-                                fontWeight: project?.Column_Line
-                                    .b_is_axis_txt_bold
-                                    ? "bold"
-                                    : "bold",
-                                backgroundColor: project?.Column_Line
-                                    .b_is_axis_txt_bold
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isBold"
-                        >
-                            B
-                        </div>
-
-                        <div className="clr_cntr">
-                            <label htmlFor="inptclrgrph">
-                                <IoMdColorFill />
-                            </label>
-                            <input
-                                id="inptclrgrph"
-                                value={project?.Column_Line.b_axis_txt_color}
-                                type="color"
-                                onChange={(e) => {
-                                    const color = e.target.value;
-                                    if (project) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    axis_txt_color: color,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }}
-                            />
-                        </div>
-                    </div>
-                    <div className="aixs_text">
-                        <div>
-                            <label>Axis X</label>
-                            <input
-                                title="axis X text"
-                                onChange={(e) => {
-                                    if (project) {
-                                        console.log(e.target.value);
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    axisX: e.target.value,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }}
-                                value={project?.Column_Line.b_axisX}
-                                type="text"
-                                placeholder="Default"
-                            />
-                        </div>
-                        <div>
-                            <label>Axis Y</label>
-                            <input
-                                title="axis Y text"
-                                onChange={(e) => {
-                                    if (project) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Line,
-                                                    axisY: e.target.value,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }}
-                                value={project?.Column_Line.b_axisY}
-                                type="text"
-                                placeholder="Default"
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="clmn_prt">
-                    <h1
-                        style={{
-                            fontFamily: "Lexend",
-                            marginLeft: 0,
-                            fontWeight: 550,
-                            marginTop: "10px",
-                        }}
-                    >
-                        Line
-                    </h1>
                     <div className="shw_pntrmrk">
                         <label>Show Pointer Marks</label>
                         <div
                             style={{
-                                justifyContent: project?.Column_Line
-                                    .l_show_pointer_mark
-                                    ? "end"
-                                    : "start",
                                 backgroundColor: project?.Column_Line
                                     .l_show_pointer_mark
                                     ? "#3D75CD"
@@ -2567,9 +2298,9 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Line: {
+                                            Column_Line: {
                                                 ...project.Column_Line,
-                                                show_pointer_mark:
+                                                l_show_pointer_mark:
                                                     !project.Column_Line
                                                         .l_show_pointer_mark,
                                             },
@@ -2577,12 +2308,20 @@ function EditGraphsSection(params: { show: boolean }) {
                                     );
                                 }
                             }}
-                            className="toogle"
+                            className="toggle"
                         >
-                            <div className="tgl_crcl"></div>
+                            <div
+                                style={{
+                                    transform: project?.Column_Line
+                                        .l_show_pointer_mark
+                                        ? "translateX(25px)"
+                                        : "",
+                                }}
+                                className="tgl_crcl"
+                            ></div>
                         </div>
                     </div>
-                    <label>Line Thickness</label>
+                    <label>Area Thickness</label>
                     <div className="inpt_rng_cntr">
                         <p>0</p>
                         <input
@@ -2592,9 +2331,9 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Line: {
+                                            Column_Line: {
                                                 ...project?.Column_Line,
-                                                thickness: parseInt(
+                                                l_thickness: parseInt(
                                                     e.target.value
                                                 ),
                                             },
@@ -2608,274 +2347,7 @@ function EditGraphsSection(params: { show: boolean }) {
                         />
                         <p>5px</p>
                     </div>
-                    <label>Legend</label>
-                    <div className="cntredtprt">
-                        <RiFontSize2 />
-                        <input
-                            title="legend size"
-                            onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 24 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Line: {
-                                                    ...project.Column_Line,
-                                                    legend_size: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Line: {
-                                                    ...project.Column_Line,
-                                                    legend_size: 0,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }
-                            }}
-                            value={project?.Column_Line.l_legend_size}
-                        />
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Line: {
-                                                ...project.Column_Line,
-                                                is_legend_italic:
-                                                    !project.Column_Line
-                                                        .l_is_legend_italic,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Line.l_is_legend_italic
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-                                fontStyle: project?.Column_Line
-                                    .l_is_legend_italic
-                                    ? "italic"
-                                    : "italic",
-                                backgroundColor: project?.Column_Line
-                                    .l_is_legend_italic
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isItalic"
-                        >
-                            I
-                        </div>
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Line: {
-                                                ...project.Column_Line,
-                                                is_legend_bold:
-                                                    !project.Column_Line
-                                                        .l_is_legend_bold,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Line.l_is_legend_bold
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-
-                                fontWeight: project?.Column_Line
-                                    .l_is_legend_bold
-                                    ? "bold"
-                                    : "bold",
-                                backgroundColor: project?.Column_Line
-                                    .l_is_legend_bold
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isBold"
-                        >
-                            B
-                        </div>
-
-                        <div className="clr_cntr">
-                            <label htmlFor="inptclrgrph">
-                                <IoMdColorFill />
-                            </label>
-                            <input
-                                id="inptclrgrph"
-                                value={project?.Column_Line.l_legend_color}
-                                type="color"
-                                onChange={(e) => {
-                                    const color = e.target.value;
-                                    if (project) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Line: {
-                                                    ...project.Column_Line,
-                                                    legend_color: color,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }}
-                            />
-                        </div>
-                    </div>
-                    <label>Axis</label>
-                    <div className="cntredtprt">
-                        <RiFontSize2 />
-                        <input
-                            title="axis text size"
-                            onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 32 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Line: {
-                                                    ...project.Column_Line,
-                                                    l_axis_txt_size: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Line: {
-                                                    ...project.Column_Line,
-                                                    l_axis_txt_size: 0,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }
-                            }}
-                            value={project?.Column_Line.l_axis_txt_size}
-                        />
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Line: {
-                                                ...project.Column_Line,
-                                                is_axis_txt_italic:
-                                                    !project.Column_Line
-                                                        .l_is_axis_txt_italic,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Line.l_is_axis_txt_italic
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-
-                                fontStyle: project?.Column_Line
-                                    .l_is_axis_txt_italic
-                                    ? "italic"
-                                    : "italic",
-                                backgroundColor: project?.Column_Line
-                                    .l_is_axis_txt_italic
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isItalic"
-                        >
-                            I
-                        </div>
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Line: {
-                                                ...project.Column_Line,
-                                                is_axis_txt_bold:
-                                                    !project.Column_Line
-                                                        .l_is_axis_txt_bold,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Line.l_is_axis_txt_bold
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-
-                                fontWeight: project?.Column_Line
-                                    .l_is_axis_txt_bold
-                                    ? "bold"
-                                    : "bold",
-                                backgroundColor: project?.Column_Line
-                                    .l_is_axis_txt_bold
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isBold"
-                        >
-                            B
-                        </div>
-
-                        <div className="clr_cntr">
-                            <label htmlFor="inptclrgrph">
-                                <IoMdColorFill />
-                            </label>
-                            <input
-                                id="inptclrgrph"
-                                value={project?.Column_Line.l_axis_txt_color}
-                                type="color"
-                                onChange={(e) => {
-                                    const color = e.target.value;
-                                    if (project) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Line: {
-                                                    ...project.Column_Line,
-                                                    axis_txt_color: color,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }}
-                            />
-                        </div>
-                    </div>
-                    <label>Line</label>
+                    <label>Area Line</label>
                     <div className="smt_cntr">
                         <div
                             style={{
@@ -2892,7 +2364,7 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Line: {
+                                            Column_Line: {
                                                 ...project.Column_Line,
                                                 l_is_line_smoth: true,
                                             },
@@ -2919,7 +2391,7 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Line: {
+                                            Column_Line: {
                                                 ...project.Column_Line,
                                                 l_is_line_smoth: false,
                                             },
@@ -2932,234 +2404,40 @@ function EditGraphsSection(params: { show: boolean }) {
                             Straight
                         </div>
                     </div>
-                </div>
-            </>
-        );
-    };
-
-    const ColumnAreaPart = () => {
-        return (
-            <>
-                <div className="clmn_prt">
-                    <h1
-                        style={{
-                            fontFamily: "Lexend",
-                            marginLeft: 0,
-                            fontWeight: 550,
-                            marginTop: "10px",
-                        }}
-                    >
-                        Column
-                    </h1>
-                    <label>Bar Spacing</label>
-                    <div className="cntredtprt">
-                        <RxColumnSpacing />
-                        <input
-                            max={10}
-                            onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 24 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (
-                                        e.target.value.at(
-                                            e.target.value.length - 1
-                                        ) == "." &&
-                                        !`${project?.Column_Area.b_bar_spacing}`.includes(
-                                            "."
-                                        )
-                                    ) {
-                                        console.log("ha");
-                                        setisPoint(true);
-                                    } else if (
-                                        project &&
-                                        e.target.value != ""
-                                    ) {
-                                        const inputValue = isPoint
-                                            ? e.target.value.slice(
-                                                  0,
-                                                  e.target.value.length - 1
-                                              ) +
-                                              "." +
-                                              e.target.value.charAt(
-                                                  e.target.value.length - 1
-                                              )
-                                            : e.target.value;
-                                        console.log(isPoint, inputValue);
-                                        setisPoint(false);
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
-                                                    bar_spacing:
-                                                        parseFloat(inputValue),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        e.target.value == "" &&
-                                        project
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
-                                                    bar_spacing: 0,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }
-                            }}
-                            value={project?.Column_Area.b_bar_spacing}
-                        />
-                    </div>
-                    <label>Border</label>
-                    <div className="cntredtprt">
-                        <FaBorderTopLeft />
-                        <input
-                            title="border radius"
-                            onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 24 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
-                                                    border_radius: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
-                                                    border_radius: 0,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }
-                            }}
-                            max={10}
-                            value={project?.Column_Area.b_border_radius}
-                        />
-                        <p id="icon_thickness">T</p>
-                        <input
-                            title="border thickness"
-                            onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 24 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
-                                                    border_bld: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
-                                                    border_bld: 0,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }
-                            }}
-                            value={project?.Column_Area.b_border_bld}
-                        />
-
-                        <div className="clr_cntr">
-                            <label htmlFor="inptclrgrph">
-                                <IoMdColorFill />
-                            </label>
-                            <input
-                                id="inptclrgrph"
-                                value={project?.Column_Area.b_border_color}
-                                type="color"
-                                onChange={(e) => {
-                                    const color = e.target.value;
-                                    if (project) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
-                                                    border_color: color,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }}
-                            />
-                        </div>
-                    </div>
                     <label>Legend</label>
                     <div className="cntredtprt">
                         <RiFontSize2 />
                         <input
                             title="legend size"
+                            type="number"
+                            max={24}
+                            min={0}
                             onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 24 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
-                                                    legend_size: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
-                                                    legend_size: 0,
-                                                },
-                                            })
-                                        );
-                                    }
+                                if (project && e.target.value != "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Line: {
+                                                ...project.Column_Line,
+                                                legend_size: parseInt(
+                                                    e.target.value
+                                                ),
+                                            },
+                                        })
+                                    );
+                                } else if (project && e.target.value == "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Line: {
+                                                ...project.Column_Line,
+                                                legend_size: 0,
+                                            },
+                                        })
+                                    );
                                 }
                             }}
-                            value={project?.Column_Area.b_legend_size}
+                            value={project?.Column_Line.legend_size}
                         />
                         <div
                             onClick={() => {
@@ -3167,26 +2445,25 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Column: {
-                                                ...project.Column_Area,
+                                            Column_Line: {
+                                                ...project.Column_Line,
                                                 is_legend_italic:
-                                                    !project.Column_Area
-                                                        .b_is_legend_italic,
+                                                    !project.Column_Line
+                                                        .is_legend_italic,
                                             },
                                         })
                                     );
                                 }
                             }}
                             style={{
-                                color: project?.Column_Area.b_is_legend_italic
+                                color: project?.Column_Line.is_legend_italic
                                     ? "white"
                                     : "rgba(0,0,0,0.7)",
-                                fontStyle: project?.Column_Area
-                                    .b_is_legend_italic
+                                fontStyle: project?.Column_Line.is_legend_italic
                                     ? "italic"
                                     : "italic",
-                                backgroundColor: project?.Column_Area
-                                    .b_is_legend_italic
+                                backgroundColor: project?.Column_Line
+                                    .is_legend_italic
                                     ? "#6991D1"
                                     : "rgba(216, 216, 216, 0.16)",
                             }}
@@ -3200,27 +2477,26 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Column: {
-                                                ...project.Column_Area,
+                                            Column_Line: {
+                                                ...project.Column_Line,
                                                 is_legend_bold:
-                                                    !project.Column_Area
-                                                        .b_is_legend_bold,
+                                                    !project.Column_Line
+                                                        .is_legend_bold,
                                             },
                                         })
                                     );
                                 }
                             }}
                             style={{
-                                color: project?.Column_Area.b_is_legend_bold
+                                color: project?.Column_Line.is_legend_bold
                                     ? "white"
                                     : "rgba(0,0,0,0.7)",
 
-                                fontWeight: project?.Column_Area
-                                    .b_is_legend_bold
+                                fontWeight: project?.Column_Line.is_legend_bold
                                     ? "bold"
                                     : "bold",
-                                backgroundColor: project?.Column_Area
-                                    .b_is_legend_bold
+                                backgroundColor: project?.Column_Line
+                                    .is_legend_bold
                                     ? "#6991D1"
                                     : "rgba(216, 216, 216, 0.16)",
                             }}
@@ -3230,12 +2506,12 @@ function EditGraphsSection(params: { show: boolean }) {
                         </div>
 
                         <div className="clr_cntr">
-                            <label htmlFor="inptclrgrph">
+                            <label htmlFor="inptclrgrph2">
                                 <IoMdColorFill />
                             </label>
                             <input
-                                id="inptclrgrph"
-                                value={project?.Column_Area.b_legend_color}
+                                id="inptclrgrph2"
+                                value={project?.Column_Line.legend_color}
                                 type="color"
                                 onChange={(e) => {
                                     const color = e.target.value;
@@ -3243,8 +2519,8 @@ function EditGraphsSection(params: { show: boolean }) {
                                         dispatch(
                                             update({
                                                 ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
+                                                Column_Line: {
+                                                    ...project.Column_Line,
                                                     legend_color: color,
                                                 },
                                             })
@@ -3259,40 +2535,35 @@ function EditGraphsSection(params: { show: boolean }) {
                         <RiFontSize2 />
                         <input
                             title="axis text size"
+                            type="number"
+                            min={0}
+                            max={32}
                             onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 32 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
-                                                    axis_txt_size: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
-                                                    axis_txt_size: 0,
-                                                },
-                                            })
-                                        );
-                                    }
+                                if (project && e.target.value != "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Line: {
+                                                ...project.Column_Line,
+                                                axis_txt_size: parseInt(
+                                                    e.target.value
+                                                ),
+                                            },
+                                        })
+                                    );
+                                } else if (project && e.target.value == "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Line: {
+                                                ...project.Column_Line,
+                                                axis_txt_size: 0,
+                                            },
+                                        })
+                                    );
                                 }
                             }}
-                            value={project?.Column_Area.b_axis_txt_size}
+                            value={project?.Column_Line.axis_txt_size}
                         />
                         <div
                             onClick={() => {
@@ -3300,27 +2571,27 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Column: {
-                                                ...project.Column_Area,
+                                            Column_Line: {
+                                                ...project.Column_Line,
                                                 is_axis_txt_italic:
-                                                    !project.Column_Area
-                                                        .b_is_axis_txt_italic,
+                                                    !project.Column_Line
+                                                        .is_axis_txt_italic,
                                             },
                                         })
                                     );
                                 }
                             }}
                             style={{
-                                color: project?.Column_Area.b_is_axis_txt_italic
+                                color: project?.Column_Line.is_axis_txt_italic
                                     ? "white"
                                     : "rgba(0,0,0,0.7)",
 
-                                fontStyle: project?.Column_Area
-                                    .b_is_axis_txt_italic
+                                fontStyle: project?.Column_Line
+                                    .is_axis_txt_italic
                                     ? "italic"
                                     : "italic",
-                                backgroundColor: project?.Column_Area
-                                    .b_is_axis_txt_italic
+                                backgroundColor: project?.Column_Line
+                                    .is_axis_txt_italic
                                     ? "#6991D1"
                                     : "rgba(216, 216, 216, 0.16)",
                             }}
@@ -3334,27 +2605,27 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Column: {
-                                                ...project.Column_Area,
+                                            Column_Line: {
+                                                ...project.Column_Line,
                                                 is_axis_txt_bold:
-                                                    !project.Column_Area
-                                                        .b_is_axis_txt_bold,
+                                                    !project.Column_Line
+                                                        .is_axis_txt_bold,
                                             },
                                         })
                                     );
                                 }
                             }}
                             style={{
-                                color: project?.Column_Area.b_is_axis_txt_bold
+                                color: project?.Column_Line.is_axis_txt_bold
                                     ? "white"
                                     : "rgba(0,0,0,0.7)",
 
-                                fontWeight: project?.Column_Area
-                                    .b_is_axis_txt_bold
+                                fontWeight: project?.Column_Line
+                                    .is_axis_txt_bold
                                     ? "bold"
                                     : "bold",
-                                backgroundColor: project?.Column_Area
-                                    .b_is_axis_txt_bold
+                                backgroundColor: project?.Column_Line
+                                    .is_axis_txt_bold
                                     ? "#6991D1"
                                     : "rgba(216, 216, 216, 0.16)",
                             }}
@@ -3364,12 +2635,12 @@ function EditGraphsSection(params: { show: boolean }) {
                         </div>
 
                         <div className="clr_cntr">
-                            <label htmlFor="inptclrgrph">
+                            <label htmlFor="inptclrgrph3">
                                 <IoMdColorFill />
                             </label>
                             <input
-                                id="inptclrgrph"
-                                value={project?.Column_Area.b_axis_txt_color}
+                                id="inptclrgrph3"
+                                value={project?.Column_Line.axis_txt_color}
                                 type="color"
                                 onChange={(e) => {
                                     const color = e.target.value;
@@ -3377,8 +2648,8 @@ function EditGraphsSection(params: { show: boolean }) {
                                         dispatch(
                                             update({
                                                 ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
+                                                Column_Line: {
+                                                    ...project.Column_Line,
                                                     axis_txt_color: color,
                                                 },
                                             })
@@ -3399,15 +2670,15 @@ function EditGraphsSection(params: { show: boolean }) {
                                         dispatch(
                                             update({
                                                 ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
+                                                Column_Line: {
+                                                    ...project.Column_Line,
                                                     axisX: e.target.value,
                                                 },
                                             })
                                         );
                                     }
                                 }}
-                                value={project?.Column_Area.b_axisX}
+                                value={project?.Column_Line.axisX}
                                 type="text"
                                 placeholder="Default"
                             />
@@ -3421,22 +2692,28 @@ function EditGraphsSection(params: { show: boolean }) {
                                         dispatch(
                                             update({
                                                 ...project,
-                                                Column: {
-                                                    ...project.Column_Area,
+                                                Column_Line: {
+                                                    ...project.Column_Line,
                                                     axisY: e.target.value,
                                                 },
                                             })
                                         );
                                     }
                                 }}
-                                value={project?.Column_Area.b_axisY}
+                                value={project?.Column_Line.axisY}
                                 type="text"
                                 placeholder="Default"
                             />
                         </div>
                     </div>
                 </div>
+            </>
+        );
+    };
 
+    const ColumnAreaPart = () => {
+        return (
+            <>
                 <div className="clmn_prt">
                     <h1
                         style={{
@@ -3446,16 +2723,132 @@ function EditGraphsSection(params: { show: boolean }) {
                             marginTop: "10px",
                         }}
                     >
-                        Area
+                        Column Area
                     </h1>
+                    <label>Bar Spacing</label>
+                    <div className="inpt_rng_cntr">
+                        <p>1</p>
+                        <input
+                            type="range"
+                            min={1}
+                            max={5}
+                            step={0.1}
+                            title={project.Column_Area.b_bar_spacing.toString()}
+                            onChange={(e) => {
+                                dispatch(
+                                    update({
+                                        ...project,
+                                        Column_Area: {
+                                            ...project.Column_Area,
+                                            b_bar_spacing: parseFloat(
+                                                e.target.value
+                                            ),
+                                        },
+                                    })
+                                );
+                            }}
+                            value={project?.Column_Area.b_bar_spacing}
+                        />
+                        <p>5</p>
+                    </div>
+                    <label>Border</label>
+                    <div className="cntredtprt">
+                        <FaBorderTopLeft />
+                        <input
+                            title="border radius"
+                            type="number"
+                            min={0}
+                            onChange={(e) => {
+                                if (project && e.target.value != "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                b_border_radius: parseInt(
+                                                    e.target.value
+                                                ),
+                                            },
+                                        })
+                                    );
+                                } else if (project && e.target.value == "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                b_border_radius: 0,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            max={100}
+                            value={project?.Column_Area.b_border_radius}
+                        />
+                        <p id="icon_thickness">T</p>
+                        <input
+                            title="border thickness"
+                            type="number"
+                            min={0}
+                            max={6}
+                            onChange={(e) => {
+                                if (project && e.target.value != "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                b_border_bld: parseInt(
+                                                    e.target.value
+                                                ),
+                                            },
+                                        })
+                                    );
+                                } else if (project && e.target.value == "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                b_border_bld: 0,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            value={project?.Column_Area.b_border_bld}
+                        />
+
+                        <div className="clr_cntr">
+                            <label htmlFor="inptclrgrph1">
+                                <IoMdColorFill />
+                            </label>
+                            <input
+                                id="inptclrgrph1"
+                                value={project?.Column_Area.b_border_color}
+                                type="color"
+                                onChange={(e) => {
+                                    const color = e.target.value;
+                                    if (project) {
+                                        dispatch(
+                                            update({
+                                                ...project,
+                                                Column_Area: {
+                                                    ...project.Column_Area,
+                                                    b_border_color: color,
+                                                },
+                                            })
+                                        );
+                                    }
+                                }}
+                            />
+                        </div>
+                    </div>
                     <div className="shw_pntrmrk">
                         <label>Show Pointer Marks</label>
                         <div
                             style={{
-                                justifyContent: project?.Column_Area
-                                    .a_show_pointer_mark
-                                    ? "end"
-                                    : "start",
                                 backgroundColor: project?.Column_Area
                                     .a_show_pointer_mark
                                     ? "#3D75CD"
@@ -3466,9 +2859,9 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Area: {
+                                            Column_Area: {
                                                 ...project.Column_Area,
-                                                show_pointer_mark:
+                                                a_show_pointer_mark:
                                                     !project.Column_Area
                                                         .a_show_pointer_mark,
                                             },
@@ -3476,9 +2869,17 @@ function EditGraphsSection(params: { show: boolean }) {
                                     );
                                 }
                             }}
-                            className="toogle"
+                            className="toggle"
                         >
-                            <div className="tgl_crcl"></div>
+                            <div
+                                style={{
+                                    transform: project?.Column_Area
+                                        .a_show_pointer_mark
+                                        ? "translateX(25px)"
+                                        : "",
+                                }}
+                                className="tgl_crcl"
+                            ></div>
                         </div>
                     </div>
                     <label>Area Thickness</label>
@@ -3491,9 +2892,9 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Area: {
+                                            Column_Area: {
                                                 ...project?.Column_Area,
-                                                thickness: parseInt(
+                                                a_thickness: parseInt(
                                                     e.target.value
                                                 ),
                                             },
@@ -3507,274 +2908,7 @@ function EditGraphsSection(params: { show: boolean }) {
                         />
                         <p>5px</p>
                     </div>
-                    <label>Legend</label>
-                    <div className="cntredtprt">
-                        <RiFontSize2 />
-                        <input
-                            title="legend size"
-                            onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 24 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Area: {
-                                                    ...project.Column_Area,
-                                                    legend_size: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Area: {
-                                                    ...project.Column_Area,
-                                                    legend_size: 0,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }
-                            }}
-                            value={project?.Column_Area.a_legend_size}
-                        />
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Area: {
-                                                ...project.Column_Area,
-                                                is_legend_italic:
-                                                    !project.Column_Area
-                                                        .a_is_legend_italic,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Area.a_is_legend_italic
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-                                fontStyle: project?.Column_Area
-                                    .a_is_legend_italic
-                                    ? "italic"
-                                    : "italic",
-                                backgroundColor: project?.Column_Area
-                                    .a_is_legend_italic
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isItalic"
-                        >
-                            I
-                        </div>
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Area: {
-                                                ...project.Column_Area,
-                                                is_legend_bold:
-                                                    !project.Column_Area
-                                                        .a_is_legend_bold,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Area.a_is_legend_bold
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-
-                                fontWeight: project?.Column_Area
-                                    .a_is_legend_bold
-                                    ? "bold"
-                                    : "bold",
-                                backgroundColor: project?.Column_Area
-                                    .a_is_legend_bold
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isBold"
-                        >
-                            B
-                        </div>
-
-                        <div className="clr_cntr">
-                            <label htmlFor="inptclrgrph">
-                                <IoMdColorFill />
-                            </label>
-                            <input
-                                id="inptclrgrph"
-                                value={project?.Column_Area.a_legend_color}
-                                type="color"
-                                onChange={(e) => {
-                                    const color = e.target.value;
-                                    if (project) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Area: {
-                                                    ...project.Column_Area,
-                                                    legend_color: color,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }}
-                            />
-                        </div>
-                    </div>
-                    <label>Axis</label>
-                    <div className="cntredtprt">
-                        <RiFontSize2 />
-                        <input
-                            title="axis text size"
-                            onChange={(e) => {
-                                if (
-                                    parseInt(e.target.value) <= 32 ||
-                                    e.target.value == ""
-                                ) {
-                                    if (project && e.target.value != "") {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Area: {
-                                                    ...project.Column_Area,
-                                                    axis_txt_size: parseInt(
-                                                        e.target.value
-                                                    ),
-                                                },
-                                            })
-                                        );
-                                    } else if (
-                                        project &&
-                                        e.target.value == ""
-                                    ) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Area: {
-                                                    ...project.Column_Area,
-                                                    axis_txt_size: 0,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }
-                            }}
-                            value={project?.Column_Area.a_axis_txt_size}
-                        />
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Area: {
-                                                ...project.Column_Area,
-                                                is_axis_txt_italic:
-                                                    !project.Column_Area
-                                                        .a_is_axis_txt_italic,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Area.a_is_axis_txt_italic
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-
-                                fontStyle: project?.Column_Area
-                                    .a_is_axis_txt_italic
-                                    ? "italic"
-                                    : "italic",
-                                backgroundColor: project?.Column_Area
-                                    .a_is_axis_txt_italic
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isItalic"
-                        >
-                            I
-                        </div>
-                        <div
-                            onClick={() => {
-                                if (project) {
-                                    dispatch(
-                                        update({
-                                            ...project,
-                                            Area: {
-                                                ...project.Column_Area,
-                                                is_axis_txt_bold:
-                                                    !project.Column_Area
-                                                        .a_is_axis_txt_bold,
-                                            },
-                                        })
-                                    );
-                                }
-                            }}
-                            style={{
-                                color: project?.Column_Area.a_is_axis_txt_bold
-                                    ? "white"
-                                    : "rgba(0,0,0,0.7)",
-
-                                fontWeight: project?.Column_Area
-                                    .a_is_axis_txt_bold
-                                    ? "bold"
-                                    : "bold",
-                                backgroundColor: project?.Column_Area
-                                    .a_is_axis_txt_bold
-                                    ? "#6991D1"
-                                    : "rgba(216, 216, 216, 0.16)",
-                            }}
-                            className="isBold"
-                        >
-                            B
-                        </div>
-
-                        <div className="clr_cntr">
-                            <label htmlFor="inptclrgrph">
-                                <IoMdColorFill />
-                            </label>
-                            <input
-                                id="inptclrgrph"
-                                value={project?.Column_Area.a_axis_txt_color}
-                                type="color"
-                                onChange={(e) => {
-                                    const color = e.target.value;
-                                    if (project) {
-                                        dispatch(
-                                            update({
-                                                ...project,
-                                                Area: {
-                                                    ...project.Column_Area,
-                                                    axis_txt_color: color,
-                                                },
-                                            })
-                                        );
-                                    }
-                                }}
-                            />
-                        </div>
-                    </div>
-                    <label>Area</label>
+                    <label>Area Line</label>
                     <div className="smt_cntr">
                         <div
                             style={{
@@ -3791,9 +2925,9 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Area: {
+                                            Column_Area: {
                                                 ...project.Column_Area,
-                                                is_line_smoth: true,
+                                                a_is_line_smoth: true,
                                             },
                                         })
                                     );
@@ -3818,9 +2952,9 @@ function EditGraphsSection(params: { show: boolean }) {
                                     dispatch(
                                         update({
                                             ...project,
-                                            Area: {
+                                            Column_Area: {
                                                 ...project.Column_Area,
-                                                is_line_smoth: false,
+                                                a_is_line_smoth: false,
                                             },
                                         })
                                     );
@@ -3829,6 +2963,308 @@ function EditGraphsSection(params: { show: boolean }) {
                             className="smtorstrt"
                         >
                             Straight
+                        </div>
+                    </div>
+                    <label>Legend</label>
+                    <div className="cntredtprt">
+                        <RiFontSize2 />
+                        <input
+                            title="legend size"
+                            type="number"
+                            max={24}
+                            min={0}
+                            onChange={(e) => {
+                                if (project && e.target.value != "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                legend_size: parseInt(
+                                                    e.target.value
+                                                ),
+                                            },
+                                        })
+                                    );
+                                } else if (project && e.target.value == "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                legend_size: 0,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            value={project?.Column_Area.legend_size}
+                        />
+                        <div
+                            onClick={() => {
+                                if (project) {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                is_legend_italic:
+                                                    !project.Column_Area
+                                                        .is_legend_italic,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            style={{
+                                color: project?.Column_Area.is_legend_italic
+                                    ? "white"
+                                    : "rgba(0,0,0,0.7)",
+                                fontStyle: project?.Column_Area.is_legend_italic
+                                    ? "italic"
+                                    : "italic",
+                                backgroundColor: project?.Column_Area
+                                    .is_legend_italic
+                                    ? "#6991D1"
+                                    : "rgba(216, 216, 216, 0.16)",
+                            }}
+                            className="isItalic"
+                        >
+                            I
+                        </div>
+                        <div
+                            onClick={() => {
+                                if (project) {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                is_legend_bold:
+                                                    !project.Column_Area
+                                                        .is_legend_bold,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            style={{
+                                color: project?.Column_Area.is_legend_bold
+                                    ? "white"
+                                    : "rgba(0,0,0,0.7)",
+
+                                fontWeight: project?.Column_Area.is_legend_bold
+                                    ? "bold"
+                                    : "bold",
+                                backgroundColor: project?.Column_Area
+                                    .is_legend_bold
+                                    ? "#6991D1"
+                                    : "rgba(216, 216, 216, 0.16)",
+                            }}
+                            className="isBold"
+                        >
+                            B
+                        </div>
+
+                        <div className="clr_cntr">
+                            <label htmlFor="inptclrgrph2">
+                                <IoMdColorFill />
+                            </label>
+                            <input
+                                id="inptclrgrph2"
+                                value={project?.Column_Area.legend_color}
+                                type="color"
+                                onChange={(e) => {
+                                    const color = e.target.value;
+                                    if (project) {
+                                        dispatch(
+                                            update({
+                                                ...project,
+                                                Column_Area: {
+                                                    ...project.Column_Area,
+                                                    legend_color: color,
+                                                },
+                                            })
+                                        );
+                                    }
+                                }}
+                            />
+                        </div>
+                    </div>
+                    <label>Axis</label>
+                    <div className="cntredtprt">
+                        <RiFontSize2 />
+                        <input
+                            title="axis text size"
+                            type="number"
+                            min={0}
+                            max={32}
+                            onChange={(e) => {
+                                if (project && e.target.value != "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                axis_txt_size: parseInt(
+                                                    e.target.value
+                                                ),
+                                            },
+                                        })
+                                    );
+                                } else if (project && e.target.value == "") {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                axis_txt_size: 0,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            value={project?.Column_Area.axis_txt_size}
+                        />
+                        <div
+                            onClick={() => {
+                                if (project) {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                is_axis_txt_italic:
+                                                    !project.Column_Area
+                                                        .is_axis_txt_italic,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            style={{
+                                color: project?.Column_Area.is_axis_txt_italic
+                                    ? "white"
+                                    : "rgba(0,0,0,0.7)",
+
+                                fontStyle: project?.Column_Area
+                                    .is_axis_txt_italic
+                                    ? "italic"
+                                    : "italic",
+                                backgroundColor: project?.Column_Area
+                                    .is_axis_txt_italic
+                                    ? "#6991D1"
+                                    : "rgba(216, 216, 216, 0.16)",
+                            }}
+                            className="isItalic"
+                        >
+                            I
+                        </div>
+                        <div
+                            onClick={() => {
+                                if (project) {
+                                    dispatch(
+                                        update({
+                                            ...project,
+                                            Column_Area: {
+                                                ...project.Column_Area,
+                                                is_axis_txt_bold:
+                                                    !project.Column_Area
+                                                        .is_axis_txt_bold,
+                                            },
+                                        })
+                                    );
+                                }
+                            }}
+                            style={{
+                                color: project?.Column_Area.is_axis_txt_bold
+                                    ? "white"
+                                    : "rgba(0,0,0,0.7)",
+
+                                fontWeight: project?.Column_Area
+                                    .is_axis_txt_bold
+                                    ? "bold"
+                                    : "bold",
+                                backgroundColor: project?.Column_Area
+                                    .is_axis_txt_bold
+                                    ? "#6991D1"
+                                    : "rgba(216, 216, 216, 0.16)",
+                            }}
+                            className="isBold"
+                        >
+                            B
+                        </div>
+
+                        <div className="clr_cntr">
+                            <label htmlFor="inptclrgrph3">
+                                <IoMdColorFill />
+                            </label>
+                            <input
+                                id="inptclrgrph3"
+                                value={project?.Column_Area.axis_txt_color}
+                                type="color"
+                                onChange={(e) => {
+                                    const color = e.target.value;
+                                    if (project) {
+                                        dispatch(
+                                            update({
+                                                ...project,
+                                                Column_Area: {
+                                                    ...project.Column_Area,
+                                                    axis_txt_color: color,
+                                                },
+                                            })
+                                        );
+                                    }
+                                }}
+                            />
+                        </div>
+                    </div>
+                    <div className="aixs_text">
+                        <div>
+                            <label>Axis X</label>
+                            <input
+                                title="axis X text"
+                                onChange={(e) => {
+                                    if (project) {
+                                        console.log(e.target.value);
+                                        dispatch(
+                                            update({
+                                                ...project,
+                                                Column_Area: {
+                                                    ...project.Column_Area,
+                                                    axisX: e.target.value,
+                                                },
+                                            })
+                                        );
+                                    }
+                                }}
+                                value={project?.Column_Area.axisX}
+                                type="text"
+                                placeholder="Default"
+                            />
+                        </div>
+                        <div>
+                            <label>Axis Y</label>
+                            <input
+                                title="axis Y text"
+                                onChange={(e) => {
+                                    if (project) {
+                                        dispatch(
+                                            update({
+                                                ...project,
+                                                Column_Area: {
+                                                    ...project.Column_Area,
+                                                    axisY: e.target.value,
+                                                },
+                                            })
+                                        );
+                                    }
+                                }}
+                                value={project?.Column_Area.axisY}
+                                type="text"
+                                placeholder="Default"
+                            />
                         </div>
                     </div>
                 </div>

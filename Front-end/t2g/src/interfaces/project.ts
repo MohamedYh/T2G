@@ -83,6 +83,7 @@ export interface BarsInterface {
 export interface PieInterface {
     id: number;
     start_angle: number;
+    show_percentage: boolean;
     isLegend: boolean;
     legend_size: number;
     is_legend_italic: boolean;
@@ -94,6 +95,7 @@ export interface PieInterface {
 export interface DonutInterface {
     id: number;
     start_angle: number;
+    show_percentage: boolean;
     inner_radius: number;
     isLegend: boolean;
     legend_size: number;
@@ -143,74 +145,62 @@ export interface LineInterface {
     projectId: number;
 }
 
-export interface Column_AreaInterface {
-    id: number;
-    b_bar_spacing: number;
-    b_border_radius: number;
-    b_border_bld: number;
-    b_border_color: string;
-    b_isLegend: boolean;
-    b_legend_size: number;
-    b_is_legend_italic: boolean;
-    b_is_legend_bold: boolean;
-    b_legend_color: string;
-    b_isAxis: boolean;
-    b_axis_txt_size: number;
-    b_is_axis_txt_italic: boolean;
-    b_is_axis_txt_bold: boolean;
-    b_axis_txt_color: string;
-    b_axisX: string;
-    b_axisY: string;
-    a_show_pointer_mark: boolean;
-    a_isAxis: boolean;
-    a_axis_txt_size: number;
-    a_is_axis_txt_italic: boolean;
-    a_is_axis_txt_bold: boolean;
-    a_axis_txt_color: string;
-    a_axisX: string;
-    a_axisY: string;
-    a_isLegend: boolean;
-    a_legend_size: number;
-    a_is_legend_italic: boolean;
-    a_is_legend_bold: boolean;
-    a_legend_color: string;
-    a_thickness: number;
-    a_is_line_smoth: boolean;
-    projectId: number;
-}
-
 export interface Column_LineInterface {
     id: number;
     b_bar_spacing: number;
+    // Border
     b_border_radius: number;
     b_border_bld: number;
     b_border_color: string;
-    b_isLegend: boolean;
-    b_legend_size: number;
-    b_is_legend_italic: boolean;
-    b_is_legend_bold: boolean;
-    b_legend_color: string;
-    b_isAxis: boolean;
-    b_axis_txt_size: number;
-    b_is_axis_txt_italic: boolean;
-    b_is_axis_txt_bold: boolean;
-    b_axis_txt_color: string;
-    b_axisX: string;
-    b_axisY: string;
+    // Pointer
     l_show_pointer_mark: boolean;
-    l_isAxis: boolean;
-    l_axis_txt_size: number;
-    l_is_axis_txt_italic: boolean;
-    l_is_axis_txt_bold: boolean;
-    l_axis_txt_color: string;
-    l_axisX: string;
-    l_axisY: string;
-    l_isLegend: boolean;
-    l_legend_size: number;
-    l_is_legend_italic: boolean;
-    l_is_legend_bold: boolean;
-    l_legend_color: string;
+    // Axis
+    isAxis: boolean;
+    axis_txt_size: number;
+    is_axis_txt_italic: boolean;
+    is_axis_txt_bold: boolean;
+    axis_txt_color: string;
+    axisX: string;
+    axisY: string;
+    // Legend
+    isLegend: boolean;
+    legend_size: number;
+    is_legend_italic: boolean;
+    is_legend_bold: boolean;
+    legend_color: string;
+    // Line
     l_thickness: number;
     l_is_line_smoth: boolean;
+    // Relation
+    projectId: number;
+}
+
+export interface Column_AreaInterface {
+    id: number;
+    b_bar_spacing: number;
+    // Border
+    b_border_radius: number;
+    b_border_bld: number;
+    b_border_color: string;
+    // Pointer
+    a_show_pointer_mark: boolean;
+    // Axis
+    isAxis: boolean;
+    axis_txt_size: number;
+    is_axis_txt_italic: boolean;
+    is_axis_txt_bold: boolean;
+    axis_txt_color: string;
+    axisX: string;
+    axisY: string;
+    // Legend
+    isLegend: boolean;
+    legend_size: number;
+    is_legend_italic: boolean;
+    is_legend_bold: boolean;
+    legend_color: string;
+    // Line
+    a_thickness: number;
+    a_is_line_smoth: boolean;
+    // Relation
     projectId: number;
 }

@@ -45,21 +45,18 @@ function DataSection(params: { show: boolean }) {
                 const headersArr: string[] = JSON.parse(
                     project.data[project.data_selected].headers || "[]"
                 );
-                console.log(headersArr);
                 headersArr.push(...Array(26 - headersArr.length).fill(""));
                 setHeaders(headersArr);
                 // ---------------------------------------
                 const dtsarr = project.data[project.data_selected].data;
                 const tableArr: DataObject[] = JSON.parse(dtsarr || "[]");
-                console.log("tableArr", project.data[project.data_selected]);
                 setTableDataMap((tdm) => [...tdm, headersArr]);
 
                 // ---------------------------------------
                 tableArr.push(
-                    ...Array(11 - tableArr.length).fill({ "": { "": "" } })
+                    ...Array(26 - tableArr.length).fill({ "": { "": "" } })
                 );
                 tableArr.map((x) => {
-                    console.log();
                     const lst = [
                         Object.keys(x)[0],
                         ...Object.values(x[Object.keys(x)[0]]),
@@ -67,7 +64,6 @@ function DataSection(params: { show: boolean }) {
                     lst.push(...Array(26 - lst.length).fill(""));
                     setTableDataMap((tdm) => [...tdm, lst]);
                 });
-                console.log(tableArr);
                 setTable(tableArr);
             } catch (error) {
                 console.error("Error parsing JSON data:", error);
@@ -90,18 +86,6 @@ function DataSection(params: { show: boolean }) {
                 break;
             }
         }
-
-        const map_lst = [];
-
-        for (let m = 1; m < limitY; m++) {
-            const arr = [];
-            for (let n = 1; n < limitX; n++) {
-                arr.push(tableDataMap[m][n]);
-            }
-            map_lst.push(arr);
-        }
-
-        console.log(map_lst);
     }
 
     useEffect(() => {
@@ -125,8 +109,6 @@ function DataSection(params: { show: boolean }) {
     };
 
     const handleParse = (fil: File) => {
-        console.log("parsing");
-
         if (!fil) return alert("Enter a valid file");
         const reader = new FileReader();
 
@@ -148,14 +130,11 @@ function DataSection(params: { show: boolean }) {
                         for (let val = 1; val < values.length; val++) {
                             obj[values[0]][keys[val]] = values[val];
                         }
-                        console.log(obj, values, keys);
 
                         res.push(obj);
                     }
                 });
-                console.log(res);
                 HandleAddFile(fil.name || "", res, keys);
-                console.log(res);
             }
         };
         reader.readAsText(fil);
@@ -179,7 +158,6 @@ function DataSection(params: { show: boolean }) {
                 if (r.status == 200) {
                     if (project) {
                         const idp: number = r.data.id;
-                        console.log(r.data);
                         dispatch(
                             update({
                                 ...project,
@@ -195,19 +173,6 @@ function DataSection(params: { show: boolean }) {
                                 ],
                             })
                         );
-                        console.log({
-                            ...project,
-                            data: [
-                                ...project.data,
-                                {
-                                    data: JSON.stringify(data),
-                                    headers: JSON.stringify(hdrs),
-                                    id: idp,
-                                    name: fileName,
-                                    projectId,
-                                },
-                            ],
-                        });
                     }
                 } else if (r.status == 211) {
                     localStorage.clear();
@@ -235,7 +200,6 @@ function DataSection(params: { show: boolean }) {
                 external_keys.map((x, j) => {
                     obj[v][x] = robj[j][x][v];
                 });
-                console.log(obj);
                 newDt.push(obj);
             });
 
@@ -253,23 +217,19 @@ function DataSection(params: { show: boolean }) {
     };
 
     function HandleChangeTableValues(inputVl: string, m: number, n: number) {
-        console.log("fjd");
         var dts = [...tableDataMap];
         dts[m][n] = inputVl;
 
         if (project) {
             const new_dt = inputVl;
-            console.log(new_dt);
             const data_list: Data[] = [...project.data];
             var raw_data = { ...data_list[project.data_selected] };
             var cdt: DataObject[] = JSON.parse(raw_data.data);
             for (let i = 0; i < cdt.length; i++) {
                 if (Object.keys(cdt[i])[0] == dts[m][0]) {
-                    console.log(dts[m][0]);
                     cdt[i][dts[m][0]][dts[0][n]] = new_dt + "";
                 }
             }
-            console.log(cdt);
             raw_data.data = JSON.stringify(cdt);
             data_list[project.data_selected] = raw_data;
             console.log(data_list);
@@ -321,13 +281,11 @@ function DataSection(params: { show: boolean }) {
                                 cdt[i][Object.keys(cdt[i])[0] as keyof object]
                             ).length >= n
                         ) {
-                            console.log(i);
                             var obj: DataObject = {};
                             obj[fthr] = {};
                             const vls = Object.keys(
                                 cdt[i][Object.keys(cdt[i])[0]]
                             );
-                            console.log(vls, fthr, cdt[i]);
                             for (let y = 0; y < vls.length; y++) {
                                 const r = y + 0;
                                 console.log(cdt[i][fthr], vls[y], cdt[i], fthr);
@@ -335,29 +293,19 @@ function DataSection(params: { show: boolean }) {
                                 if (r != n - 1) {
                                     obj[fthr][vls[y]] =
                                         cdt[i][fthr][vls[y]] + "";
-                                    console.log(obj, r);
                                 } else {
                                     obj[fthr][inputVl] =
                                         cdt[i][fthr][vls[y]] + "";
                                     console.log(obj, r);
                                 }
                             }
-
-                            console.log("fds");
-                            console.log(obj);
                             cdt[i] = obj;
                         } else {
                             cdt[i][fthr][inputVl] = "";
                             console.log(cdt[i][fthr], inputVl);
                         }
                     }
-                    console.log(
-                        Object.keys(
-                            cdt[0][Object.keys(cdt[0])[0] as keyof object]
-                        ),
-                        n,
-                        tableDataMap[m][n]
-                    );
+
                     console.log(cdt);
                     raw_data.data = JSON.stringify(cdt);
                     raw_data.headers = JSON.stringify(lst_hdrs);
@@ -372,7 +320,6 @@ function DataSection(params: { show: boolean }) {
                 const data_list: Data[] = [...project.data];
                 var raw_data = { ...data_list[project.data_selected] };
                 var cdt: DataObject[] = JSON.parse(raw_data.data);
-                console.log("ds", m - 1, cdt.length);
                 if (m - 1 < cdt.length) {
                     const obj: DataObject = {};
                     obj[inputVl as keyof object] =
@@ -386,6 +333,7 @@ function DataSection(params: { show: boolean }) {
                         obj[inputVl][x] = "";
                     });
                     cdt.push(obj);
+                    ``;
                     console.log(kys, obj);
                 }
                 raw_data.data = JSON.stringify(cdt);
@@ -396,6 +344,10 @@ function DataSection(params: { show: boolean }) {
                 setTableDataMap(dts);
             }
         }
+    }
+
+    function isNumeric(str: string) {
+        return /^[+-]?\d+(\.\d+)?$/.test(str);
     }
 
     function checkData() {
@@ -516,7 +468,7 @@ function DataSection(params: { show: boolean }) {
                             </tr>
                             <tr>
                                 <th>0</th>
-                                {tableDataMap.length == 12
+                                {tableDataMap.length > 11
                                     ? tableDataMap[0].map((x, index) => {
                                           return (
                                               <th key={index}>
@@ -550,17 +502,9 @@ function DataSection(params: { show: boolean }) {
                                                                       false
                                                                   );
                                                               }
-                                                              console.log(
-                                                                  Object.keys(
-                                                                      dt[0][
-                                                                          Object.keys(
-                                                                              dt[0]
-                                                                          )[0]
-                                                                      ]
-                                                                  )
-                                                              );
+
                                                               const isOnlyDigits =
-                                                                  /^\d+$/.test(
+                                                                  isNumeric(
                                                                       e.target
                                                                           .value
                                                                   );
@@ -604,7 +548,7 @@ function DataSection(params: { show: boolean }) {
                                       })
                                     : null}
                             </tr>
-                            {tableDataMap.length == 12
+                            {tableDataMap.length >= 12
                                 ? tableDataMap
                                       .slice(1, tableDataMap.length)
                                       .map((x, ixy) => {
@@ -627,15 +571,7 @@ function DataSection(params: { show: boolean }) {
                                                                   className="inptsvl"
                                                                   title={y}
                                                                   type="text"
-                                                                  value={
-                                                                      indexX !=
-                                                                          0 &&
-                                                                      y != ""
-                                                                          ? parseInt(
-                                                                                y
-                                                                            )
-                                                                          : y
-                                                                  }
+                                                                  value={y}
                                                                   onFocus={(
                                                                       e
                                                                   ) => {
@@ -651,20 +587,8 @@ function DataSection(params: { show: boolean }) {
                                                                           indexX !=
                                                                               0
                                                                       ) {
-                                                                          console.log(
-                                                                              indexY,
-                                                                              indexX
-                                                                          );
                                                                           setTypeError(
                                                                               true
-                                                                          );
-                                                                      } else {
-                                                                          console.log(
-                                                                              indexY,
-                                                                              indexX,
-                                                                              tableDataMap[0][
-                                                                                  indexX
-                                                                              ]
                                                                           );
                                                                       }
                                                                   }}
@@ -680,9 +604,6 @@ function DataSection(params: { show: boolean }) {
                                                                   onChange={(
                                                                       e
                                                                   ) => {
-                                                                      console.log(
-                                                                          indexX
-                                                                      );
                                                                       if (
                                                                           e
                                                                               .target
@@ -698,11 +619,21 @@ function DataSection(params: { show: boolean }) {
                                                                           );
                                                                       }
                                                                       const isOnlyDigits =
-                                                                          /^\d+$/.test(
-                                                                              e
-                                                                                  .target
-                                                                                  .value
-                                                                          );
+                                                                          e.target.value.at(
+                                                                              -1
+                                                                          ) !=
+                                                                          "."
+                                                                              ? isNumeric(
+                                                                                    e
+                                                                                        .target
+                                                                                        .value
+                                                                                )
+                                                                              : isNumeric(
+                                                                                    e.target.value.slice(
+                                                                                        0,
+                                                                                        -1
+                                                                                    )
+                                                                                );
                                                                       console.log(
                                                                           isOnlyDigits,
                                                                           e
@@ -729,25 +660,24 @@ function DataSection(params: { show: boolean }) {
                                                                               ][0] !=
                                                                                   ""
                                                                           ) {
-                                                                              HandleChangeTableValues(
-                                                                                  e
-                                                                                      .target
-                                                                                      .value,
-                                                                                  indexY,
-                                                                                  indexX
-                                                                              );
+                                                                              if (
+                                                                                  Number(
+                                                                                      e
+                                                                                          .target
+                                                                                          .value
+                                                                                  ) <=
+                                                                                  10 **
+                                                                                      11
+                                                                              ) {
+                                                                                  HandleChangeTableValues(
+                                                                                      e
+                                                                                          .target
+                                                                                          .value,
+                                                                                      indexY,
+                                                                                      indexX
+                                                                                  );
+                                                                              }
                                                                           } else {
-                                                                              console.log(
-                                                                                  tableDataMap,
-                                                                                  indexY,
-                                                                                  indexX,
-                                                                                  tableDataMap[0][
-                                                                                      indexY
-                                                                                  ],
-                                                                                  tableDataMap[
-                                                                                      indexY
-                                                                                  ][0]
-                                                                              );
                                                                               toast.error(
                                                                                   "you can't type in a cell without identifiers"
                                                                               );
@@ -756,14 +686,40 @@ function DataSection(params: { show: boolean }) {
                                                                           indexX ==
                                                                           0
                                                                       ) {
-                                                                          HandleChangeTableKeys(
-                                                                              e
-                                                                                  .target
-                                                                                  .value,
-                                                                              indexY,
-                                                                              indexX,
-                                                                              false
-                                                                          );
+                                                                          const dt: DataObject[] =
+                                                                              JSON.parse(
+                                                                                  project
+                                                                                      .data[
+                                                                                      project
+                                                                                          .data_selected
+                                                                                  ]
+                                                                                      .data
+                                                                              );
+                                                                          if (
+                                                                              !dt
+                                                                                  .map(
+                                                                                      (
+                                                                                          v
+                                                                                      ) =>
+                                                                                          Object.keys(
+                                                                                              v
+                                                                                          )[0]
+                                                                                  )
+                                                                                  .includes(
+                                                                                      e
+                                                                                          .target
+                                                                                          .value
+                                                                                  )
+                                                                          ) {
+                                                                              HandleChangeTableKeys(
+                                                                                  e
+                                                                                      .target
+                                                                                      .value,
+                                                                                  indexY,
+                                                                                  indexX,
+                                                                                  false
+                                                                              );
+                                                                          }
                                                                       }
                                                                   }}
                                                               />

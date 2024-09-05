@@ -324,6 +324,7 @@ export async function updateProject(userId, projectId, newData) {
     delete newData.Column_Line.projectId;
     delete newData.Column_Area.id;
     delete newData.Column_Area.projectId;
+    console.log("#%$", newData);
     if (projectId) {
         try {
             const ugs = await prisma.projects.update({

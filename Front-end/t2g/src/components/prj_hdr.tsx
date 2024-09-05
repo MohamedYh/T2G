@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/reduxStore";
 import { update } from "@/store/slices/projectManger";
 import { FaChevronDown } from "react-icons/fa";
+import { updateAction } from "@/store/slices/actionUpdater";
 
 function ProjectHeader() {
     const router = useRouter();
@@ -59,9 +60,13 @@ function ProjectHeader() {
                     value={delayName}
                 />
             </div>
-            <div className="exprt">
+            <div
+                onClick={() => {
+                    dispatch(updateAction());
+                }}
+                className="exprt"
+            >
                 <p>Export</p>
-                <FaChevronDown />
             </div>
         </div>
     );

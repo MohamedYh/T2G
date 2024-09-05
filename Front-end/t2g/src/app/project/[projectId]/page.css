@@ -57,6 +57,7 @@
     align-items: center;
     background-color: #69d1b2;
     width: auto;
+    cursor: pointer;
     border-radius: 8px;
     justify-content: center;
     color: white;
@@ -471,7 +472,7 @@ input[type="color"] {
     font-size: 20px;
 }
 
-.toogle {
+.toggle {
     display: flex;
     align-items: center;
     height: 29px;
@@ -481,6 +482,7 @@ input[type="color"] {
     padding: 0 6px;
     margin-left: 12px;
 }
+
 .tgl_crcl {
     width: 20px;
     height: 20px;
@@ -488,7 +490,9 @@ input[type="color"] {
     border-radius: 50%;
     box-shadow: 0 0 8px #0006;
     cursor: pointer;
+    transition: 250ms;
 }
+
 .shw_pntrmrk {
     display: flex;
     align-items: center;
@@ -496,6 +500,7 @@ input[type="color"] {
 }
 .smt_cntr {
     display: flex;
+    margin-bottom: 20px;
 }
 .smtorstrt {
     width: 150px;
@@ -618,8 +623,9 @@ div.smtorstrt:nth-child(1) {
     transition: 250ms;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
+    background-size: cover;
 }
 
 .svgcntr {
@@ -627,4 +633,45 @@ div.smtorstrt:nth-child(1) {
     display: flex;
     align-items: center;
     justify-content: center;
+    order: 2;
+    overflow: visible;
+    transform: translateY(-15px);
+}
+
+.lgndcntr {
+    order: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.rectlegend {
+}
+
+.lgndcntr p {
+    margin: 0;
+    font-family: "Lexend";
+    color: rgba(0, 0, 0, 0.75);
+    font-weight: 400;
+}
+
+.grplgnd {
+    display: flex;
+    align-items: center;
+}
+
+#projectTitle {
+    border: none;
+    outline: none;
+    font-size: 32px;
+    width: fit-content;
+    text-align: center;
+    font-weight: 500;
+    font-family: "LExend";
+    width: 100%;
+    padding: 0;
+    margin-bottom: 40px;
+    margin-top: 15px;
+    background: transparent;
 }

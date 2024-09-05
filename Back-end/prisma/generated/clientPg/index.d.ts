@@ -7975,6 +7975,7 @@ export namespace Prisma {
   export type PieMinAggregateOutputType = {
     id: number | null
     start_angle: number | null
+    show_percentage: boolean | null
     isLegend: boolean | null
     legend_size: number | null
     is_legend_italic: boolean | null
@@ -7986,6 +7987,7 @@ export namespace Prisma {
   export type PieMaxAggregateOutputType = {
     id: number | null
     start_angle: number | null
+    show_percentage: boolean | null
     isLegend: boolean | null
     legend_size: number | null
     is_legend_italic: boolean | null
@@ -7997,6 +7999,7 @@ export namespace Prisma {
   export type PieCountAggregateOutputType = {
     id: number
     start_angle: number
+    show_percentage: number
     isLegend: number
     legend_size: number
     is_legend_italic: number
@@ -8024,6 +8027,7 @@ export namespace Prisma {
   export type PieMinAggregateInputType = {
     id?: true
     start_angle?: true
+    show_percentage?: true
     isLegend?: true
     legend_size?: true
     is_legend_italic?: true
@@ -8035,6 +8039,7 @@ export namespace Prisma {
   export type PieMaxAggregateInputType = {
     id?: true
     start_angle?: true
+    show_percentage?: true
     isLegend?: true
     legend_size?: true
     is_legend_italic?: true
@@ -8046,6 +8051,7 @@ export namespace Prisma {
   export type PieCountAggregateInputType = {
     id?: true
     start_angle?: true
+    show_percentage?: true
     isLegend?: true
     legend_size?: true
     is_legend_italic?: true
@@ -8144,6 +8150,7 @@ export namespace Prisma {
   export type PieGroupByOutputType = {
     id: number
     start_angle: number
+    show_percentage: boolean
     isLegend: boolean
     legend_size: number
     is_legend_italic: boolean
@@ -8174,6 +8181,7 @@ export namespace Prisma {
   export type PieSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     start_angle?: boolean
+    show_percentage?: boolean
     isLegend?: boolean
     legend_size?: boolean
     is_legend_italic?: boolean
@@ -8187,6 +8195,7 @@ export namespace Prisma {
   export type PieSelectScalar = {
     id?: boolean
     start_angle?: boolean
+    show_percentage?: boolean
     isLegend?: boolean
     legend_size?: boolean
     is_legend_italic?: boolean
@@ -8207,6 +8216,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       start_angle: number
+      show_percentage: boolean
       isLegend: boolean
       legend_size: number
       is_legend_italic: boolean
@@ -8585,6 +8595,7 @@ export namespace Prisma {
   interface PieFieldRefs {
     readonly id: FieldRef<"Pie", 'Int'>
     readonly start_angle: FieldRef<"Pie", 'Int'>
+    readonly show_percentage: FieldRef<"Pie", 'Boolean'>
     readonly isLegend: FieldRef<"Pie", 'Boolean'>
     readonly legend_size: FieldRef<"Pie", 'Int'>
     readonly is_legend_italic: FieldRef<"Pie", 'Boolean'>
@@ -8935,6 +8946,7 @@ export namespace Prisma {
   export type DonutMinAggregateOutputType = {
     id: number | null
     start_angle: number | null
+    show_percentage: boolean | null
     inner_radius: number | null
     isLegend: boolean | null
     legend_size: number | null
@@ -8947,6 +8959,7 @@ export namespace Prisma {
   export type DonutMaxAggregateOutputType = {
     id: number | null
     start_angle: number | null
+    show_percentage: boolean | null
     inner_radius: number | null
     isLegend: boolean | null
     legend_size: number | null
@@ -8959,6 +8972,7 @@ export namespace Prisma {
   export type DonutCountAggregateOutputType = {
     id: number
     start_angle: number
+    show_percentage: number
     inner_radius: number
     isLegend: number
     legend_size: number
@@ -8989,6 +9003,7 @@ export namespace Prisma {
   export type DonutMinAggregateInputType = {
     id?: true
     start_angle?: true
+    show_percentage?: true
     inner_radius?: true
     isLegend?: true
     legend_size?: true
@@ -9001,6 +9016,7 @@ export namespace Prisma {
   export type DonutMaxAggregateInputType = {
     id?: true
     start_angle?: true
+    show_percentage?: true
     inner_radius?: true
     isLegend?: true
     legend_size?: true
@@ -9013,6 +9029,7 @@ export namespace Prisma {
   export type DonutCountAggregateInputType = {
     id?: true
     start_angle?: true
+    show_percentage?: true
     inner_radius?: true
     isLegend?: true
     legend_size?: true
@@ -9112,6 +9129,7 @@ export namespace Prisma {
   export type DonutGroupByOutputType = {
     id: number
     start_angle: number
+    show_percentage: boolean
     inner_radius: number
     isLegend: boolean
     legend_size: number
@@ -9143,6 +9161,7 @@ export namespace Prisma {
   export type DonutSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     start_angle?: boolean
+    show_percentage?: boolean
     inner_radius?: boolean
     isLegend?: boolean
     legend_size?: boolean
@@ -9157,6 +9176,7 @@ export namespace Prisma {
   export type DonutSelectScalar = {
     id?: boolean
     start_angle?: boolean
+    show_percentage?: boolean
     inner_radius?: boolean
     isLegend?: boolean
     legend_size?: boolean
@@ -9178,6 +9198,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       start_angle: number
+      show_percentage: boolean
       inner_radius: number
       isLegend: boolean
       legend_size: number
@@ -9557,6 +9578,7 @@ export namespace Prisma {
   interface DonutFieldRefs {
     readonly id: FieldRef<"Donut", 'Int'>
     readonly start_angle: FieldRef<"Donut", 'Int'>
+    readonly show_percentage: FieldRef<"Donut", 'Boolean'>
     readonly inner_radius: FieldRef<"Donut", 'Int'>
     readonly isLegend: FieldRef<"Donut", 'Boolean'>
     readonly legend_size: FieldRef<"Donut", 'Int'>
@@ -12016,10 +12038,8 @@ export namespace Prisma {
     b_bar_spacing: number | null
     b_border_radius: number | null
     b_border_bld: number | null
-    b_legend_size: number | null
-    b_axis_txt_size: number | null
-    l_axis_txt_size: number | null
-    l_legend_size: number | null
+    axis_txt_size: number | null
+    legend_size: number | null
     l_thickness: number | null
     projectId: number | null
   }
@@ -12029,10 +12049,8 @@ export namespace Prisma {
     b_bar_spacing: number | null
     b_border_radius: number | null
     b_border_bld: number | null
-    b_legend_size: number | null
-    b_axis_txt_size: number | null
-    l_axis_txt_size: number | null
-    l_legend_size: number | null
+    axis_txt_size: number | null
+    legend_size: number | null
     l_thickness: number | null
     projectId: number | null
   }
@@ -12043,31 +12061,19 @@ export namespace Prisma {
     b_border_radius: number | null
     b_border_bld: number | null
     b_border_color: string | null
-    b_isLegend: boolean | null
-    b_legend_size: number | null
-    b_is_legend_italic: boolean | null
-    b_is_legend_bold: boolean | null
-    b_legend_color: string | null
-    b_isAxis: boolean | null
-    b_axis_txt_size: number | null
-    b_is_axis_txt_italic: boolean | null
-    b_is_axis_txt_bold: boolean | null
-    b_axis_txt_color: string | null
-    b_axisX: string | null
-    b_axisY: string | null
     l_show_pointer_mark: boolean | null
-    l_isAxis: boolean | null
-    l_axis_txt_size: number | null
-    l_is_axis_txt_italic: boolean | null
-    l_is_axis_txt_bold: boolean | null
-    l_axis_txt_color: string | null
-    l_axisX: string | null
-    l_axisY: string | null
-    l_isLegend: boolean | null
-    l_legend_size: number | null
-    l_is_legend_italic: boolean | null
-    l_is_legend_bold: boolean | null
-    l_legend_color: string | null
+    isAxis: boolean | null
+    axis_txt_size: number | null
+    is_axis_txt_italic: boolean | null
+    is_axis_txt_bold: boolean | null
+    axis_txt_color: string | null
+    axisX: string | null
+    axisY: string | null
+    isLegend: boolean | null
+    legend_size: number | null
+    is_legend_italic: boolean | null
+    is_legend_bold: boolean | null
+    legend_color: string | null
     l_thickness: number | null
     l_is_line_smoth: boolean | null
     projectId: number | null
@@ -12079,31 +12085,19 @@ export namespace Prisma {
     b_border_radius: number | null
     b_border_bld: number | null
     b_border_color: string | null
-    b_isLegend: boolean | null
-    b_legend_size: number | null
-    b_is_legend_italic: boolean | null
-    b_is_legend_bold: boolean | null
-    b_legend_color: string | null
-    b_isAxis: boolean | null
-    b_axis_txt_size: number | null
-    b_is_axis_txt_italic: boolean | null
-    b_is_axis_txt_bold: boolean | null
-    b_axis_txt_color: string | null
-    b_axisX: string | null
-    b_axisY: string | null
     l_show_pointer_mark: boolean | null
-    l_isAxis: boolean | null
-    l_axis_txt_size: number | null
-    l_is_axis_txt_italic: boolean | null
-    l_is_axis_txt_bold: boolean | null
-    l_axis_txt_color: string | null
-    l_axisX: string | null
-    l_axisY: string | null
-    l_isLegend: boolean | null
-    l_legend_size: number | null
-    l_is_legend_italic: boolean | null
-    l_is_legend_bold: boolean | null
-    l_legend_color: string | null
+    isAxis: boolean | null
+    axis_txt_size: number | null
+    is_axis_txt_italic: boolean | null
+    is_axis_txt_bold: boolean | null
+    axis_txt_color: string | null
+    axisX: string | null
+    axisY: string | null
+    isLegend: boolean | null
+    legend_size: number | null
+    is_legend_italic: boolean | null
+    is_legend_bold: boolean | null
+    legend_color: string | null
     l_thickness: number | null
     l_is_line_smoth: boolean | null
     projectId: number | null
@@ -12115,31 +12109,19 @@ export namespace Prisma {
     b_border_radius: number
     b_border_bld: number
     b_border_color: number
-    b_isLegend: number
-    b_legend_size: number
-    b_is_legend_italic: number
-    b_is_legend_bold: number
-    b_legend_color: number
-    b_isAxis: number
-    b_axis_txt_size: number
-    b_is_axis_txt_italic: number
-    b_is_axis_txt_bold: number
-    b_axis_txt_color: number
-    b_axisX: number
-    b_axisY: number
     l_show_pointer_mark: number
-    l_isAxis: number
-    l_axis_txt_size: number
-    l_is_axis_txt_italic: number
-    l_is_axis_txt_bold: number
-    l_axis_txt_color: number
-    l_axisX: number
-    l_axisY: number
-    l_isLegend: number
-    l_legend_size: number
-    l_is_legend_italic: number
-    l_is_legend_bold: number
-    l_legend_color: number
+    isAxis: number
+    axis_txt_size: number
+    is_axis_txt_italic: number
+    is_axis_txt_bold: number
+    axis_txt_color: number
+    axisX: number
+    axisY: number
+    isLegend: number
+    legend_size: number
+    is_legend_italic: number
+    is_legend_bold: number
+    legend_color: number
     l_thickness: number
     l_is_line_smoth: number
     projectId: number
@@ -12152,10 +12134,8 @@ export namespace Prisma {
     b_bar_spacing?: true
     b_border_radius?: true
     b_border_bld?: true
-    b_legend_size?: true
-    b_axis_txt_size?: true
-    l_axis_txt_size?: true
-    l_legend_size?: true
+    axis_txt_size?: true
+    legend_size?: true
     l_thickness?: true
     projectId?: true
   }
@@ -12165,10 +12145,8 @@ export namespace Prisma {
     b_bar_spacing?: true
     b_border_radius?: true
     b_border_bld?: true
-    b_legend_size?: true
-    b_axis_txt_size?: true
-    l_axis_txt_size?: true
-    l_legend_size?: true
+    axis_txt_size?: true
+    legend_size?: true
     l_thickness?: true
     projectId?: true
   }
@@ -12179,31 +12157,19 @@ export namespace Prisma {
     b_border_radius?: true
     b_border_bld?: true
     b_border_color?: true
-    b_isLegend?: true
-    b_legend_size?: true
-    b_is_legend_italic?: true
-    b_is_legend_bold?: true
-    b_legend_color?: true
-    b_isAxis?: true
-    b_axis_txt_size?: true
-    b_is_axis_txt_italic?: true
-    b_is_axis_txt_bold?: true
-    b_axis_txt_color?: true
-    b_axisX?: true
-    b_axisY?: true
     l_show_pointer_mark?: true
-    l_isAxis?: true
-    l_axis_txt_size?: true
-    l_is_axis_txt_italic?: true
-    l_is_axis_txt_bold?: true
-    l_axis_txt_color?: true
-    l_axisX?: true
-    l_axisY?: true
-    l_isLegend?: true
-    l_legend_size?: true
-    l_is_legend_italic?: true
-    l_is_legend_bold?: true
-    l_legend_color?: true
+    isAxis?: true
+    axis_txt_size?: true
+    is_axis_txt_italic?: true
+    is_axis_txt_bold?: true
+    axis_txt_color?: true
+    axisX?: true
+    axisY?: true
+    isLegend?: true
+    legend_size?: true
+    is_legend_italic?: true
+    is_legend_bold?: true
+    legend_color?: true
     l_thickness?: true
     l_is_line_smoth?: true
     projectId?: true
@@ -12215,31 +12181,19 @@ export namespace Prisma {
     b_border_radius?: true
     b_border_bld?: true
     b_border_color?: true
-    b_isLegend?: true
-    b_legend_size?: true
-    b_is_legend_italic?: true
-    b_is_legend_bold?: true
-    b_legend_color?: true
-    b_isAxis?: true
-    b_axis_txt_size?: true
-    b_is_axis_txt_italic?: true
-    b_is_axis_txt_bold?: true
-    b_axis_txt_color?: true
-    b_axisX?: true
-    b_axisY?: true
     l_show_pointer_mark?: true
-    l_isAxis?: true
-    l_axis_txt_size?: true
-    l_is_axis_txt_italic?: true
-    l_is_axis_txt_bold?: true
-    l_axis_txt_color?: true
-    l_axisX?: true
-    l_axisY?: true
-    l_isLegend?: true
-    l_legend_size?: true
-    l_is_legend_italic?: true
-    l_is_legend_bold?: true
-    l_legend_color?: true
+    isAxis?: true
+    axis_txt_size?: true
+    is_axis_txt_italic?: true
+    is_axis_txt_bold?: true
+    axis_txt_color?: true
+    axisX?: true
+    axisY?: true
+    isLegend?: true
+    legend_size?: true
+    is_legend_italic?: true
+    is_legend_bold?: true
+    legend_color?: true
     l_thickness?: true
     l_is_line_smoth?: true
     projectId?: true
@@ -12251,31 +12205,19 @@ export namespace Prisma {
     b_border_radius?: true
     b_border_bld?: true
     b_border_color?: true
-    b_isLegend?: true
-    b_legend_size?: true
-    b_is_legend_italic?: true
-    b_is_legend_bold?: true
-    b_legend_color?: true
-    b_isAxis?: true
-    b_axis_txt_size?: true
-    b_is_axis_txt_italic?: true
-    b_is_axis_txt_bold?: true
-    b_axis_txt_color?: true
-    b_axisX?: true
-    b_axisY?: true
     l_show_pointer_mark?: true
-    l_isAxis?: true
-    l_axis_txt_size?: true
-    l_is_axis_txt_italic?: true
-    l_is_axis_txt_bold?: true
-    l_axis_txt_color?: true
-    l_axisX?: true
-    l_axisY?: true
-    l_isLegend?: true
-    l_legend_size?: true
-    l_is_legend_italic?: true
-    l_is_legend_bold?: true
-    l_legend_color?: true
+    isAxis?: true
+    axis_txt_size?: true
+    is_axis_txt_italic?: true
+    is_axis_txt_bold?: true
+    axis_txt_color?: true
+    axisX?: true
+    axisY?: true
+    isLegend?: true
+    legend_size?: true
+    is_legend_italic?: true
+    is_legend_bold?: true
+    legend_color?: true
     l_thickness?: true
     l_is_line_smoth?: true
     projectId?: true
@@ -12374,31 +12316,19 @@ export namespace Prisma {
     b_border_radius: number
     b_border_bld: number
     b_border_color: string
-    b_isLegend: boolean
-    b_legend_size: number
-    b_is_legend_italic: boolean
-    b_is_legend_bold: boolean
-    b_legend_color: string
-    b_isAxis: boolean
-    b_axis_txt_size: number
-    b_is_axis_txt_italic: boolean
-    b_is_axis_txt_bold: boolean
-    b_axis_txt_color: string
-    b_axisX: string
-    b_axisY: string
     l_show_pointer_mark: boolean
-    l_isAxis: boolean
-    l_axis_txt_size: number
-    l_is_axis_txt_italic: boolean
-    l_is_axis_txt_bold: boolean
-    l_axis_txt_color: string
-    l_axisX: string
-    l_axisY: string
-    l_isLegend: boolean
-    l_legend_size: number
-    l_is_legend_italic: boolean
-    l_is_legend_bold: boolean
-    l_legend_color: string
+    isAxis: boolean
+    axis_txt_size: number
+    is_axis_txt_italic: boolean
+    is_axis_txt_bold: boolean
+    axis_txt_color: string
+    axisX: string
+    axisY: string
+    isLegend: boolean
+    legend_size: number
+    is_legend_italic: boolean
+    is_legend_bold: boolean
+    legend_color: string
     l_thickness: number
     l_is_line_smoth: boolean
     projectId: number
@@ -12429,31 +12359,19 @@ export namespace Prisma {
     b_border_radius?: boolean
     b_border_bld?: boolean
     b_border_color?: boolean
-    b_isLegend?: boolean
-    b_legend_size?: boolean
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: boolean
-    b_isAxis?: boolean
-    b_axis_txt_size?: boolean
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: boolean
-    b_axisX?: boolean
-    b_axisY?: boolean
     l_show_pointer_mark?: boolean
-    l_isAxis?: boolean
-    l_axis_txt_size?: boolean
-    l_is_axis_txt_italic?: boolean
-    l_is_axis_txt_bold?: boolean
-    l_axis_txt_color?: boolean
-    l_axisX?: boolean
-    l_axisY?: boolean
-    l_isLegend?: boolean
-    l_legend_size?: boolean
-    l_is_legend_italic?: boolean
-    l_is_legend_bold?: boolean
-    l_legend_color?: boolean
+    isAxis?: boolean
+    axis_txt_size?: boolean
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: boolean
+    axisX?: boolean
+    axisY?: boolean
+    isLegend?: boolean
+    legend_size?: boolean
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: boolean
     l_thickness?: boolean
     l_is_line_smoth?: boolean
     projectId?: boolean
@@ -12467,31 +12385,19 @@ export namespace Prisma {
     b_border_radius?: boolean
     b_border_bld?: boolean
     b_border_color?: boolean
-    b_isLegend?: boolean
-    b_legend_size?: boolean
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: boolean
-    b_isAxis?: boolean
-    b_axis_txt_size?: boolean
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: boolean
-    b_axisX?: boolean
-    b_axisY?: boolean
     l_show_pointer_mark?: boolean
-    l_isAxis?: boolean
-    l_axis_txt_size?: boolean
-    l_is_axis_txt_italic?: boolean
-    l_is_axis_txt_bold?: boolean
-    l_axis_txt_color?: boolean
-    l_axisX?: boolean
-    l_axisY?: boolean
-    l_isLegend?: boolean
-    l_legend_size?: boolean
-    l_is_legend_italic?: boolean
-    l_is_legend_bold?: boolean
-    l_legend_color?: boolean
+    isAxis?: boolean
+    axis_txt_size?: boolean
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: boolean
+    axisX?: boolean
+    axisY?: boolean
+    isLegend?: boolean
+    legend_size?: boolean
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: boolean
     l_thickness?: boolean
     l_is_line_smoth?: boolean
     projectId?: boolean
@@ -12512,31 +12418,19 @@ export namespace Prisma {
       b_border_radius: number
       b_border_bld: number
       b_border_color: string
-      b_isLegend: boolean
-      b_legend_size: number
-      b_is_legend_italic: boolean
-      b_is_legend_bold: boolean
-      b_legend_color: string
-      b_isAxis: boolean
-      b_axis_txt_size: number
-      b_is_axis_txt_italic: boolean
-      b_is_axis_txt_bold: boolean
-      b_axis_txt_color: string
-      b_axisX: string
-      b_axisY: string
       l_show_pointer_mark: boolean
-      l_isAxis: boolean
-      l_axis_txt_size: number
-      l_is_axis_txt_italic: boolean
-      l_is_axis_txt_bold: boolean
-      l_axis_txt_color: string
-      l_axisX: string
-      l_axisY: string
-      l_isLegend: boolean
-      l_legend_size: number
-      l_is_legend_italic: boolean
-      l_is_legend_bold: boolean
-      l_legend_color: string
+      isAxis: boolean
+      axis_txt_size: number
+      is_axis_txt_italic: boolean
+      is_axis_txt_bold: boolean
+      axis_txt_color: string
+      axisX: string
+      axisY: string
+      isLegend: boolean
+      legend_size: number
+      is_legend_italic: boolean
+      is_legend_bold: boolean
+      legend_color: string
       l_thickness: number
       l_is_line_smoth: boolean
       projectId: number
@@ -12915,31 +12809,19 @@ export namespace Prisma {
     readonly b_border_radius: FieldRef<"Column_Line", 'Int'>
     readonly b_border_bld: FieldRef<"Column_Line", 'Int'>
     readonly b_border_color: FieldRef<"Column_Line", 'String'>
-    readonly b_isLegend: FieldRef<"Column_Line", 'Boolean'>
-    readonly b_legend_size: FieldRef<"Column_Line", 'Int'>
-    readonly b_is_legend_italic: FieldRef<"Column_Line", 'Boolean'>
-    readonly b_is_legend_bold: FieldRef<"Column_Line", 'Boolean'>
-    readonly b_legend_color: FieldRef<"Column_Line", 'String'>
-    readonly b_isAxis: FieldRef<"Column_Line", 'Boolean'>
-    readonly b_axis_txt_size: FieldRef<"Column_Line", 'Int'>
-    readonly b_is_axis_txt_italic: FieldRef<"Column_Line", 'Boolean'>
-    readonly b_is_axis_txt_bold: FieldRef<"Column_Line", 'Boolean'>
-    readonly b_axis_txt_color: FieldRef<"Column_Line", 'String'>
-    readonly b_axisX: FieldRef<"Column_Line", 'String'>
-    readonly b_axisY: FieldRef<"Column_Line", 'String'>
     readonly l_show_pointer_mark: FieldRef<"Column_Line", 'Boolean'>
-    readonly l_isAxis: FieldRef<"Column_Line", 'Boolean'>
-    readonly l_axis_txt_size: FieldRef<"Column_Line", 'Int'>
-    readonly l_is_axis_txt_italic: FieldRef<"Column_Line", 'Boolean'>
-    readonly l_is_axis_txt_bold: FieldRef<"Column_Line", 'Boolean'>
-    readonly l_axis_txt_color: FieldRef<"Column_Line", 'String'>
-    readonly l_axisX: FieldRef<"Column_Line", 'String'>
-    readonly l_axisY: FieldRef<"Column_Line", 'String'>
-    readonly l_isLegend: FieldRef<"Column_Line", 'Boolean'>
-    readonly l_legend_size: FieldRef<"Column_Line", 'Int'>
-    readonly l_is_legend_italic: FieldRef<"Column_Line", 'Boolean'>
-    readonly l_is_legend_bold: FieldRef<"Column_Line", 'Boolean'>
-    readonly l_legend_color: FieldRef<"Column_Line", 'String'>
+    readonly isAxis: FieldRef<"Column_Line", 'Boolean'>
+    readonly axis_txt_size: FieldRef<"Column_Line", 'Int'>
+    readonly is_axis_txt_italic: FieldRef<"Column_Line", 'Boolean'>
+    readonly is_axis_txt_bold: FieldRef<"Column_Line", 'Boolean'>
+    readonly axis_txt_color: FieldRef<"Column_Line", 'String'>
+    readonly axisX: FieldRef<"Column_Line", 'String'>
+    readonly axisY: FieldRef<"Column_Line", 'String'>
+    readonly isLegend: FieldRef<"Column_Line", 'Boolean'>
+    readonly legend_size: FieldRef<"Column_Line", 'Int'>
+    readonly is_legend_italic: FieldRef<"Column_Line", 'Boolean'>
+    readonly is_legend_bold: FieldRef<"Column_Line", 'Boolean'>
+    readonly legend_color: FieldRef<"Column_Line", 'String'>
     readonly l_thickness: FieldRef<"Column_Line", 'Int'>
     readonly l_is_line_smoth: FieldRef<"Column_Line", 'Boolean'>
     readonly projectId: FieldRef<"Column_Line", 'Int'>
@@ -13273,10 +13155,8 @@ export namespace Prisma {
     b_bar_spacing: number | null
     b_border_radius: number | null
     b_border_bld: number | null
-    b_legend_size: number | null
-    b_axis_txt_size: number | null
-    a_axis_txt_size: number | null
-    a_legend_size: number | null
+    axis_txt_size: number | null
+    legend_size: number | null
     a_thickness: number | null
     projectId: number | null
   }
@@ -13286,10 +13166,8 @@ export namespace Prisma {
     b_bar_spacing: number | null
     b_border_radius: number | null
     b_border_bld: number | null
-    b_legend_size: number | null
-    b_axis_txt_size: number | null
-    a_axis_txt_size: number | null
-    a_legend_size: number | null
+    axis_txt_size: number | null
+    legend_size: number | null
     a_thickness: number | null
     projectId: number | null
   }
@@ -13300,31 +13178,19 @@ export namespace Prisma {
     b_border_radius: number | null
     b_border_bld: number | null
     b_border_color: string | null
-    b_isLegend: boolean | null
-    b_legend_size: number | null
-    b_is_legend_italic: boolean | null
-    b_is_legend_bold: boolean | null
-    b_legend_color: string | null
-    b_isAxis: boolean | null
-    b_axis_txt_size: number | null
-    b_is_axis_txt_italic: boolean | null
-    b_is_axis_txt_bold: boolean | null
-    b_axis_txt_color: string | null
-    b_axisX: string | null
-    b_axisY: string | null
     a_show_pointer_mark: boolean | null
-    a_isAxis: boolean | null
-    a_axis_txt_size: number | null
-    a_is_axis_txt_italic: boolean | null
-    a_is_axis_txt_bold: boolean | null
-    a_axis_txt_color: string | null
-    a_axisX: string | null
-    a_axisY: string | null
-    a_isLegend: boolean | null
-    a_legend_size: number | null
-    a_is_legend_italic: boolean | null
-    a_is_legend_bold: boolean | null
-    a_legend_color: string | null
+    isAxis: boolean | null
+    axis_txt_size: number | null
+    is_axis_txt_italic: boolean | null
+    is_axis_txt_bold: boolean | null
+    axis_txt_color: string | null
+    axisX: string | null
+    axisY: string | null
+    isLegend: boolean | null
+    legend_size: number | null
+    is_legend_italic: boolean | null
+    is_legend_bold: boolean | null
+    legend_color: string | null
     a_thickness: number | null
     a_is_line_smoth: boolean | null
     projectId: number | null
@@ -13336,31 +13202,19 @@ export namespace Prisma {
     b_border_radius: number | null
     b_border_bld: number | null
     b_border_color: string | null
-    b_isLegend: boolean | null
-    b_legend_size: number | null
-    b_is_legend_italic: boolean | null
-    b_is_legend_bold: boolean | null
-    b_legend_color: string | null
-    b_isAxis: boolean | null
-    b_axis_txt_size: number | null
-    b_is_axis_txt_italic: boolean | null
-    b_is_axis_txt_bold: boolean | null
-    b_axis_txt_color: string | null
-    b_axisX: string | null
-    b_axisY: string | null
     a_show_pointer_mark: boolean | null
-    a_isAxis: boolean | null
-    a_axis_txt_size: number | null
-    a_is_axis_txt_italic: boolean | null
-    a_is_axis_txt_bold: boolean | null
-    a_axis_txt_color: string | null
-    a_axisX: string | null
-    a_axisY: string | null
-    a_isLegend: boolean | null
-    a_legend_size: number | null
-    a_is_legend_italic: boolean | null
-    a_is_legend_bold: boolean | null
-    a_legend_color: string | null
+    isAxis: boolean | null
+    axis_txt_size: number | null
+    is_axis_txt_italic: boolean | null
+    is_axis_txt_bold: boolean | null
+    axis_txt_color: string | null
+    axisX: string | null
+    axisY: string | null
+    isLegend: boolean | null
+    legend_size: number | null
+    is_legend_italic: boolean | null
+    is_legend_bold: boolean | null
+    legend_color: string | null
     a_thickness: number | null
     a_is_line_smoth: boolean | null
     projectId: number | null
@@ -13372,31 +13226,19 @@ export namespace Prisma {
     b_border_radius: number
     b_border_bld: number
     b_border_color: number
-    b_isLegend: number
-    b_legend_size: number
-    b_is_legend_italic: number
-    b_is_legend_bold: number
-    b_legend_color: number
-    b_isAxis: number
-    b_axis_txt_size: number
-    b_is_axis_txt_italic: number
-    b_is_axis_txt_bold: number
-    b_axis_txt_color: number
-    b_axisX: number
-    b_axisY: number
     a_show_pointer_mark: number
-    a_isAxis: number
-    a_axis_txt_size: number
-    a_is_axis_txt_italic: number
-    a_is_axis_txt_bold: number
-    a_axis_txt_color: number
-    a_axisX: number
-    a_axisY: number
-    a_isLegend: number
-    a_legend_size: number
-    a_is_legend_italic: number
-    a_is_legend_bold: number
-    a_legend_color: number
+    isAxis: number
+    axis_txt_size: number
+    is_axis_txt_italic: number
+    is_axis_txt_bold: number
+    axis_txt_color: number
+    axisX: number
+    axisY: number
+    isLegend: number
+    legend_size: number
+    is_legend_italic: number
+    is_legend_bold: number
+    legend_color: number
     a_thickness: number
     a_is_line_smoth: number
     projectId: number
@@ -13409,10 +13251,8 @@ export namespace Prisma {
     b_bar_spacing?: true
     b_border_radius?: true
     b_border_bld?: true
-    b_legend_size?: true
-    b_axis_txt_size?: true
-    a_axis_txt_size?: true
-    a_legend_size?: true
+    axis_txt_size?: true
+    legend_size?: true
     a_thickness?: true
     projectId?: true
   }
@@ -13422,10 +13262,8 @@ export namespace Prisma {
     b_bar_spacing?: true
     b_border_radius?: true
     b_border_bld?: true
-    b_legend_size?: true
-    b_axis_txt_size?: true
-    a_axis_txt_size?: true
-    a_legend_size?: true
+    axis_txt_size?: true
+    legend_size?: true
     a_thickness?: true
     projectId?: true
   }
@@ -13436,31 +13274,19 @@ export namespace Prisma {
     b_border_radius?: true
     b_border_bld?: true
     b_border_color?: true
-    b_isLegend?: true
-    b_legend_size?: true
-    b_is_legend_italic?: true
-    b_is_legend_bold?: true
-    b_legend_color?: true
-    b_isAxis?: true
-    b_axis_txt_size?: true
-    b_is_axis_txt_italic?: true
-    b_is_axis_txt_bold?: true
-    b_axis_txt_color?: true
-    b_axisX?: true
-    b_axisY?: true
     a_show_pointer_mark?: true
-    a_isAxis?: true
-    a_axis_txt_size?: true
-    a_is_axis_txt_italic?: true
-    a_is_axis_txt_bold?: true
-    a_axis_txt_color?: true
-    a_axisX?: true
-    a_axisY?: true
-    a_isLegend?: true
-    a_legend_size?: true
-    a_is_legend_italic?: true
-    a_is_legend_bold?: true
-    a_legend_color?: true
+    isAxis?: true
+    axis_txt_size?: true
+    is_axis_txt_italic?: true
+    is_axis_txt_bold?: true
+    axis_txt_color?: true
+    axisX?: true
+    axisY?: true
+    isLegend?: true
+    legend_size?: true
+    is_legend_italic?: true
+    is_legend_bold?: true
+    legend_color?: true
     a_thickness?: true
     a_is_line_smoth?: true
     projectId?: true
@@ -13472,31 +13298,19 @@ export namespace Prisma {
     b_border_radius?: true
     b_border_bld?: true
     b_border_color?: true
-    b_isLegend?: true
-    b_legend_size?: true
-    b_is_legend_italic?: true
-    b_is_legend_bold?: true
-    b_legend_color?: true
-    b_isAxis?: true
-    b_axis_txt_size?: true
-    b_is_axis_txt_italic?: true
-    b_is_axis_txt_bold?: true
-    b_axis_txt_color?: true
-    b_axisX?: true
-    b_axisY?: true
     a_show_pointer_mark?: true
-    a_isAxis?: true
-    a_axis_txt_size?: true
-    a_is_axis_txt_italic?: true
-    a_is_axis_txt_bold?: true
-    a_axis_txt_color?: true
-    a_axisX?: true
-    a_axisY?: true
-    a_isLegend?: true
-    a_legend_size?: true
-    a_is_legend_italic?: true
-    a_is_legend_bold?: true
-    a_legend_color?: true
+    isAxis?: true
+    axis_txt_size?: true
+    is_axis_txt_italic?: true
+    is_axis_txt_bold?: true
+    axis_txt_color?: true
+    axisX?: true
+    axisY?: true
+    isLegend?: true
+    legend_size?: true
+    is_legend_italic?: true
+    is_legend_bold?: true
+    legend_color?: true
     a_thickness?: true
     a_is_line_smoth?: true
     projectId?: true
@@ -13508,31 +13322,19 @@ export namespace Prisma {
     b_border_radius?: true
     b_border_bld?: true
     b_border_color?: true
-    b_isLegend?: true
-    b_legend_size?: true
-    b_is_legend_italic?: true
-    b_is_legend_bold?: true
-    b_legend_color?: true
-    b_isAxis?: true
-    b_axis_txt_size?: true
-    b_is_axis_txt_italic?: true
-    b_is_axis_txt_bold?: true
-    b_axis_txt_color?: true
-    b_axisX?: true
-    b_axisY?: true
     a_show_pointer_mark?: true
-    a_isAxis?: true
-    a_axis_txt_size?: true
-    a_is_axis_txt_italic?: true
-    a_is_axis_txt_bold?: true
-    a_axis_txt_color?: true
-    a_axisX?: true
-    a_axisY?: true
-    a_isLegend?: true
-    a_legend_size?: true
-    a_is_legend_italic?: true
-    a_is_legend_bold?: true
-    a_legend_color?: true
+    isAxis?: true
+    axis_txt_size?: true
+    is_axis_txt_italic?: true
+    is_axis_txt_bold?: true
+    axis_txt_color?: true
+    axisX?: true
+    axisY?: true
+    isLegend?: true
+    legend_size?: true
+    is_legend_italic?: true
+    is_legend_bold?: true
+    legend_color?: true
     a_thickness?: true
     a_is_line_smoth?: true
     projectId?: true
@@ -13631,31 +13433,19 @@ export namespace Prisma {
     b_border_radius: number
     b_border_bld: number
     b_border_color: string
-    b_isLegend: boolean
-    b_legend_size: number
-    b_is_legend_italic: boolean
-    b_is_legend_bold: boolean
-    b_legend_color: string
-    b_isAxis: boolean
-    b_axis_txt_size: number
-    b_is_axis_txt_italic: boolean
-    b_is_axis_txt_bold: boolean
-    b_axis_txt_color: string
-    b_axisX: string
-    b_axisY: string
     a_show_pointer_mark: boolean
-    a_isAxis: boolean
-    a_axis_txt_size: number
-    a_is_axis_txt_italic: boolean
-    a_is_axis_txt_bold: boolean
-    a_axis_txt_color: string
-    a_axisX: string
-    a_axisY: string
-    a_isLegend: boolean
-    a_legend_size: number
-    a_is_legend_italic: boolean
-    a_is_legend_bold: boolean
-    a_legend_color: string
+    isAxis: boolean
+    axis_txt_size: number
+    is_axis_txt_italic: boolean
+    is_axis_txt_bold: boolean
+    axis_txt_color: string
+    axisX: string
+    axisY: string
+    isLegend: boolean
+    legend_size: number
+    is_legend_italic: boolean
+    is_legend_bold: boolean
+    legend_color: string
     a_thickness: number
     a_is_line_smoth: boolean
     projectId: number
@@ -13686,31 +13476,19 @@ export namespace Prisma {
     b_border_radius?: boolean
     b_border_bld?: boolean
     b_border_color?: boolean
-    b_isLegend?: boolean
-    b_legend_size?: boolean
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: boolean
-    b_isAxis?: boolean
-    b_axis_txt_size?: boolean
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: boolean
-    b_axisX?: boolean
-    b_axisY?: boolean
     a_show_pointer_mark?: boolean
-    a_isAxis?: boolean
-    a_axis_txt_size?: boolean
-    a_is_axis_txt_italic?: boolean
-    a_is_axis_txt_bold?: boolean
-    a_axis_txt_color?: boolean
-    a_axisX?: boolean
-    a_axisY?: boolean
-    a_isLegend?: boolean
-    a_legend_size?: boolean
-    a_is_legend_italic?: boolean
-    a_is_legend_bold?: boolean
-    a_legend_color?: boolean
+    isAxis?: boolean
+    axis_txt_size?: boolean
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: boolean
+    axisX?: boolean
+    axisY?: boolean
+    isLegend?: boolean
+    legend_size?: boolean
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: boolean
     a_thickness?: boolean
     a_is_line_smoth?: boolean
     projectId?: boolean
@@ -13724,31 +13502,19 @@ export namespace Prisma {
     b_border_radius?: boolean
     b_border_bld?: boolean
     b_border_color?: boolean
-    b_isLegend?: boolean
-    b_legend_size?: boolean
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: boolean
-    b_isAxis?: boolean
-    b_axis_txt_size?: boolean
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: boolean
-    b_axisX?: boolean
-    b_axisY?: boolean
     a_show_pointer_mark?: boolean
-    a_isAxis?: boolean
-    a_axis_txt_size?: boolean
-    a_is_axis_txt_italic?: boolean
-    a_is_axis_txt_bold?: boolean
-    a_axis_txt_color?: boolean
-    a_axisX?: boolean
-    a_axisY?: boolean
-    a_isLegend?: boolean
-    a_legend_size?: boolean
-    a_is_legend_italic?: boolean
-    a_is_legend_bold?: boolean
-    a_legend_color?: boolean
+    isAxis?: boolean
+    axis_txt_size?: boolean
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: boolean
+    axisX?: boolean
+    axisY?: boolean
+    isLegend?: boolean
+    legend_size?: boolean
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: boolean
     a_thickness?: boolean
     a_is_line_smoth?: boolean
     projectId?: boolean
@@ -13769,31 +13535,19 @@ export namespace Prisma {
       b_border_radius: number
       b_border_bld: number
       b_border_color: string
-      b_isLegend: boolean
-      b_legend_size: number
-      b_is_legend_italic: boolean
-      b_is_legend_bold: boolean
-      b_legend_color: string
-      b_isAxis: boolean
-      b_axis_txt_size: number
-      b_is_axis_txt_italic: boolean
-      b_is_axis_txt_bold: boolean
-      b_axis_txt_color: string
-      b_axisX: string
-      b_axisY: string
       a_show_pointer_mark: boolean
-      a_isAxis: boolean
-      a_axis_txt_size: number
-      a_is_axis_txt_italic: boolean
-      a_is_axis_txt_bold: boolean
-      a_axis_txt_color: string
-      a_axisX: string
-      a_axisY: string
-      a_isLegend: boolean
-      a_legend_size: number
-      a_is_legend_italic: boolean
-      a_is_legend_bold: boolean
-      a_legend_color: string
+      isAxis: boolean
+      axis_txt_size: number
+      is_axis_txt_italic: boolean
+      is_axis_txt_bold: boolean
+      axis_txt_color: string
+      axisX: string
+      axisY: string
+      isLegend: boolean
+      legend_size: number
+      is_legend_italic: boolean
+      is_legend_bold: boolean
+      legend_color: string
       a_thickness: number
       a_is_line_smoth: boolean
       projectId: number
@@ -14172,31 +13926,19 @@ export namespace Prisma {
     readonly b_border_radius: FieldRef<"Column_Area", 'Int'>
     readonly b_border_bld: FieldRef<"Column_Area", 'Int'>
     readonly b_border_color: FieldRef<"Column_Area", 'String'>
-    readonly b_isLegend: FieldRef<"Column_Area", 'Boolean'>
-    readonly b_legend_size: FieldRef<"Column_Area", 'Int'>
-    readonly b_is_legend_italic: FieldRef<"Column_Area", 'Boolean'>
-    readonly b_is_legend_bold: FieldRef<"Column_Area", 'Boolean'>
-    readonly b_legend_color: FieldRef<"Column_Area", 'String'>
-    readonly b_isAxis: FieldRef<"Column_Area", 'Boolean'>
-    readonly b_axis_txt_size: FieldRef<"Column_Area", 'Int'>
-    readonly b_is_axis_txt_italic: FieldRef<"Column_Area", 'Boolean'>
-    readonly b_is_axis_txt_bold: FieldRef<"Column_Area", 'Boolean'>
-    readonly b_axis_txt_color: FieldRef<"Column_Area", 'String'>
-    readonly b_axisX: FieldRef<"Column_Area", 'String'>
-    readonly b_axisY: FieldRef<"Column_Area", 'String'>
     readonly a_show_pointer_mark: FieldRef<"Column_Area", 'Boolean'>
-    readonly a_isAxis: FieldRef<"Column_Area", 'Boolean'>
-    readonly a_axis_txt_size: FieldRef<"Column_Area", 'Int'>
-    readonly a_is_axis_txt_italic: FieldRef<"Column_Area", 'Boolean'>
-    readonly a_is_axis_txt_bold: FieldRef<"Column_Area", 'Boolean'>
-    readonly a_axis_txt_color: FieldRef<"Column_Area", 'String'>
-    readonly a_axisX: FieldRef<"Column_Area", 'String'>
-    readonly a_axisY: FieldRef<"Column_Area", 'String'>
-    readonly a_isLegend: FieldRef<"Column_Area", 'Boolean'>
-    readonly a_legend_size: FieldRef<"Column_Area", 'Int'>
-    readonly a_is_legend_italic: FieldRef<"Column_Area", 'Boolean'>
-    readonly a_is_legend_bold: FieldRef<"Column_Area", 'Boolean'>
-    readonly a_legend_color: FieldRef<"Column_Area", 'String'>
+    readonly isAxis: FieldRef<"Column_Area", 'Boolean'>
+    readonly axis_txt_size: FieldRef<"Column_Area", 'Int'>
+    readonly is_axis_txt_italic: FieldRef<"Column_Area", 'Boolean'>
+    readonly is_axis_txt_bold: FieldRef<"Column_Area", 'Boolean'>
+    readonly axis_txt_color: FieldRef<"Column_Area", 'String'>
+    readonly axisX: FieldRef<"Column_Area", 'String'>
+    readonly axisY: FieldRef<"Column_Area", 'String'>
+    readonly isLegend: FieldRef<"Column_Area", 'Boolean'>
+    readonly legend_size: FieldRef<"Column_Area", 'Int'>
+    readonly is_legend_italic: FieldRef<"Column_Area", 'Boolean'>
+    readonly is_legend_bold: FieldRef<"Column_Area", 'Boolean'>
+    readonly legend_color: FieldRef<"Column_Area", 'String'>
     readonly a_thickness: FieldRef<"Column_Area", 'Int'>
     readonly a_is_line_smoth: FieldRef<"Column_Area", 'Boolean'>
     readonly projectId: FieldRef<"Column_Area", 'Int'>
@@ -14626,6 +14368,7 @@ export namespace Prisma {
   export const PieScalarFieldEnum: {
     id: 'id',
     start_angle: 'start_angle',
+    show_percentage: 'show_percentage',
     isLegend: 'isLegend',
     legend_size: 'legend_size',
     is_legend_italic: 'is_legend_italic',
@@ -14640,6 +14383,7 @@ export namespace Prisma {
   export const DonutScalarFieldEnum: {
     id: 'id',
     start_angle: 'start_angle',
+    show_percentage: 'show_percentage',
     inner_radius: 'inner_radius',
     isLegend: 'isLegend',
     legend_size: 'legend_size',
@@ -14704,31 +14448,19 @@ export namespace Prisma {
     b_border_radius: 'b_border_radius',
     b_border_bld: 'b_border_bld',
     b_border_color: 'b_border_color',
-    b_isLegend: 'b_isLegend',
-    b_legend_size: 'b_legend_size',
-    b_is_legend_italic: 'b_is_legend_italic',
-    b_is_legend_bold: 'b_is_legend_bold',
-    b_legend_color: 'b_legend_color',
-    b_isAxis: 'b_isAxis',
-    b_axis_txt_size: 'b_axis_txt_size',
-    b_is_axis_txt_italic: 'b_is_axis_txt_italic',
-    b_is_axis_txt_bold: 'b_is_axis_txt_bold',
-    b_axis_txt_color: 'b_axis_txt_color',
-    b_axisX: 'b_axisX',
-    b_axisY: 'b_axisY',
     l_show_pointer_mark: 'l_show_pointer_mark',
-    l_isAxis: 'l_isAxis',
-    l_axis_txt_size: 'l_axis_txt_size',
-    l_is_axis_txt_italic: 'l_is_axis_txt_italic',
-    l_is_axis_txt_bold: 'l_is_axis_txt_bold',
-    l_axis_txt_color: 'l_axis_txt_color',
-    l_axisX: 'l_axisX',
-    l_axisY: 'l_axisY',
-    l_isLegend: 'l_isLegend',
-    l_legend_size: 'l_legend_size',
-    l_is_legend_italic: 'l_is_legend_italic',
-    l_is_legend_bold: 'l_is_legend_bold',
-    l_legend_color: 'l_legend_color',
+    isAxis: 'isAxis',
+    axis_txt_size: 'axis_txt_size',
+    is_axis_txt_italic: 'is_axis_txt_italic',
+    is_axis_txt_bold: 'is_axis_txt_bold',
+    axis_txt_color: 'axis_txt_color',
+    axisX: 'axisX',
+    axisY: 'axisY',
+    isLegend: 'isLegend',
+    legend_size: 'legend_size',
+    is_legend_italic: 'is_legend_italic',
+    is_legend_bold: 'is_legend_bold',
+    legend_color: 'legend_color',
     l_thickness: 'l_thickness',
     l_is_line_smoth: 'l_is_line_smoth',
     projectId: 'projectId'
@@ -14743,31 +14475,19 @@ export namespace Prisma {
     b_border_radius: 'b_border_radius',
     b_border_bld: 'b_border_bld',
     b_border_color: 'b_border_color',
-    b_isLegend: 'b_isLegend',
-    b_legend_size: 'b_legend_size',
-    b_is_legend_italic: 'b_is_legend_italic',
-    b_is_legend_bold: 'b_is_legend_bold',
-    b_legend_color: 'b_legend_color',
-    b_isAxis: 'b_isAxis',
-    b_axis_txt_size: 'b_axis_txt_size',
-    b_is_axis_txt_italic: 'b_is_axis_txt_italic',
-    b_is_axis_txt_bold: 'b_is_axis_txt_bold',
-    b_axis_txt_color: 'b_axis_txt_color',
-    b_axisX: 'b_axisX',
-    b_axisY: 'b_axisY',
     a_show_pointer_mark: 'a_show_pointer_mark',
-    a_isAxis: 'a_isAxis',
-    a_axis_txt_size: 'a_axis_txt_size',
-    a_is_axis_txt_italic: 'a_is_axis_txt_italic',
-    a_is_axis_txt_bold: 'a_is_axis_txt_bold',
-    a_axis_txt_color: 'a_axis_txt_color',
-    a_axisX: 'a_axisX',
-    a_axisY: 'a_axisY',
-    a_isLegend: 'a_isLegend',
-    a_legend_size: 'a_legend_size',
-    a_is_legend_italic: 'a_is_legend_italic',
-    a_is_legend_bold: 'a_is_legend_bold',
-    a_legend_color: 'a_legend_color',
+    isAxis: 'isAxis',
+    axis_txt_size: 'axis_txt_size',
+    is_axis_txt_italic: 'is_axis_txt_italic',
+    is_axis_txt_bold: 'is_axis_txt_bold',
+    axis_txt_color: 'axis_txt_color',
+    axisX: 'axisX',
+    axisY: 'axisY',
+    isLegend: 'isLegend',
+    legend_size: 'legend_size',
+    is_legend_italic: 'is_legend_italic',
+    is_legend_bold: 'is_legend_bold',
+    legend_color: 'legend_color',
     a_thickness: 'a_thickness',
     a_is_line_smoth: 'a_is_line_smoth',
     projectId: 'projectId'
@@ -15363,6 +15083,7 @@ export namespace Prisma {
     NOT?: PieWhereInput | PieWhereInput[]
     id?: IntFilter<"Pie"> | number
     start_angle?: IntFilter<"Pie"> | number
+    show_percentage?: BoolFilter<"Pie"> | boolean
     isLegend?: BoolFilter<"Pie"> | boolean
     legend_size?: IntFilter<"Pie"> | number
     is_legend_italic?: BoolFilter<"Pie"> | boolean
@@ -15375,6 +15096,7 @@ export namespace Prisma {
   export type PieOrderByWithRelationInput = {
     id?: SortOrder
     start_angle?: SortOrder
+    show_percentage?: SortOrder
     isLegend?: SortOrder
     legend_size?: SortOrder
     is_legend_italic?: SortOrder
@@ -15391,6 +15113,7 @@ export namespace Prisma {
     OR?: PieWhereInput[]
     NOT?: PieWhereInput | PieWhereInput[]
     start_angle?: IntFilter<"Pie"> | number
+    show_percentage?: BoolFilter<"Pie"> | boolean
     isLegend?: BoolFilter<"Pie"> | boolean
     legend_size?: IntFilter<"Pie"> | number
     is_legend_italic?: BoolFilter<"Pie"> | boolean
@@ -15402,6 +15125,7 @@ export namespace Prisma {
   export type PieOrderByWithAggregationInput = {
     id?: SortOrder
     start_angle?: SortOrder
+    show_percentage?: SortOrder
     isLegend?: SortOrder
     legend_size?: SortOrder
     is_legend_italic?: SortOrder
@@ -15421,6 +15145,7 @@ export namespace Prisma {
     NOT?: PieScalarWhereWithAggregatesInput | PieScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Pie"> | number
     start_angle?: IntWithAggregatesFilter<"Pie"> | number
+    show_percentage?: BoolWithAggregatesFilter<"Pie"> | boolean
     isLegend?: BoolWithAggregatesFilter<"Pie"> | boolean
     legend_size?: IntWithAggregatesFilter<"Pie"> | number
     is_legend_italic?: BoolWithAggregatesFilter<"Pie"> | boolean
@@ -15435,6 +15160,7 @@ export namespace Prisma {
     NOT?: DonutWhereInput | DonutWhereInput[]
     id?: IntFilter<"Donut"> | number
     start_angle?: IntFilter<"Donut"> | number
+    show_percentage?: BoolFilter<"Donut"> | boolean
     inner_radius?: IntFilter<"Donut"> | number
     isLegend?: BoolFilter<"Donut"> | boolean
     legend_size?: IntFilter<"Donut"> | number
@@ -15448,6 +15174,7 @@ export namespace Prisma {
   export type DonutOrderByWithRelationInput = {
     id?: SortOrder
     start_angle?: SortOrder
+    show_percentage?: SortOrder
     inner_radius?: SortOrder
     isLegend?: SortOrder
     legend_size?: SortOrder
@@ -15465,6 +15192,7 @@ export namespace Prisma {
     OR?: DonutWhereInput[]
     NOT?: DonutWhereInput | DonutWhereInput[]
     start_angle?: IntFilter<"Donut"> | number
+    show_percentage?: BoolFilter<"Donut"> | boolean
     inner_radius?: IntFilter<"Donut"> | number
     isLegend?: BoolFilter<"Donut"> | boolean
     legend_size?: IntFilter<"Donut"> | number
@@ -15477,6 +15205,7 @@ export namespace Prisma {
   export type DonutOrderByWithAggregationInput = {
     id?: SortOrder
     start_angle?: SortOrder
+    show_percentage?: SortOrder
     inner_radius?: SortOrder
     isLegend?: SortOrder
     legend_size?: SortOrder
@@ -15497,6 +15226,7 @@ export namespace Prisma {
     NOT?: DonutScalarWhereWithAggregatesInput | DonutScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Donut"> | number
     start_angle?: IntWithAggregatesFilter<"Donut"> | number
+    show_percentage?: BoolWithAggregatesFilter<"Donut"> | boolean
     inner_radius?: IntWithAggregatesFilter<"Donut"> | number
     isLegend?: BoolWithAggregatesFilter<"Donut"> | boolean
     legend_size?: IntWithAggregatesFilter<"Donut"> | number
@@ -15749,31 +15479,19 @@ export namespace Prisma {
     b_border_radius?: IntFilter<"Column_Line"> | number
     b_border_bld?: IntFilter<"Column_Line"> | number
     b_border_color?: StringFilter<"Column_Line"> | string
-    b_isLegend?: BoolFilter<"Column_Line"> | boolean
-    b_legend_size?: IntFilter<"Column_Line"> | number
-    b_is_legend_italic?: BoolFilter<"Column_Line"> | boolean
-    b_is_legend_bold?: BoolFilter<"Column_Line"> | boolean
-    b_legend_color?: StringFilter<"Column_Line"> | string
-    b_isAxis?: BoolFilter<"Column_Line"> | boolean
-    b_axis_txt_size?: IntFilter<"Column_Line"> | number
-    b_is_axis_txt_italic?: BoolFilter<"Column_Line"> | boolean
-    b_is_axis_txt_bold?: BoolFilter<"Column_Line"> | boolean
-    b_axis_txt_color?: StringFilter<"Column_Line"> | string
-    b_axisX?: StringFilter<"Column_Line"> | string
-    b_axisY?: StringFilter<"Column_Line"> | string
     l_show_pointer_mark?: BoolFilter<"Column_Line"> | boolean
-    l_isAxis?: BoolFilter<"Column_Line"> | boolean
-    l_axis_txt_size?: IntFilter<"Column_Line"> | number
-    l_is_axis_txt_italic?: BoolFilter<"Column_Line"> | boolean
-    l_is_axis_txt_bold?: BoolFilter<"Column_Line"> | boolean
-    l_axis_txt_color?: StringFilter<"Column_Line"> | string
-    l_axisX?: StringFilter<"Column_Line"> | string
-    l_axisY?: StringFilter<"Column_Line"> | string
-    l_isLegend?: BoolFilter<"Column_Line"> | boolean
-    l_legend_size?: IntFilter<"Column_Line"> | number
-    l_is_legend_italic?: BoolFilter<"Column_Line"> | boolean
-    l_is_legend_bold?: BoolFilter<"Column_Line"> | boolean
-    l_legend_color?: StringFilter<"Column_Line"> | string
+    isAxis?: BoolFilter<"Column_Line"> | boolean
+    axis_txt_size?: IntFilter<"Column_Line"> | number
+    is_axis_txt_italic?: BoolFilter<"Column_Line"> | boolean
+    is_axis_txt_bold?: BoolFilter<"Column_Line"> | boolean
+    axis_txt_color?: StringFilter<"Column_Line"> | string
+    axisX?: StringFilter<"Column_Line"> | string
+    axisY?: StringFilter<"Column_Line"> | string
+    isLegend?: BoolFilter<"Column_Line"> | boolean
+    legend_size?: IntFilter<"Column_Line"> | number
+    is_legend_italic?: BoolFilter<"Column_Line"> | boolean
+    is_legend_bold?: BoolFilter<"Column_Line"> | boolean
+    legend_color?: StringFilter<"Column_Line"> | string
     l_thickness?: IntFilter<"Column_Line"> | number
     l_is_line_smoth?: BoolFilter<"Column_Line"> | boolean
     projectId?: IntFilter<"Column_Line"> | number
@@ -15786,31 +15504,19 @@ export namespace Prisma {
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
     b_border_color?: SortOrder
-    b_isLegend?: SortOrder
-    b_legend_size?: SortOrder
-    b_is_legend_italic?: SortOrder
-    b_is_legend_bold?: SortOrder
-    b_legend_color?: SortOrder
-    b_isAxis?: SortOrder
-    b_axis_txt_size?: SortOrder
-    b_is_axis_txt_italic?: SortOrder
-    b_is_axis_txt_bold?: SortOrder
-    b_axis_txt_color?: SortOrder
-    b_axisX?: SortOrder
-    b_axisY?: SortOrder
     l_show_pointer_mark?: SortOrder
-    l_isAxis?: SortOrder
-    l_axis_txt_size?: SortOrder
-    l_is_axis_txt_italic?: SortOrder
-    l_is_axis_txt_bold?: SortOrder
-    l_axis_txt_color?: SortOrder
-    l_axisX?: SortOrder
-    l_axisY?: SortOrder
-    l_isLegend?: SortOrder
-    l_legend_size?: SortOrder
-    l_is_legend_italic?: SortOrder
-    l_is_legend_bold?: SortOrder
-    l_legend_color?: SortOrder
+    isAxis?: SortOrder
+    axis_txt_size?: SortOrder
+    is_axis_txt_italic?: SortOrder
+    is_axis_txt_bold?: SortOrder
+    axis_txt_color?: SortOrder
+    axisX?: SortOrder
+    axisY?: SortOrder
+    isLegend?: SortOrder
+    legend_size?: SortOrder
+    is_legend_italic?: SortOrder
+    is_legend_bold?: SortOrder
+    legend_color?: SortOrder
     l_thickness?: SortOrder
     l_is_line_smoth?: SortOrder
     projectId?: SortOrder
@@ -15827,31 +15533,19 @@ export namespace Prisma {
     b_border_radius?: IntFilter<"Column_Line"> | number
     b_border_bld?: IntFilter<"Column_Line"> | number
     b_border_color?: StringFilter<"Column_Line"> | string
-    b_isLegend?: BoolFilter<"Column_Line"> | boolean
-    b_legend_size?: IntFilter<"Column_Line"> | number
-    b_is_legend_italic?: BoolFilter<"Column_Line"> | boolean
-    b_is_legend_bold?: BoolFilter<"Column_Line"> | boolean
-    b_legend_color?: StringFilter<"Column_Line"> | string
-    b_isAxis?: BoolFilter<"Column_Line"> | boolean
-    b_axis_txt_size?: IntFilter<"Column_Line"> | number
-    b_is_axis_txt_italic?: BoolFilter<"Column_Line"> | boolean
-    b_is_axis_txt_bold?: BoolFilter<"Column_Line"> | boolean
-    b_axis_txt_color?: StringFilter<"Column_Line"> | string
-    b_axisX?: StringFilter<"Column_Line"> | string
-    b_axisY?: StringFilter<"Column_Line"> | string
     l_show_pointer_mark?: BoolFilter<"Column_Line"> | boolean
-    l_isAxis?: BoolFilter<"Column_Line"> | boolean
-    l_axis_txt_size?: IntFilter<"Column_Line"> | number
-    l_is_axis_txt_italic?: BoolFilter<"Column_Line"> | boolean
-    l_is_axis_txt_bold?: BoolFilter<"Column_Line"> | boolean
-    l_axis_txt_color?: StringFilter<"Column_Line"> | string
-    l_axisX?: StringFilter<"Column_Line"> | string
-    l_axisY?: StringFilter<"Column_Line"> | string
-    l_isLegend?: BoolFilter<"Column_Line"> | boolean
-    l_legend_size?: IntFilter<"Column_Line"> | number
-    l_is_legend_italic?: BoolFilter<"Column_Line"> | boolean
-    l_is_legend_bold?: BoolFilter<"Column_Line"> | boolean
-    l_legend_color?: StringFilter<"Column_Line"> | string
+    isAxis?: BoolFilter<"Column_Line"> | boolean
+    axis_txt_size?: IntFilter<"Column_Line"> | number
+    is_axis_txt_italic?: BoolFilter<"Column_Line"> | boolean
+    is_axis_txt_bold?: BoolFilter<"Column_Line"> | boolean
+    axis_txt_color?: StringFilter<"Column_Line"> | string
+    axisX?: StringFilter<"Column_Line"> | string
+    axisY?: StringFilter<"Column_Line"> | string
+    isLegend?: BoolFilter<"Column_Line"> | boolean
+    legend_size?: IntFilter<"Column_Line"> | number
+    is_legend_italic?: BoolFilter<"Column_Line"> | boolean
+    is_legend_bold?: BoolFilter<"Column_Line"> | boolean
+    legend_color?: StringFilter<"Column_Line"> | string
     l_thickness?: IntFilter<"Column_Line"> | number
     l_is_line_smoth?: BoolFilter<"Column_Line"> | boolean
     project?: XOR<ProjectsRelationFilter, ProjectsWhereInput>
@@ -15863,31 +15557,19 @@ export namespace Prisma {
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
     b_border_color?: SortOrder
-    b_isLegend?: SortOrder
-    b_legend_size?: SortOrder
-    b_is_legend_italic?: SortOrder
-    b_is_legend_bold?: SortOrder
-    b_legend_color?: SortOrder
-    b_isAxis?: SortOrder
-    b_axis_txt_size?: SortOrder
-    b_is_axis_txt_italic?: SortOrder
-    b_is_axis_txt_bold?: SortOrder
-    b_axis_txt_color?: SortOrder
-    b_axisX?: SortOrder
-    b_axisY?: SortOrder
     l_show_pointer_mark?: SortOrder
-    l_isAxis?: SortOrder
-    l_axis_txt_size?: SortOrder
-    l_is_axis_txt_italic?: SortOrder
-    l_is_axis_txt_bold?: SortOrder
-    l_axis_txt_color?: SortOrder
-    l_axisX?: SortOrder
-    l_axisY?: SortOrder
-    l_isLegend?: SortOrder
-    l_legend_size?: SortOrder
-    l_is_legend_italic?: SortOrder
-    l_is_legend_bold?: SortOrder
-    l_legend_color?: SortOrder
+    isAxis?: SortOrder
+    axis_txt_size?: SortOrder
+    is_axis_txt_italic?: SortOrder
+    is_axis_txt_bold?: SortOrder
+    axis_txt_color?: SortOrder
+    axisX?: SortOrder
+    axisY?: SortOrder
+    isLegend?: SortOrder
+    legend_size?: SortOrder
+    is_legend_italic?: SortOrder
+    is_legend_bold?: SortOrder
+    legend_color?: SortOrder
     l_thickness?: SortOrder
     l_is_line_smoth?: SortOrder
     projectId?: SortOrder
@@ -15907,31 +15589,19 @@ export namespace Prisma {
     b_border_radius?: IntWithAggregatesFilter<"Column_Line"> | number
     b_border_bld?: IntWithAggregatesFilter<"Column_Line"> | number
     b_border_color?: StringWithAggregatesFilter<"Column_Line"> | string
-    b_isLegend?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    b_legend_size?: IntWithAggregatesFilter<"Column_Line"> | number
-    b_is_legend_italic?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    b_is_legend_bold?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    b_legend_color?: StringWithAggregatesFilter<"Column_Line"> | string
-    b_isAxis?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    b_axis_txt_size?: IntWithAggregatesFilter<"Column_Line"> | number
-    b_is_axis_txt_italic?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    b_is_axis_txt_bold?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    b_axis_txt_color?: StringWithAggregatesFilter<"Column_Line"> | string
-    b_axisX?: StringWithAggregatesFilter<"Column_Line"> | string
-    b_axisY?: StringWithAggregatesFilter<"Column_Line"> | string
     l_show_pointer_mark?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    l_isAxis?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    l_axis_txt_size?: IntWithAggregatesFilter<"Column_Line"> | number
-    l_is_axis_txt_italic?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    l_is_axis_txt_bold?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    l_axis_txt_color?: StringWithAggregatesFilter<"Column_Line"> | string
-    l_axisX?: StringWithAggregatesFilter<"Column_Line"> | string
-    l_axisY?: StringWithAggregatesFilter<"Column_Line"> | string
-    l_isLegend?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    l_legend_size?: IntWithAggregatesFilter<"Column_Line"> | number
-    l_is_legend_italic?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    l_is_legend_bold?: BoolWithAggregatesFilter<"Column_Line"> | boolean
-    l_legend_color?: StringWithAggregatesFilter<"Column_Line"> | string
+    isAxis?: BoolWithAggregatesFilter<"Column_Line"> | boolean
+    axis_txt_size?: IntWithAggregatesFilter<"Column_Line"> | number
+    is_axis_txt_italic?: BoolWithAggregatesFilter<"Column_Line"> | boolean
+    is_axis_txt_bold?: BoolWithAggregatesFilter<"Column_Line"> | boolean
+    axis_txt_color?: StringWithAggregatesFilter<"Column_Line"> | string
+    axisX?: StringWithAggregatesFilter<"Column_Line"> | string
+    axisY?: StringWithAggregatesFilter<"Column_Line"> | string
+    isLegend?: BoolWithAggregatesFilter<"Column_Line"> | boolean
+    legend_size?: IntWithAggregatesFilter<"Column_Line"> | number
+    is_legend_italic?: BoolWithAggregatesFilter<"Column_Line"> | boolean
+    is_legend_bold?: BoolWithAggregatesFilter<"Column_Line"> | boolean
+    legend_color?: StringWithAggregatesFilter<"Column_Line"> | string
     l_thickness?: IntWithAggregatesFilter<"Column_Line"> | number
     l_is_line_smoth?: BoolWithAggregatesFilter<"Column_Line"> | boolean
     projectId?: IntWithAggregatesFilter<"Column_Line"> | number
@@ -15946,31 +15616,19 @@ export namespace Prisma {
     b_border_radius?: IntFilter<"Column_Area"> | number
     b_border_bld?: IntFilter<"Column_Area"> | number
     b_border_color?: StringFilter<"Column_Area"> | string
-    b_isLegend?: BoolFilter<"Column_Area"> | boolean
-    b_legend_size?: IntFilter<"Column_Area"> | number
-    b_is_legend_italic?: BoolFilter<"Column_Area"> | boolean
-    b_is_legend_bold?: BoolFilter<"Column_Area"> | boolean
-    b_legend_color?: StringFilter<"Column_Area"> | string
-    b_isAxis?: BoolFilter<"Column_Area"> | boolean
-    b_axis_txt_size?: IntFilter<"Column_Area"> | number
-    b_is_axis_txt_italic?: BoolFilter<"Column_Area"> | boolean
-    b_is_axis_txt_bold?: BoolFilter<"Column_Area"> | boolean
-    b_axis_txt_color?: StringFilter<"Column_Area"> | string
-    b_axisX?: StringFilter<"Column_Area"> | string
-    b_axisY?: StringFilter<"Column_Area"> | string
     a_show_pointer_mark?: BoolFilter<"Column_Area"> | boolean
-    a_isAxis?: BoolFilter<"Column_Area"> | boolean
-    a_axis_txt_size?: IntFilter<"Column_Area"> | number
-    a_is_axis_txt_italic?: BoolFilter<"Column_Area"> | boolean
-    a_is_axis_txt_bold?: BoolFilter<"Column_Area"> | boolean
-    a_axis_txt_color?: StringFilter<"Column_Area"> | string
-    a_axisX?: StringFilter<"Column_Area"> | string
-    a_axisY?: StringFilter<"Column_Area"> | string
-    a_isLegend?: BoolFilter<"Column_Area"> | boolean
-    a_legend_size?: IntFilter<"Column_Area"> | number
-    a_is_legend_italic?: BoolFilter<"Column_Area"> | boolean
-    a_is_legend_bold?: BoolFilter<"Column_Area"> | boolean
-    a_legend_color?: StringFilter<"Column_Area"> | string
+    isAxis?: BoolFilter<"Column_Area"> | boolean
+    axis_txt_size?: IntFilter<"Column_Area"> | number
+    is_axis_txt_italic?: BoolFilter<"Column_Area"> | boolean
+    is_axis_txt_bold?: BoolFilter<"Column_Area"> | boolean
+    axis_txt_color?: StringFilter<"Column_Area"> | string
+    axisX?: StringFilter<"Column_Area"> | string
+    axisY?: StringFilter<"Column_Area"> | string
+    isLegend?: BoolFilter<"Column_Area"> | boolean
+    legend_size?: IntFilter<"Column_Area"> | number
+    is_legend_italic?: BoolFilter<"Column_Area"> | boolean
+    is_legend_bold?: BoolFilter<"Column_Area"> | boolean
+    legend_color?: StringFilter<"Column_Area"> | string
     a_thickness?: IntFilter<"Column_Area"> | number
     a_is_line_smoth?: BoolFilter<"Column_Area"> | boolean
     projectId?: IntFilter<"Column_Area"> | number
@@ -15983,31 +15641,19 @@ export namespace Prisma {
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
     b_border_color?: SortOrder
-    b_isLegend?: SortOrder
-    b_legend_size?: SortOrder
-    b_is_legend_italic?: SortOrder
-    b_is_legend_bold?: SortOrder
-    b_legend_color?: SortOrder
-    b_isAxis?: SortOrder
-    b_axis_txt_size?: SortOrder
-    b_is_axis_txt_italic?: SortOrder
-    b_is_axis_txt_bold?: SortOrder
-    b_axis_txt_color?: SortOrder
-    b_axisX?: SortOrder
-    b_axisY?: SortOrder
     a_show_pointer_mark?: SortOrder
-    a_isAxis?: SortOrder
-    a_axis_txt_size?: SortOrder
-    a_is_axis_txt_italic?: SortOrder
-    a_is_axis_txt_bold?: SortOrder
-    a_axis_txt_color?: SortOrder
-    a_axisX?: SortOrder
-    a_axisY?: SortOrder
-    a_isLegend?: SortOrder
-    a_legend_size?: SortOrder
-    a_is_legend_italic?: SortOrder
-    a_is_legend_bold?: SortOrder
-    a_legend_color?: SortOrder
+    isAxis?: SortOrder
+    axis_txt_size?: SortOrder
+    is_axis_txt_italic?: SortOrder
+    is_axis_txt_bold?: SortOrder
+    axis_txt_color?: SortOrder
+    axisX?: SortOrder
+    axisY?: SortOrder
+    isLegend?: SortOrder
+    legend_size?: SortOrder
+    is_legend_italic?: SortOrder
+    is_legend_bold?: SortOrder
+    legend_color?: SortOrder
     a_thickness?: SortOrder
     a_is_line_smoth?: SortOrder
     projectId?: SortOrder
@@ -16024,31 +15670,19 @@ export namespace Prisma {
     b_border_radius?: IntFilter<"Column_Area"> | number
     b_border_bld?: IntFilter<"Column_Area"> | number
     b_border_color?: StringFilter<"Column_Area"> | string
-    b_isLegend?: BoolFilter<"Column_Area"> | boolean
-    b_legend_size?: IntFilter<"Column_Area"> | number
-    b_is_legend_italic?: BoolFilter<"Column_Area"> | boolean
-    b_is_legend_bold?: BoolFilter<"Column_Area"> | boolean
-    b_legend_color?: StringFilter<"Column_Area"> | string
-    b_isAxis?: BoolFilter<"Column_Area"> | boolean
-    b_axis_txt_size?: IntFilter<"Column_Area"> | number
-    b_is_axis_txt_italic?: BoolFilter<"Column_Area"> | boolean
-    b_is_axis_txt_bold?: BoolFilter<"Column_Area"> | boolean
-    b_axis_txt_color?: StringFilter<"Column_Area"> | string
-    b_axisX?: StringFilter<"Column_Area"> | string
-    b_axisY?: StringFilter<"Column_Area"> | string
     a_show_pointer_mark?: BoolFilter<"Column_Area"> | boolean
-    a_isAxis?: BoolFilter<"Column_Area"> | boolean
-    a_axis_txt_size?: IntFilter<"Column_Area"> | number
-    a_is_axis_txt_italic?: BoolFilter<"Column_Area"> | boolean
-    a_is_axis_txt_bold?: BoolFilter<"Column_Area"> | boolean
-    a_axis_txt_color?: StringFilter<"Column_Area"> | string
-    a_axisX?: StringFilter<"Column_Area"> | string
-    a_axisY?: StringFilter<"Column_Area"> | string
-    a_isLegend?: BoolFilter<"Column_Area"> | boolean
-    a_legend_size?: IntFilter<"Column_Area"> | number
-    a_is_legend_italic?: BoolFilter<"Column_Area"> | boolean
-    a_is_legend_bold?: BoolFilter<"Column_Area"> | boolean
-    a_legend_color?: StringFilter<"Column_Area"> | string
+    isAxis?: BoolFilter<"Column_Area"> | boolean
+    axis_txt_size?: IntFilter<"Column_Area"> | number
+    is_axis_txt_italic?: BoolFilter<"Column_Area"> | boolean
+    is_axis_txt_bold?: BoolFilter<"Column_Area"> | boolean
+    axis_txt_color?: StringFilter<"Column_Area"> | string
+    axisX?: StringFilter<"Column_Area"> | string
+    axisY?: StringFilter<"Column_Area"> | string
+    isLegend?: BoolFilter<"Column_Area"> | boolean
+    legend_size?: IntFilter<"Column_Area"> | number
+    is_legend_italic?: BoolFilter<"Column_Area"> | boolean
+    is_legend_bold?: BoolFilter<"Column_Area"> | boolean
+    legend_color?: StringFilter<"Column_Area"> | string
     a_thickness?: IntFilter<"Column_Area"> | number
     a_is_line_smoth?: BoolFilter<"Column_Area"> | boolean
     project?: XOR<ProjectsRelationFilter, ProjectsWhereInput>
@@ -16060,31 +15694,19 @@ export namespace Prisma {
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
     b_border_color?: SortOrder
-    b_isLegend?: SortOrder
-    b_legend_size?: SortOrder
-    b_is_legend_italic?: SortOrder
-    b_is_legend_bold?: SortOrder
-    b_legend_color?: SortOrder
-    b_isAxis?: SortOrder
-    b_axis_txt_size?: SortOrder
-    b_is_axis_txt_italic?: SortOrder
-    b_is_axis_txt_bold?: SortOrder
-    b_axis_txt_color?: SortOrder
-    b_axisX?: SortOrder
-    b_axisY?: SortOrder
     a_show_pointer_mark?: SortOrder
-    a_isAxis?: SortOrder
-    a_axis_txt_size?: SortOrder
-    a_is_axis_txt_italic?: SortOrder
-    a_is_axis_txt_bold?: SortOrder
-    a_axis_txt_color?: SortOrder
-    a_axisX?: SortOrder
-    a_axisY?: SortOrder
-    a_isLegend?: SortOrder
-    a_legend_size?: SortOrder
-    a_is_legend_italic?: SortOrder
-    a_is_legend_bold?: SortOrder
-    a_legend_color?: SortOrder
+    isAxis?: SortOrder
+    axis_txt_size?: SortOrder
+    is_axis_txt_italic?: SortOrder
+    is_axis_txt_bold?: SortOrder
+    axis_txt_color?: SortOrder
+    axisX?: SortOrder
+    axisY?: SortOrder
+    isLegend?: SortOrder
+    legend_size?: SortOrder
+    is_legend_italic?: SortOrder
+    is_legend_bold?: SortOrder
+    legend_color?: SortOrder
     a_thickness?: SortOrder
     a_is_line_smoth?: SortOrder
     projectId?: SortOrder
@@ -16104,31 +15726,19 @@ export namespace Prisma {
     b_border_radius?: IntWithAggregatesFilter<"Column_Area"> | number
     b_border_bld?: IntWithAggregatesFilter<"Column_Area"> | number
     b_border_color?: StringWithAggregatesFilter<"Column_Area"> | string
-    b_isLegend?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    b_legend_size?: IntWithAggregatesFilter<"Column_Area"> | number
-    b_is_legend_italic?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    b_is_legend_bold?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    b_legend_color?: StringWithAggregatesFilter<"Column_Area"> | string
-    b_isAxis?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    b_axis_txt_size?: IntWithAggregatesFilter<"Column_Area"> | number
-    b_is_axis_txt_italic?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    b_is_axis_txt_bold?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    b_axis_txt_color?: StringWithAggregatesFilter<"Column_Area"> | string
-    b_axisX?: StringWithAggregatesFilter<"Column_Area"> | string
-    b_axisY?: StringWithAggregatesFilter<"Column_Area"> | string
     a_show_pointer_mark?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    a_isAxis?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    a_axis_txt_size?: IntWithAggregatesFilter<"Column_Area"> | number
-    a_is_axis_txt_italic?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    a_is_axis_txt_bold?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    a_axis_txt_color?: StringWithAggregatesFilter<"Column_Area"> | string
-    a_axisX?: StringWithAggregatesFilter<"Column_Area"> | string
-    a_axisY?: StringWithAggregatesFilter<"Column_Area"> | string
-    a_isLegend?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    a_legend_size?: IntWithAggregatesFilter<"Column_Area"> | number
-    a_is_legend_italic?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    a_is_legend_bold?: BoolWithAggregatesFilter<"Column_Area"> | boolean
-    a_legend_color?: StringWithAggregatesFilter<"Column_Area"> | string
+    isAxis?: BoolWithAggregatesFilter<"Column_Area"> | boolean
+    axis_txt_size?: IntWithAggregatesFilter<"Column_Area"> | number
+    is_axis_txt_italic?: BoolWithAggregatesFilter<"Column_Area"> | boolean
+    is_axis_txt_bold?: BoolWithAggregatesFilter<"Column_Area"> | boolean
+    axis_txt_color?: StringWithAggregatesFilter<"Column_Area"> | string
+    axisX?: StringWithAggregatesFilter<"Column_Area"> | string
+    axisY?: StringWithAggregatesFilter<"Column_Area"> | string
+    isLegend?: BoolWithAggregatesFilter<"Column_Area"> | boolean
+    legend_size?: IntWithAggregatesFilter<"Column_Area"> | number
+    is_legend_italic?: BoolWithAggregatesFilter<"Column_Area"> | boolean
+    is_legend_bold?: BoolWithAggregatesFilter<"Column_Area"> | boolean
+    legend_color?: StringWithAggregatesFilter<"Column_Area"> | string
     a_thickness?: IntWithAggregatesFilter<"Column_Area"> | number
     a_is_line_smoth?: BoolWithAggregatesFilter<"Column_Area"> | boolean
     projectId?: IntWithAggregatesFilter<"Column_Area"> | number
@@ -16703,6 +16313,7 @@ export namespace Prisma {
 
   export type PieCreateInput = {
     start_angle?: number
+    show_percentage?: boolean
     isLegend?: boolean
     legend_size?: number
     is_legend_italic?: boolean
@@ -16714,6 +16325,7 @@ export namespace Prisma {
   export type PieUncheckedCreateInput = {
     id?: number
     start_angle?: number
+    show_percentage?: boolean
     isLegend?: boolean
     legend_size?: number
     is_legend_italic?: boolean
@@ -16724,6 +16336,7 @@ export namespace Prisma {
 
   export type PieUpdateInput = {
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
     is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
@@ -16735,6 +16348,7 @@ export namespace Prisma {
   export type PieUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
     is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
@@ -16746,6 +16360,7 @@ export namespace Prisma {
   export type PieCreateManyInput = {
     id?: number
     start_angle?: number
+    show_percentage?: boolean
     isLegend?: boolean
     legend_size?: number
     is_legend_italic?: boolean
@@ -16756,6 +16371,7 @@ export namespace Prisma {
 
   export type PieUpdateManyMutationInput = {
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
     is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
@@ -16766,6 +16382,7 @@ export namespace Prisma {
   export type PieUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
     is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
@@ -16776,6 +16393,7 @@ export namespace Prisma {
 
   export type DonutCreateInput = {
     start_angle?: number
+    show_percentage?: boolean
     inner_radius?: number
     isLegend?: boolean
     legend_size?: number
@@ -16788,6 +16406,7 @@ export namespace Prisma {
   export type DonutUncheckedCreateInput = {
     id?: number
     start_angle?: number
+    show_percentage?: boolean
     inner_radius?: number
     isLegend?: boolean
     legend_size?: number
@@ -16799,6 +16418,7 @@ export namespace Prisma {
 
   export type DonutUpdateInput = {
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     inner_radius?: IntFieldUpdateOperationsInput | number
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
@@ -16811,6 +16431,7 @@ export namespace Prisma {
   export type DonutUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     inner_radius?: IntFieldUpdateOperationsInput | number
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
@@ -16823,6 +16444,7 @@ export namespace Prisma {
   export type DonutCreateManyInput = {
     id?: number
     start_angle?: number
+    show_percentage?: boolean
     inner_radius?: number
     isLegend?: boolean
     legend_size?: number
@@ -16834,6 +16456,7 @@ export namespace Prisma {
 
   export type DonutUpdateManyMutationInput = {
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     inner_radius?: IntFieldUpdateOperationsInput | number
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
@@ -16845,6 +16468,7 @@ export namespace Prisma {
   export type DonutUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     inner_radius?: IntFieldUpdateOperationsInput | number
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
@@ -17131,31 +16755,19 @@ export namespace Prisma {
     b_border_radius?: number
     b_border_bld?: number
     b_border_color?: string
-    b_isLegend?: boolean
-    b_legend_size?: number
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: string
-    b_isAxis?: boolean
-    b_axis_txt_size?: number
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: string
-    b_axisX?: string
-    b_axisY?: string
     l_show_pointer_mark?: boolean
-    l_isAxis?: boolean
-    l_axis_txt_size?: number
-    l_is_axis_txt_italic?: boolean
-    l_is_axis_txt_bold?: boolean
-    l_axis_txt_color?: string
-    l_axisX?: string
-    l_axisY?: string
-    l_isLegend?: boolean
-    l_legend_size?: number
-    l_is_legend_italic?: boolean
-    l_is_legend_bold?: boolean
-    l_legend_color?: string
+    isAxis?: boolean
+    axis_txt_size?: number
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: string
+    axisX?: string
+    axisY?: string
+    isLegend?: boolean
+    legend_size?: number
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: string
     l_thickness?: number
     l_is_line_smoth?: boolean
     project: ProjectsCreateNestedOneWithoutColumn_LineInput
@@ -17167,31 +16779,19 @@ export namespace Prisma {
     b_border_radius?: number
     b_border_bld?: number
     b_border_color?: string
-    b_isLegend?: boolean
-    b_legend_size?: number
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: string
-    b_isAxis?: boolean
-    b_axis_txt_size?: number
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: string
-    b_axisX?: string
-    b_axisY?: string
     l_show_pointer_mark?: boolean
-    l_isAxis?: boolean
-    l_axis_txt_size?: number
-    l_is_axis_txt_italic?: boolean
-    l_is_axis_txt_bold?: boolean
-    l_axis_txt_color?: string
-    l_axisX?: string
-    l_axisY?: string
-    l_isLegend?: boolean
-    l_legend_size?: number
-    l_is_legend_italic?: boolean
-    l_is_legend_bold?: boolean
-    l_legend_color?: string
+    isAxis?: boolean
+    axis_txt_size?: number
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: string
+    axisX?: string
+    axisY?: string
+    isLegend?: boolean
+    legend_size?: number
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: string
     l_thickness?: number
     l_is_line_smoth?: boolean
     projectId: number
@@ -17202,31 +16802,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     l_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    l_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    l_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    l_axisX?: StringFieldUpdateOperationsInput | string
-    l_axisY?: StringFieldUpdateOperationsInput | string
-    l_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_size?: IntFieldUpdateOperationsInput | number
-    l_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     l_thickness?: IntFieldUpdateOperationsInput | number
     l_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
     project?: ProjectsUpdateOneRequiredWithoutColumn_LineNestedInput
@@ -17238,31 +16826,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     l_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    l_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    l_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    l_axisX?: StringFieldUpdateOperationsInput | string
-    l_axisY?: StringFieldUpdateOperationsInput | string
-    l_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_size?: IntFieldUpdateOperationsInput | number
-    l_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     l_thickness?: IntFieldUpdateOperationsInput | number
     l_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
     projectId?: IntFieldUpdateOperationsInput | number
@@ -17274,31 +16850,19 @@ export namespace Prisma {
     b_border_radius?: number
     b_border_bld?: number
     b_border_color?: string
-    b_isLegend?: boolean
-    b_legend_size?: number
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: string
-    b_isAxis?: boolean
-    b_axis_txt_size?: number
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: string
-    b_axisX?: string
-    b_axisY?: string
     l_show_pointer_mark?: boolean
-    l_isAxis?: boolean
-    l_axis_txt_size?: number
-    l_is_axis_txt_italic?: boolean
-    l_is_axis_txt_bold?: boolean
-    l_axis_txt_color?: string
-    l_axisX?: string
-    l_axisY?: string
-    l_isLegend?: boolean
-    l_legend_size?: number
-    l_is_legend_italic?: boolean
-    l_is_legend_bold?: boolean
-    l_legend_color?: string
+    isAxis?: boolean
+    axis_txt_size?: number
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: string
+    axisX?: string
+    axisY?: string
+    isLegend?: boolean
+    legend_size?: number
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: string
     l_thickness?: number
     l_is_line_smoth?: boolean
     projectId: number
@@ -17309,31 +16873,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     l_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    l_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    l_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    l_axisX?: StringFieldUpdateOperationsInput | string
-    l_axisY?: StringFieldUpdateOperationsInput | string
-    l_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_size?: IntFieldUpdateOperationsInput | number
-    l_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     l_thickness?: IntFieldUpdateOperationsInput | number
     l_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
   }
@@ -17344,31 +16896,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     l_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    l_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    l_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    l_axisX?: StringFieldUpdateOperationsInput | string
-    l_axisY?: StringFieldUpdateOperationsInput | string
-    l_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_size?: IntFieldUpdateOperationsInput | number
-    l_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     l_thickness?: IntFieldUpdateOperationsInput | number
     l_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
     projectId?: IntFieldUpdateOperationsInput | number
@@ -17379,31 +16919,19 @@ export namespace Prisma {
     b_border_radius?: number
     b_border_bld?: number
     b_border_color?: string
-    b_isLegend?: boolean
-    b_legend_size?: number
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: string
-    b_isAxis?: boolean
-    b_axis_txt_size?: number
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: string
-    b_axisX?: string
-    b_axisY?: string
     a_show_pointer_mark?: boolean
-    a_isAxis?: boolean
-    a_axis_txt_size?: number
-    a_is_axis_txt_italic?: boolean
-    a_is_axis_txt_bold?: boolean
-    a_axis_txt_color?: string
-    a_axisX?: string
-    a_axisY?: string
-    a_isLegend?: boolean
-    a_legend_size?: number
-    a_is_legend_italic?: boolean
-    a_is_legend_bold?: boolean
-    a_legend_color?: string
+    isAxis?: boolean
+    axis_txt_size?: number
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: string
+    axisX?: string
+    axisY?: string
+    isLegend?: boolean
+    legend_size?: number
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: string
     a_thickness?: number
     a_is_line_smoth?: boolean
     project: ProjectsCreateNestedOneWithoutColumn_AreaInput
@@ -17415,31 +16943,19 @@ export namespace Prisma {
     b_border_radius?: number
     b_border_bld?: number
     b_border_color?: string
-    b_isLegend?: boolean
-    b_legend_size?: number
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: string
-    b_isAxis?: boolean
-    b_axis_txt_size?: number
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: string
-    b_axisX?: string
-    b_axisY?: string
     a_show_pointer_mark?: boolean
-    a_isAxis?: boolean
-    a_axis_txt_size?: number
-    a_is_axis_txt_italic?: boolean
-    a_is_axis_txt_bold?: boolean
-    a_axis_txt_color?: string
-    a_axisX?: string
-    a_axisY?: string
-    a_isLegend?: boolean
-    a_legend_size?: number
-    a_is_legend_italic?: boolean
-    a_is_legend_bold?: boolean
-    a_legend_color?: string
+    isAxis?: boolean
+    axis_txt_size?: number
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: string
+    axisX?: string
+    axisY?: string
+    isLegend?: boolean
+    legend_size?: number
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: string
     a_thickness?: number
     a_is_line_smoth?: boolean
     projectId: number
@@ -17450,31 +16966,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     a_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    a_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    a_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    a_axisX?: StringFieldUpdateOperationsInput | string
-    a_axisY?: StringFieldUpdateOperationsInput | string
-    a_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_size?: IntFieldUpdateOperationsInput | number
-    a_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     a_thickness?: IntFieldUpdateOperationsInput | number
     a_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
     project?: ProjectsUpdateOneRequiredWithoutColumn_AreaNestedInput
@@ -17486,31 +16990,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     a_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    a_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    a_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    a_axisX?: StringFieldUpdateOperationsInput | string
-    a_axisY?: StringFieldUpdateOperationsInput | string
-    a_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_size?: IntFieldUpdateOperationsInput | number
-    a_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     a_thickness?: IntFieldUpdateOperationsInput | number
     a_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
     projectId?: IntFieldUpdateOperationsInput | number
@@ -17522,31 +17014,19 @@ export namespace Prisma {
     b_border_radius?: number
     b_border_bld?: number
     b_border_color?: string
-    b_isLegend?: boolean
-    b_legend_size?: number
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: string
-    b_isAxis?: boolean
-    b_axis_txt_size?: number
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: string
-    b_axisX?: string
-    b_axisY?: string
     a_show_pointer_mark?: boolean
-    a_isAxis?: boolean
-    a_axis_txt_size?: number
-    a_is_axis_txt_italic?: boolean
-    a_is_axis_txt_bold?: boolean
-    a_axis_txt_color?: string
-    a_axisX?: string
-    a_axisY?: string
-    a_isLegend?: boolean
-    a_legend_size?: number
-    a_is_legend_italic?: boolean
-    a_is_legend_bold?: boolean
-    a_legend_color?: string
+    isAxis?: boolean
+    axis_txt_size?: number
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: string
+    axisX?: string
+    axisY?: string
+    isLegend?: boolean
+    legend_size?: number
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: string
     a_thickness?: number
     a_is_line_smoth?: boolean
     projectId: number
@@ -17557,31 +17037,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     a_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    a_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    a_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    a_axisX?: StringFieldUpdateOperationsInput | string
-    a_axisY?: StringFieldUpdateOperationsInput | string
-    a_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_size?: IntFieldUpdateOperationsInput | number
-    a_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     a_thickness?: IntFieldUpdateOperationsInput | number
     a_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
   }
@@ -17592,31 +17060,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     a_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    a_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    a_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    a_axisX?: StringFieldUpdateOperationsInput | string
-    a_axisY?: StringFieldUpdateOperationsInput | string
-    a_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_size?: IntFieldUpdateOperationsInput | number
-    a_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     a_thickness?: IntFieldUpdateOperationsInput | number
     a_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
     projectId?: IntFieldUpdateOperationsInput | number
@@ -18162,6 +17618,7 @@ export namespace Prisma {
   export type PieCountOrderByAggregateInput = {
     id?: SortOrder
     start_angle?: SortOrder
+    show_percentage?: SortOrder
     isLegend?: SortOrder
     legend_size?: SortOrder
     is_legend_italic?: SortOrder
@@ -18180,6 +17637,7 @@ export namespace Prisma {
   export type PieMaxOrderByAggregateInput = {
     id?: SortOrder
     start_angle?: SortOrder
+    show_percentage?: SortOrder
     isLegend?: SortOrder
     legend_size?: SortOrder
     is_legend_italic?: SortOrder
@@ -18191,6 +17649,7 @@ export namespace Prisma {
   export type PieMinOrderByAggregateInput = {
     id?: SortOrder
     start_angle?: SortOrder
+    show_percentage?: SortOrder
     isLegend?: SortOrder
     legend_size?: SortOrder
     is_legend_italic?: SortOrder
@@ -18209,6 +17668,7 @@ export namespace Prisma {
   export type DonutCountOrderByAggregateInput = {
     id?: SortOrder
     start_angle?: SortOrder
+    show_percentage?: SortOrder
     inner_radius?: SortOrder
     isLegend?: SortOrder
     legend_size?: SortOrder
@@ -18229,6 +17689,7 @@ export namespace Prisma {
   export type DonutMaxOrderByAggregateInput = {
     id?: SortOrder
     start_angle?: SortOrder
+    show_percentage?: SortOrder
     inner_radius?: SortOrder
     isLegend?: SortOrder
     legend_size?: SortOrder
@@ -18241,6 +17702,7 @@ export namespace Prisma {
   export type DonutMinOrderByAggregateInput = {
     id?: SortOrder
     start_angle?: SortOrder
+    show_percentage?: SortOrder
     inner_radius?: SortOrder
     isLegend?: SortOrder
     legend_size?: SortOrder
@@ -18416,31 +17878,19 @@ export namespace Prisma {
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
     b_border_color?: SortOrder
-    b_isLegend?: SortOrder
-    b_legend_size?: SortOrder
-    b_is_legend_italic?: SortOrder
-    b_is_legend_bold?: SortOrder
-    b_legend_color?: SortOrder
-    b_isAxis?: SortOrder
-    b_axis_txt_size?: SortOrder
-    b_is_axis_txt_italic?: SortOrder
-    b_is_axis_txt_bold?: SortOrder
-    b_axis_txt_color?: SortOrder
-    b_axisX?: SortOrder
-    b_axisY?: SortOrder
     l_show_pointer_mark?: SortOrder
-    l_isAxis?: SortOrder
-    l_axis_txt_size?: SortOrder
-    l_is_axis_txt_italic?: SortOrder
-    l_is_axis_txt_bold?: SortOrder
-    l_axis_txt_color?: SortOrder
-    l_axisX?: SortOrder
-    l_axisY?: SortOrder
-    l_isLegend?: SortOrder
-    l_legend_size?: SortOrder
-    l_is_legend_italic?: SortOrder
-    l_is_legend_bold?: SortOrder
-    l_legend_color?: SortOrder
+    isAxis?: SortOrder
+    axis_txt_size?: SortOrder
+    is_axis_txt_italic?: SortOrder
+    is_axis_txt_bold?: SortOrder
+    axis_txt_color?: SortOrder
+    axisX?: SortOrder
+    axisY?: SortOrder
+    isLegend?: SortOrder
+    legend_size?: SortOrder
+    is_legend_italic?: SortOrder
+    is_legend_bold?: SortOrder
+    legend_color?: SortOrder
     l_thickness?: SortOrder
     l_is_line_smoth?: SortOrder
     projectId?: SortOrder
@@ -18451,10 +17901,8 @@ export namespace Prisma {
     b_bar_spacing?: SortOrder
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
-    b_legend_size?: SortOrder
-    b_axis_txt_size?: SortOrder
-    l_axis_txt_size?: SortOrder
-    l_legend_size?: SortOrder
+    axis_txt_size?: SortOrder
+    legend_size?: SortOrder
     l_thickness?: SortOrder
     projectId?: SortOrder
   }
@@ -18465,31 +17913,19 @@ export namespace Prisma {
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
     b_border_color?: SortOrder
-    b_isLegend?: SortOrder
-    b_legend_size?: SortOrder
-    b_is_legend_italic?: SortOrder
-    b_is_legend_bold?: SortOrder
-    b_legend_color?: SortOrder
-    b_isAxis?: SortOrder
-    b_axis_txt_size?: SortOrder
-    b_is_axis_txt_italic?: SortOrder
-    b_is_axis_txt_bold?: SortOrder
-    b_axis_txt_color?: SortOrder
-    b_axisX?: SortOrder
-    b_axisY?: SortOrder
     l_show_pointer_mark?: SortOrder
-    l_isAxis?: SortOrder
-    l_axis_txt_size?: SortOrder
-    l_is_axis_txt_italic?: SortOrder
-    l_is_axis_txt_bold?: SortOrder
-    l_axis_txt_color?: SortOrder
-    l_axisX?: SortOrder
-    l_axisY?: SortOrder
-    l_isLegend?: SortOrder
-    l_legend_size?: SortOrder
-    l_is_legend_italic?: SortOrder
-    l_is_legend_bold?: SortOrder
-    l_legend_color?: SortOrder
+    isAxis?: SortOrder
+    axis_txt_size?: SortOrder
+    is_axis_txt_italic?: SortOrder
+    is_axis_txt_bold?: SortOrder
+    axis_txt_color?: SortOrder
+    axisX?: SortOrder
+    axisY?: SortOrder
+    isLegend?: SortOrder
+    legend_size?: SortOrder
+    is_legend_italic?: SortOrder
+    is_legend_bold?: SortOrder
+    legend_color?: SortOrder
     l_thickness?: SortOrder
     l_is_line_smoth?: SortOrder
     projectId?: SortOrder
@@ -18501,31 +17937,19 @@ export namespace Prisma {
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
     b_border_color?: SortOrder
-    b_isLegend?: SortOrder
-    b_legend_size?: SortOrder
-    b_is_legend_italic?: SortOrder
-    b_is_legend_bold?: SortOrder
-    b_legend_color?: SortOrder
-    b_isAxis?: SortOrder
-    b_axis_txt_size?: SortOrder
-    b_is_axis_txt_italic?: SortOrder
-    b_is_axis_txt_bold?: SortOrder
-    b_axis_txt_color?: SortOrder
-    b_axisX?: SortOrder
-    b_axisY?: SortOrder
     l_show_pointer_mark?: SortOrder
-    l_isAxis?: SortOrder
-    l_axis_txt_size?: SortOrder
-    l_is_axis_txt_italic?: SortOrder
-    l_is_axis_txt_bold?: SortOrder
-    l_axis_txt_color?: SortOrder
-    l_axisX?: SortOrder
-    l_axisY?: SortOrder
-    l_isLegend?: SortOrder
-    l_legend_size?: SortOrder
-    l_is_legend_italic?: SortOrder
-    l_is_legend_bold?: SortOrder
-    l_legend_color?: SortOrder
+    isAxis?: SortOrder
+    axis_txt_size?: SortOrder
+    is_axis_txt_italic?: SortOrder
+    is_axis_txt_bold?: SortOrder
+    axis_txt_color?: SortOrder
+    axisX?: SortOrder
+    axisY?: SortOrder
+    isLegend?: SortOrder
+    legend_size?: SortOrder
+    is_legend_italic?: SortOrder
+    is_legend_bold?: SortOrder
+    legend_color?: SortOrder
     l_thickness?: SortOrder
     l_is_line_smoth?: SortOrder
     projectId?: SortOrder
@@ -18536,10 +17960,8 @@ export namespace Prisma {
     b_bar_spacing?: SortOrder
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
-    b_legend_size?: SortOrder
-    b_axis_txt_size?: SortOrder
-    l_axis_txt_size?: SortOrder
-    l_legend_size?: SortOrder
+    axis_txt_size?: SortOrder
+    legend_size?: SortOrder
     l_thickness?: SortOrder
     projectId?: SortOrder
   }
@@ -18550,31 +17972,19 @@ export namespace Prisma {
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
     b_border_color?: SortOrder
-    b_isLegend?: SortOrder
-    b_legend_size?: SortOrder
-    b_is_legend_italic?: SortOrder
-    b_is_legend_bold?: SortOrder
-    b_legend_color?: SortOrder
-    b_isAxis?: SortOrder
-    b_axis_txt_size?: SortOrder
-    b_is_axis_txt_italic?: SortOrder
-    b_is_axis_txt_bold?: SortOrder
-    b_axis_txt_color?: SortOrder
-    b_axisX?: SortOrder
-    b_axisY?: SortOrder
     a_show_pointer_mark?: SortOrder
-    a_isAxis?: SortOrder
-    a_axis_txt_size?: SortOrder
-    a_is_axis_txt_italic?: SortOrder
-    a_is_axis_txt_bold?: SortOrder
-    a_axis_txt_color?: SortOrder
-    a_axisX?: SortOrder
-    a_axisY?: SortOrder
-    a_isLegend?: SortOrder
-    a_legend_size?: SortOrder
-    a_is_legend_italic?: SortOrder
-    a_is_legend_bold?: SortOrder
-    a_legend_color?: SortOrder
+    isAxis?: SortOrder
+    axis_txt_size?: SortOrder
+    is_axis_txt_italic?: SortOrder
+    is_axis_txt_bold?: SortOrder
+    axis_txt_color?: SortOrder
+    axisX?: SortOrder
+    axisY?: SortOrder
+    isLegend?: SortOrder
+    legend_size?: SortOrder
+    is_legend_italic?: SortOrder
+    is_legend_bold?: SortOrder
+    legend_color?: SortOrder
     a_thickness?: SortOrder
     a_is_line_smoth?: SortOrder
     projectId?: SortOrder
@@ -18585,10 +17995,8 @@ export namespace Prisma {
     b_bar_spacing?: SortOrder
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
-    b_legend_size?: SortOrder
-    b_axis_txt_size?: SortOrder
-    a_axis_txt_size?: SortOrder
-    a_legend_size?: SortOrder
+    axis_txt_size?: SortOrder
+    legend_size?: SortOrder
     a_thickness?: SortOrder
     projectId?: SortOrder
   }
@@ -18599,31 +18007,19 @@ export namespace Prisma {
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
     b_border_color?: SortOrder
-    b_isLegend?: SortOrder
-    b_legend_size?: SortOrder
-    b_is_legend_italic?: SortOrder
-    b_is_legend_bold?: SortOrder
-    b_legend_color?: SortOrder
-    b_isAxis?: SortOrder
-    b_axis_txt_size?: SortOrder
-    b_is_axis_txt_italic?: SortOrder
-    b_is_axis_txt_bold?: SortOrder
-    b_axis_txt_color?: SortOrder
-    b_axisX?: SortOrder
-    b_axisY?: SortOrder
     a_show_pointer_mark?: SortOrder
-    a_isAxis?: SortOrder
-    a_axis_txt_size?: SortOrder
-    a_is_axis_txt_italic?: SortOrder
-    a_is_axis_txt_bold?: SortOrder
-    a_axis_txt_color?: SortOrder
-    a_axisX?: SortOrder
-    a_axisY?: SortOrder
-    a_isLegend?: SortOrder
-    a_legend_size?: SortOrder
-    a_is_legend_italic?: SortOrder
-    a_is_legend_bold?: SortOrder
-    a_legend_color?: SortOrder
+    isAxis?: SortOrder
+    axis_txt_size?: SortOrder
+    is_axis_txt_italic?: SortOrder
+    is_axis_txt_bold?: SortOrder
+    axis_txt_color?: SortOrder
+    axisX?: SortOrder
+    axisY?: SortOrder
+    isLegend?: SortOrder
+    legend_size?: SortOrder
+    is_legend_italic?: SortOrder
+    is_legend_bold?: SortOrder
+    legend_color?: SortOrder
     a_thickness?: SortOrder
     a_is_line_smoth?: SortOrder
     projectId?: SortOrder
@@ -18635,31 +18031,19 @@ export namespace Prisma {
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
     b_border_color?: SortOrder
-    b_isLegend?: SortOrder
-    b_legend_size?: SortOrder
-    b_is_legend_italic?: SortOrder
-    b_is_legend_bold?: SortOrder
-    b_legend_color?: SortOrder
-    b_isAxis?: SortOrder
-    b_axis_txt_size?: SortOrder
-    b_is_axis_txt_italic?: SortOrder
-    b_is_axis_txt_bold?: SortOrder
-    b_axis_txt_color?: SortOrder
-    b_axisX?: SortOrder
-    b_axisY?: SortOrder
     a_show_pointer_mark?: SortOrder
-    a_isAxis?: SortOrder
-    a_axis_txt_size?: SortOrder
-    a_is_axis_txt_italic?: SortOrder
-    a_is_axis_txt_bold?: SortOrder
-    a_axis_txt_color?: SortOrder
-    a_axisX?: SortOrder
-    a_axisY?: SortOrder
-    a_isLegend?: SortOrder
-    a_legend_size?: SortOrder
-    a_is_legend_italic?: SortOrder
-    a_is_legend_bold?: SortOrder
-    a_legend_color?: SortOrder
+    isAxis?: SortOrder
+    axis_txt_size?: SortOrder
+    is_axis_txt_italic?: SortOrder
+    is_axis_txt_bold?: SortOrder
+    axis_txt_color?: SortOrder
+    axisX?: SortOrder
+    axisY?: SortOrder
+    isLegend?: SortOrder
+    legend_size?: SortOrder
+    is_legend_italic?: SortOrder
+    is_legend_bold?: SortOrder
+    legend_color?: SortOrder
     a_thickness?: SortOrder
     a_is_line_smoth?: SortOrder
     projectId?: SortOrder
@@ -18670,10 +18054,8 @@ export namespace Prisma {
     b_bar_spacing?: SortOrder
     b_border_radius?: SortOrder
     b_border_bld?: SortOrder
-    b_legend_size?: SortOrder
-    b_axis_txt_size?: SortOrder
-    a_axis_txt_size?: SortOrder
-    a_legend_size?: SortOrder
+    axis_txt_size?: SortOrder
+    legend_size?: SortOrder
     a_thickness?: SortOrder
     projectId?: SortOrder
   }
@@ -19630,6 +19012,7 @@ export namespace Prisma {
 
   export type PieCreateWithoutProjectInput = {
     start_angle?: number
+    show_percentage?: boolean
     isLegend?: boolean
     legend_size?: number
     is_legend_italic?: boolean
@@ -19640,6 +19023,7 @@ export namespace Prisma {
   export type PieUncheckedCreateWithoutProjectInput = {
     id?: number
     start_angle?: number
+    show_percentage?: boolean
     isLegend?: boolean
     legend_size?: number
     is_legend_italic?: boolean
@@ -19654,6 +19038,7 @@ export namespace Prisma {
 
   export type DonutCreateWithoutProjectInput = {
     start_angle?: number
+    show_percentage?: boolean
     inner_radius?: number
     isLegend?: boolean
     legend_size?: number
@@ -19665,6 +19050,7 @@ export namespace Prisma {
   export type DonutUncheckedCreateWithoutProjectInput = {
     id?: number
     start_angle?: number
+    show_percentage?: boolean
     inner_radius?: number
     isLegend?: boolean
     legend_size?: number
@@ -19767,31 +19153,19 @@ export namespace Prisma {
     b_border_radius?: number
     b_border_bld?: number
     b_border_color?: string
-    b_isLegend?: boolean
-    b_legend_size?: number
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: string
-    b_isAxis?: boolean
-    b_axis_txt_size?: number
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: string
-    b_axisX?: string
-    b_axisY?: string
     l_show_pointer_mark?: boolean
-    l_isAxis?: boolean
-    l_axis_txt_size?: number
-    l_is_axis_txt_italic?: boolean
-    l_is_axis_txt_bold?: boolean
-    l_axis_txt_color?: string
-    l_axisX?: string
-    l_axisY?: string
-    l_isLegend?: boolean
-    l_legend_size?: number
-    l_is_legend_italic?: boolean
-    l_is_legend_bold?: boolean
-    l_legend_color?: string
+    isAxis?: boolean
+    axis_txt_size?: number
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: string
+    axisX?: string
+    axisY?: string
+    isLegend?: boolean
+    legend_size?: number
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: string
     l_thickness?: number
     l_is_line_smoth?: boolean
   }
@@ -19802,31 +19176,19 @@ export namespace Prisma {
     b_border_radius?: number
     b_border_bld?: number
     b_border_color?: string
-    b_isLegend?: boolean
-    b_legend_size?: number
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: string
-    b_isAxis?: boolean
-    b_axis_txt_size?: number
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: string
-    b_axisX?: string
-    b_axisY?: string
     l_show_pointer_mark?: boolean
-    l_isAxis?: boolean
-    l_axis_txt_size?: number
-    l_is_axis_txt_italic?: boolean
-    l_is_axis_txt_bold?: boolean
-    l_axis_txt_color?: string
-    l_axisX?: string
-    l_axisY?: string
-    l_isLegend?: boolean
-    l_legend_size?: number
-    l_is_legend_italic?: boolean
-    l_is_legend_bold?: boolean
-    l_legend_color?: string
+    isAxis?: boolean
+    axis_txt_size?: number
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: string
+    axisX?: string
+    axisY?: string
+    isLegend?: boolean
+    legend_size?: number
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: string
     l_thickness?: number
     l_is_line_smoth?: boolean
   }
@@ -19841,31 +19203,19 @@ export namespace Prisma {
     b_border_radius?: number
     b_border_bld?: number
     b_border_color?: string
-    b_isLegend?: boolean
-    b_legend_size?: number
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: string
-    b_isAxis?: boolean
-    b_axis_txt_size?: number
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: string
-    b_axisX?: string
-    b_axisY?: string
     a_show_pointer_mark?: boolean
-    a_isAxis?: boolean
-    a_axis_txt_size?: number
-    a_is_axis_txt_italic?: boolean
-    a_is_axis_txt_bold?: boolean
-    a_axis_txt_color?: string
-    a_axisX?: string
-    a_axisY?: string
-    a_isLegend?: boolean
-    a_legend_size?: number
-    a_is_legend_italic?: boolean
-    a_is_legend_bold?: boolean
-    a_legend_color?: string
+    isAxis?: boolean
+    axis_txt_size?: number
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: string
+    axisX?: string
+    axisY?: string
+    isLegend?: boolean
+    legend_size?: number
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: string
     a_thickness?: number
     a_is_line_smoth?: boolean
   }
@@ -19876,31 +19226,19 @@ export namespace Prisma {
     b_border_radius?: number
     b_border_bld?: number
     b_border_color?: string
-    b_isLegend?: boolean
-    b_legend_size?: number
-    b_is_legend_italic?: boolean
-    b_is_legend_bold?: boolean
-    b_legend_color?: string
-    b_isAxis?: boolean
-    b_axis_txt_size?: number
-    b_is_axis_txt_italic?: boolean
-    b_is_axis_txt_bold?: boolean
-    b_axis_txt_color?: string
-    b_axisX?: string
-    b_axisY?: string
     a_show_pointer_mark?: boolean
-    a_isAxis?: boolean
-    a_axis_txt_size?: number
-    a_is_axis_txt_italic?: boolean
-    a_is_axis_txt_bold?: boolean
-    a_axis_txt_color?: string
-    a_axisX?: string
-    a_axisY?: string
-    a_isLegend?: boolean
-    a_legend_size?: number
-    a_is_legend_italic?: boolean
-    a_is_legend_bold?: boolean
-    a_legend_color?: string
+    isAxis?: boolean
+    axis_txt_size?: number
+    is_axis_txt_italic?: boolean
+    is_axis_txt_bold?: boolean
+    axis_txt_color?: string
+    axisX?: string
+    axisY?: string
+    isLegend?: boolean
+    legend_size?: number
+    is_legend_italic?: boolean
+    is_legend_bold?: boolean
+    legend_color?: string
     a_thickness?: number
     a_is_line_smoth?: boolean
   }
@@ -20105,6 +19443,7 @@ export namespace Prisma {
 
   export type PieUpdateWithoutProjectInput = {
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
     is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
@@ -20115,6 +19454,7 @@ export namespace Prisma {
   export type PieUncheckedUpdateWithoutProjectInput = {
     id?: IntFieldUpdateOperationsInput | number
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
     is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
@@ -20135,6 +19475,7 @@ export namespace Prisma {
 
   export type DonutUpdateWithoutProjectInput = {
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     inner_radius?: IntFieldUpdateOperationsInput | number
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
@@ -20146,6 +19487,7 @@ export namespace Prisma {
   export type DonutUncheckedUpdateWithoutProjectInput = {
     id?: IntFieldUpdateOperationsInput | number
     start_angle?: IntFieldUpdateOperationsInput | number
+    show_percentage?: BoolFieldUpdateOperationsInput | boolean
     inner_radius?: IntFieldUpdateOperationsInput | number
     isLegend?: BoolFieldUpdateOperationsInput | boolean
     legend_size?: IntFieldUpdateOperationsInput | number
@@ -20266,31 +19608,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     l_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    l_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    l_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    l_axisX?: StringFieldUpdateOperationsInput | string
-    l_axisY?: StringFieldUpdateOperationsInput | string
-    l_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_size?: IntFieldUpdateOperationsInput | number
-    l_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     l_thickness?: IntFieldUpdateOperationsInput | number
     l_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
   }
@@ -20301,31 +19631,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     l_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    l_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    l_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    l_axisX?: StringFieldUpdateOperationsInput | string
-    l_axisY?: StringFieldUpdateOperationsInput | string
-    l_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_size?: IntFieldUpdateOperationsInput | number
-    l_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    l_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    l_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     l_thickness?: IntFieldUpdateOperationsInput | number
     l_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
   }
@@ -20346,31 +19664,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     a_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    a_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    a_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    a_axisX?: StringFieldUpdateOperationsInput | string
-    a_axisY?: StringFieldUpdateOperationsInput | string
-    a_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_size?: IntFieldUpdateOperationsInput | number
-    a_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     a_thickness?: IntFieldUpdateOperationsInput | number
     a_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
   }
@@ -20381,31 +19687,19 @@ export namespace Prisma {
     b_border_radius?: IntFieldUpdateOperationsInput | number
     b_border_bld?: IntFieldUpdateOperationsInput | number
     b_border_color?: StringFieldUpdateOperationsInput | string
-    b_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_size?: IntFieldUpdateOperationsInput | number
-    b_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_legend_color?: StringFieldUpdateOperationsInput | string
-    b_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    b_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    b_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    b_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    b_axisX?: StringFieldUpdateOperationsInput | string
-    b_axisY?: StringFieldUpdateOperationsInput | string
     a_show_pointer_mark?: BoolFieldUpdateOperationsInput | boolean
-    a_isAxis?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_size?: IntFieldUpdateOperationsInput | number
-    a_is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_axis_txt_color?: StringFieldUpdateOperationsInput | string
-    a_axisX?: StringFieldUpdateOperationsInput | string
-    a_axisY?: StringFieldUpdateOperationsInput | string
-    a_isLegend?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_size?: IntFieldUpdateOperationsInput | number
-    a_is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
-    a_is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
-    a_legend_color?: StringFieldUpdateOperationsInput | string
+    isAxis?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_size?: IntFieldUpdateOperationsInput | number
+    is_axis_txt_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_axis_txt_bold?: BoolFieldUpdateOperationsInput | boolean
+    axis_txt_color?: StringFieldUpdateOperationsInput | string
+    axisX?: StringFieldUpdateOperationsInput | string
+    axisY?: StringFieldUpdateOperationsInput | string
+    isLegend?: BoolFieldUpdateOperationsInput | boolean
+    legend_size?: IntFieldUpdateOperationsInput | number
+    is_legend_italic?: BoolFieldUpdateOperationsInput | boolean
+    is_legend_bold?: BoolFieldUpdateOperationsInput | boolean
+    legend_color?: StringFieldUpdateOperationsInput | string
     a_thickness?: IntFieldUpdateOperationsInput | number
     a_is_line_smoth?: BoolFieldUpdateOperationsInput | boolean
   }

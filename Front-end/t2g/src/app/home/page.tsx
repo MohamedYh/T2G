@@ -12,6 +12,8 @@ import { IoCheckmark, IoCreate } from "react-icons/io5";
 import { FaCheck, FaFilter } from "react-icons/fa";
 import Papa from "papaparse";
 import { toast, ToastContainer } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { reset } from "@/store/slices/actionUpdater";
 
 interface Project {
     id: number;
@@ -26,6 +28,8 @@ interface DataObject {
 function Home() {
     const router = useRouter();
 
+    const dispatch = useDispatch();
+
     const [loading, setLoading] = useState(true);
     const [openCreateNewProject, setOpenCreateNewProject] = useState(false);
     const [labelCsvWidth, setLabelCsvWidth] = useState(10);
@@ -33,9 +37,9 @@ function Home() {
     const [selectList, setSelectList] = useState<boolean[]>([]);
     const [projects, setProjects] = useState<Project[]>([]);
     const [openSelectDelete, setOpenSelectDelete] = useState(false);
-    const [pw, setPw] = useState(
-        Math.floor((Math.min(window.innerWidth, 2200) - 15) / 377.5) * 377.5
-    );
+    const [pw, setPw] = useState<number>(0);
+
+    const [search, setSearch] = useState("");
 
     const d3Container = useRef(null);
     const dvUploadCsvRef = useRef<HTMLDivElement>(null);
@@ -54,9 +58,19 @@ function Home() {
             localStorage.clear();
             router.push("/login");
         } else {
+            dispatch(reset());
             getProjects();
         }
     }, []);
+
+    useEffect(() => {
+        if (window) {
+            setPw(
+                Math.floor((Math.min(window.innerWidth, 2200) - 15) / 377.5) *
+                    377.5
+            );
+        }
+    }, [window]);
 
     const getProjects = () => {
         axios
@@ -190,7 +204,7 @@ function Home() {
 
                     res.push(obj);
                 });
-                HandleCreateNewProject(fil.name || "", res, keys);
+                HandleCreateNewProject(fil.name || "", res, keys, true);
                 console.log(res);
                 setData(res);
             }
@@ -246,11 +260,11 @@ function Home() {
     function HandleCreateNewProject(
         projectName: string,
         data: DataObject[],
-        headers: string[]
+        headers: string[],
+        isFile: boolean
     ) {
         const prjnm = projectName.length == 0 ? "Untitled" : projectName;
-        const dataName =
-            data != undefined && data != null && data.length > 0 ? prjnm : "";
+        const dataName = isFile ? prjnm : "";
         console.log(projectName, prjnm, data, headers);
 
         axios
@@ -315,6 +329,10 @@ function Home() {
                                 }
                             }
                         }}
+                        onChange={(e) => {
+                            setSearch(e.target.value);
+                        }}
+                        value={search}
                         id="inptsrch"
                         type="text"
                     />
@@ -390,83 +408,96 @@ function Home() {
             </div>
             <h1>Projects</h1>
             <div className="cntrer">
-                <div
-                    className="projects"
-                    style={{
-                        width: pw,
-                    }}
-                >
-                    {projects != null &&
-                    projects != undefined &&
-                    projects.length > 0
-                        ? projects.map((x, i) => {
-                              var mxlntvr = mxlnt(x.name.split(" "));
-                              return (
-                                  <>
-                                      <div
-                                          onClick={() => {
-                                              if (openSelectDelete) {
-                                                  document.getElementsByClassName(
-                                                      "bxprj"
-                                                  )[i].className =
-                                                      "bxprj selecting_delete";
-                                                  const lst = [...selectList];
-                                                  lst[i] = !lst[i];
-                                                  console.log(lst);
-                                                  setTimeout(() => {
-                                                      document.getElementsByClassName(
-                                                          "bxprj"
-                                                      )[i].className = "bxprj";
-                                                  }, 1100);
-                                                  setSelectList(lst);
-                                              } else {
-                                                  router.push(
-                                                      `/project/${x.id}/`
-                                                  );
-                                              }
-                                          }}
-                                          className="bxprj sdx"
-                                          ref={i == 0 ? projectRef : null}
-                                      >
-                                          {openSelectDelete ? (
-                                              <div
-                                                  style={{
-                                                      backgroundColor:
-                                                          selectList[i]
-                                                              ? "#eb4848"
-                                                              : "transparent",
-                                                  }}
-                                                  className="select_to_delete"
-                                              >
-                                                  {selectList[i] ? (
-                                                      <FaCheck />
-                                                  ) : null}
-                                              </div>
-                                          ) : null}
-                                          <div className="shw"></div>
-                                          <p
-                                              title={x.name}
-                                              className="prjtitle"
-                                          >
-                                              {x.name.length > 46
-                                                  ? mxlntvr.mx == false
-                                                      ? x.name.slice(0, 44) +
-                                                        "..."
-                                                      : x.name.slice(0, 19) +
-                                                        "..."
-                                                  : mxlntvr.mx == false
-                                                  ? x.name
-                                                  : x.name.slice(
-                                                        0,
-                                                        mxlntvr.lt
-                                                    ) + "..."}
-                                          </p>
-                                      </div>
-                                  </>
-                              );
-                          })
-                        : null}
-                </div>
+                {projects != null &&
+                projects != undefined &&
+                projects.length > 0 ? (
+                    <div
+                        className="projects"
+                        style={{
+                            width: pw,
+                        }}
+                    >
+                        {projects
+                            .filter((v, i) => {
+                                return v.name
+                                    .toLowerCase()
+                                    .includes(search.toLowerCase());
+                            })
+                            .map((x, i) => {
+                                var mxlntvr = mxlnt(x.name.split(" "));
+                                return (
+                                    <>
+                                        <div
+                                            onClick={() => {
+                                                if (openSelectDelete) {
+                                                    document.getElementsByClassName(
+                                                        "bxprj"
+                                                    )[i].className =
+                                                        "bxprj selecting_delete";
+                                                    const lst = [...selectList];
+                                                    lst[i] = !lst[i];
+                                                    console.log(lst);
+                                                    setTimeout(() => {
+                                                        document.getElementsByClassName(
+                                                            "bxprj"
+                                                        )[i].className =
+                                                            "bxprj";
+                                                    }, 1100);
+                                                    setSelectList(lst);
+                                                } else {
+                                                    router.push(
+                                                        `/project/${x.id}/`
+                                                    );
+                                                }
+                                            }}
+                                            className="bxprj sdx"
+                                            ref={i == 0 ? projectRef : null}
+                                        >
+                                            {openSelectDelete ? (
+                                                <div
+                                                    style={{
+                                                        backgroundColor:
+                                                            selectList[i]
+                                                                ? "#eb4848"
+                                                                : "transparent",
+                                                    }}
+                                                    className="select_to_delete"
+                                                >
+                                                    {selectList[i] ? (
+                                                        <FaCheck />
+                                                    ) : null}
+                                                </div>
+                                            ) : null}
+                                            <div className="shw"></div>
+                                            <p
+                                                title={x.name}
+                                                className="prjtitle"
+                                            >
+                                                {x.name.length > 46
+                                                    ? mxlntvr.mx == false
+                                                        ? x.name.slice(0, 44) +
+                                                          "..."
+                                                        : x.name.slice(0, 19) +
+                                                          "..."
+                                                    : mxlntvr.mx == false
+                                                    ? x.name
+                                                    : x.name.slice(
+                                                          0,
+                                                          mxlntvr.lt
+                                                      ) + "..."}
+                                            </p>
+                                        </div>
+                                    </>
+                                );
+                            })}
+                    </div>
+                ) : (
+                    <div className="noProject">
+                        <p style={{ fontFamily: "Lexend", fontSize: "28px" }}>
+                            There&apos;s no project created yet!
+                        </p>
+                    </div>
+                )}
             </div>
             <table>
                 <thead>
@@ -520,8 +551,82 @@ function Home() {
                                     console.log("hfdsjhf");
                                     HandleCreateNewProject(
                                         projectName,
-                                        [{ "": { "": "" } }],
-                                        [""]
+                                        [
+                                            {
+                                                January: {
+                                                    USD: "10.8",
+                                                    EURO: "11.45",
+                                                },
+                                            },
+                                            {
+                                                February: {
+                                                    USD: "10.8554",
+                                                    EURO: "12.15",
+                                                },
+                                            },
+                                            {
+                                                March: {
+                                                    USD: "10.1",
+                                                    EURO: "10.8",
+                                                },
+                                            },
+                                            {
+                                                April: {
+                                                    USD: "9.4",
+                                                    EURO: "10.1",
+                                                },
+                                            },
+                                            {
+                                                May: {
+                                                    USD: "9.86",
+                                                    EURO: "9.95",
+                                                },
+                                            },
+                                            {
+                                                June: {
+                                                    USD: "10.4",
+                                                    EURO: "10.2",
+                                                },
+                                            },
+                                            {
+                                                July: {
+                                                    USD: "11.3",
+                                                    EURO: "10.08",
+                                                },
+                                            },
+                                            {
+                                                August: {
+                                                    USD: "10.589",
+                                                    EURO: "10.9",
+                                                },
+                                            },
+                                            {
+                                                September: {
+                                                    USD: "8.56",
+                                                    EURO: "9.8",
+                                                },
+                                            },
+                                            {
+                                                October: {
+                                                    USD: "9.15",
+                                                    EURO: "9.75",
+                                                },
+                                            },
+                                            {
+                                                November: {
+                                                    USD: "10.4",
+                                                    EURO: "9.9",
+                                                },
+                                            },
+                                            {
+                                                December: {
+                                                    USD: "10.9",
+                                                    EURO: "11.8",
+                                                },
+                                            },
+                                        ],
+                                        ["", "USD", "EURO"],
+                                        false
                                     );
                                 }}
                                 className="crnp2"
